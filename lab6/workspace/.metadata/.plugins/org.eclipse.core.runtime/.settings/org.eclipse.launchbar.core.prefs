@@ -1,0 +1,9 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:Debugger_mb_blink-GDB,org.eclipse.launchbar.core.descriptorType.default\:Debugger_mb_accumulate-GDB,org.eclipse.launchbar.core.descriptorType.default\:Debugger_mb_accumulate-GDB_1,org.eclipse.launchbar.core.descriptorType.default\:Debugger_mb_accumulate-GDB_2,org.eclipse.launchbar.core.descriptorType.default\:Debugger_mb_accumulate-GDB_3
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:Debugger_mb_accumulate-GDB/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:Debugger_mb_accumulate-GDB/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:Debugger_mb_blink-GDB/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:Debugger_mb_blink-GDB/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

@@ -1,0 +1,6 @@
+21:46:42 **** Incremental Build of configuration Debug for project mb_blink_system ****
+make all 
+Skipping SD card image generation. Reason: "The system project only has applications for microblaze processors."
+
+21:46:42 Build Finished (took 204ms)
+

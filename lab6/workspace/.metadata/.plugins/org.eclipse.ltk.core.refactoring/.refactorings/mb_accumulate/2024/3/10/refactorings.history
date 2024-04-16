@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;mb_accumulate/src/mb_blink.c&apos; to &apos;mb_accumulate.c&apos;" description="Rename resource &apos;mb_blink.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/mb_blink.c" name="mb_accumulate.c" stamp="1709780610179" updateReferences="true"/>
+</session>
