@@ -21,39 +21,50 @@ module  ball
     input  logic        frame_clk,
     input  logic [63:0]  keycode,
 
-    output logic [9:0]  BallX, 
-    output logic [9:0]  BallY, 
-    output logic [9:0]  BallS,
-    output logic [5:0]  BallAngle
+    output logic [9:0]  X, 
+    output logic [9:0]  Y, 
+    output logic [9:0]  S,
+    output logic [5:0]  Angle,
+    output logic [7:0]  X_vec,
+    output logic [7:0]  Y_vec
 );
     
 
 	 
-    parameter [9:0] Ball_X_Center=320;  // Center position on the X axis
-    parameter [9:0] Ball_Y_Center=240;  // Center position on the Y axis
-    parameter [9:0] Ball_X_Min=0;       // Leftmost point on the X axis
-    parameter [9:0] Ball_X_Max=639;     // Rightmost point on the X axis
-    parameter [9:0] Ball_Y_Min=0;       // Topmost point on the Y axis
-    parameter [9:0] Ball_Y_Max=479;     // Bottommost point on the Y axis
-    parameter [9:0] Ball_X_Step=3;      // Step size on the X axis
-    parameter [9:0] Ball_Y_Step=3;      // Step size on the Y axis
+    parameter [9:0] X_Center=320;  // Center position on the X axis
+    parameter [9:0] Y_Center=240;  // Center position on the Y axis
+    parameter [9:0] X_Min=0;       // Leftmost point on the X axis
+    parameter [9:0] X_Max=639;     // Rightmost point on the X axis
+    parameter [9:0] Y_Min=0;       // Topmost point on the Y axis
+    parameter [9:0] Y_Max=479;     // Bottommost point on the Y axis
+    parameter [9:0] X_Step=3;      // Step size on the X axis
+    parameter [9:0] Y_Step=3;      // Step size on the Y axis
 
-    logic [9:0] Ball_X_Motion;
-    logic [9:0] Ball_X_Motion_next;
-    logic [9:0] Ball_Y_Motion;
-    logic [9:0] Ball_Y_Motion_next;
-    logic [5:0] Ball_Angle_Motion;
-    logic [5:0] Ball_Angle_Motion_next;
+    logic [16:0] X_Motion;
+    logic [16:0] X_Motion_next;
+    logic [16:0] Y_Motion;
+    logic [16:0] Y_Motion_next;
+    logic [5:0] Angle_Motion;
+    logic [5:0] Angle_Motion_next;
+    
+    logic [16:0] X_pos, Y_pos;
 
-    logic [9:0] Ball_X_next;
-    logic [9:0] Ball_Y_next;
-    logic [5:0] Ball_Angle_next;
+    logic [16:0] X_next;
+    logic [16:0] Y_next;
+    logic [5:0] Angle_next;
     logic       W, A, S, D, LA, RA;
+    
+    cos_rom cos(
+        .addr(Angle), 
+        .value(X_vec));
+    sin_rom sin(
+        .addr(Angle), 
+        .value(Y_vec));
 
     always_comb begin
-        Ball_Y_Motion_next = 10'd0; // set default motion to be same as prev clock cycle 
-        Ball_X_Motion_next = 10'd0;
-        Ball_Angle_Motion_next = 6'd0;
+        Y_Motion_next = 17'd0; 
+        X_Motion_next = 17'd0;
+        Angle_Motion_next = 6'd0;
         
         W = (keycode[7:0]==8'h1A)|(keycode[15:8]==8'h1A)|(keycode[23:16]==8'h1A)|(keycode[31:24]==8'h1A)|
             (keycode[39:32]==8'h1A)|(keycode[47:40]==8'h1A)|(keycode[55:48]==8'h1A)|(keycode[63:56]==8'h1A);
@@ -74,62 +85,63 @@ module  ball
             (keycode[39:32]==8'h4f)|(keycode[47:40]==8'h4f)|(keycode[55:48]==8'h4f)|(keycode[63:56]==8'h4f);
 
         //modify to control ball motion with the keycode
-        Ball_Y_Motion_next = 3 * (S - W);
-        Ball_X_Motion_next = 3 * (D - A);
-        Ball_Angle_Motion_next = RA - LA;
-        
-        if((S - W) != 1'b0 && (D - A) != 1'b0)
-        begin
-            Ball_Y_Motion_next = 2 * (S - W);
-            Ball_X_Motion_next = 2 * (D - A);
-        end
+        Y_Motion_next = {Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec}*( {16'b0,W} )
+                      - {X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec}*( {16'b0,A} - {16'b0,D} );
+        X_Motion_next = {X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec}*( {16'b0,W} )
+                      + {Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec}*( {16'b0,A} - {16'b0,D} );
+        Angle_Motion_next = RA - LA;
 
 
-        if ( (BallY + BallS) >= Ball_Y_Max )  // Ball is at the bottom edge, BOUNCE!
-        begin
-            Ball_Y_Motion_next = (~ (Ball_Y_Step) + 1'b1);  // set to -1 via 2's complement.
-        end
-        else if ( (BallY - BallS) <= Ball_Y_Min )  // Ball is at the top edge, BOUNCE!
-        begin
-            Ball_Y_Motion_next = Ball_Y_Step;
-        end  
-       //fill in the rest of the motion equations here to bounce left and right
-        if ( (BallX + BallS) >= Ball_X_Max )  // Ball is at the bottom edge, BOUNCE!
-        begin
-            Ball_X_Motion_next = (~ (Ball_X_Step) + 1'b1);  // set to -1 via 2's complement.
-        end
-        else if ( (BallX - BallS) <= Ball_X_Min )  // Ball is at the top edge, BOUNCE!
-        begin
-            Ball_X_Motion_next = Ball_X_Step;
-        end  
+//        if ( (Y + S) >= Y_Max )  
+//        begin
+//            Y_Motion_next = -17'd128;
+//        end
+//        else if ( (Y - S) <= Y_Min ) 
+//        begin
+//            Y_Motion_next = 17'd128;
+//        end
+//        if ( (X + S) >= X_Max )
+//        begin
+//            X_Motion_next = -17'd128;
+//        end
+//        else if ( (X - S) <= X_Min )
+//        begin
+//            X_Motion_next = 17'd128;
+//        end  
     end
 
-    assign BallS = 16;  // default ball size
-    assign Ball_X_next = (BallX + Ball_X_Motion_next);
-    assign Ball_Y_next = (BallY + Ball_Y_Motion_next);
-    assign Ball_Angle_next = (BallAngle + Ball_Angle_Motion_next);
+    assign S = 16;  // default ball size
+    assign X_next = (X_pos + X_Motion_next);
+    assign Y_next = (Y_pos + Y_Motion_next);
+    assign Angle_next = (Angle + Angle_Motion_next);
    
     always_ff @(posedge frame_clk) //make sure the frame clock is instantiated correctly
     begin: Move_Ball
         if (Reset)
         begin 
-            Ball_Y_Motion <= 10'd0; //Ball_Y_Step;
-			Ball_X_Motion <= 10'd0; //Ball_X_Step;
+            Y_Motion <= 17'd0; 
+			X_Motion <= 17'd0; 
             
-			BallY <= Ball_Y_Center;
-			BallX <= Ball_X_Center;
-			BallAngle <= 0;
+			Y_pos <= {Y_Center,7'b0};
+			X_pos <= {X_Center,7'b0};
+			Angle <= 6'd0;
+			
+			Y <= Y_pos[16:7];
+			X <= X_pos[16:7];
         end
         else 
         begin 
 
-			Ball_Y_Motion <= Ball_Y_Motion_next; 
-			Ball_X_Motion <= Ball_X_Motion_next; 
-			Ball_Angle_Motion <= Ball_Angle_Motion_next;
+			Y_Motion <= Y_Motion_next; 
+			X_Motion <= X_Motion_next; 
+			Angle_Motion <= Angle_Motion_next;
 
-            BallY <= Ball_Y_next;  // Update ball position
-            BallX <= Ball_X_next;
-            BallAngle <= Ball_Angle_next;
+            Y_pos <= Y_next;
+            X_pos <= X_next;
+            Angle <= Angle_next;
+            
+            Y <= Y_pos[16:7];
+            X <= X_pos[16:7];
 			
 		end  
     end

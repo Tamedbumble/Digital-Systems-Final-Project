@@ -24,17 +24,18 @@ def ret_cos(x):
 def ret_sin(x):
     mask = 63
     idx = x & mask
-    if x==16:
+    if idx==16:
         return 127
-    if x==48:
+    if idx==48:
         return -128
-    if x&32:
-        if x&16:
-            x = -x
-        return -sin[x&15]
+    
     if x&16:
-        x = -x
-    return sin[x&15]
+        idx = -x
+    
+    if (x&32):
+        return -sin[idx&15]
+    else:
+        return sin[idx&15]
 
 
 plt.stem(np.array([ret_cos(x) for x in range(-100, 100)]))
@@ -45,5 +46,5 @@ plt.stem(np.array([ret_sin(x) for x in range(-100, 100)]))
 plt.plot(np.array([128*np.sin(np.pi*x / (2*n)) for x in range(-100, 100)]))
 plt.show()
 
-for val in cos:
+for val in sin:
     print("8'd"+str(int(val))+",")
