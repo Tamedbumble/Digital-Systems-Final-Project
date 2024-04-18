@@ -53,6 +53,10 @@ module mb_usb_hdmi_top(
     logic [3:0] red, green, blue;
     logic reset_ah;
     
+    logic [4:0] checkXsig, checkYsig;
+    logic [31:0] distancesig;
+    logic RayWallHit;
+    
     assign reset_ah = reset_rtl_0;
     
     
@@ -151,9 +155,26 @@ module mb_usb_hdmi_top(
         .Y_vec(yvec)
     );
     
+    //Raycaster Module
+    ray ray_caster (
+        .Xvec(xvec), 
+        .Yvec(yvec),
+        .startX(X), 
+        .startY(Y),
+        .HitWall(RayWallHit), 
+        .reset(vsync), 
+        .clk(Clk),
+        .checkX(checkXsig), 
+        .checkY(checkXsig),
+        .distance(distancesig)
+    );
+    
     walls walls_inst (
     .DrawX(drawX),
     .DrawY(drawY),
+    .RayX(checkXsig),
+    .RayY(checkYsig),
+    .RayWall(RayWallHit),
     .wall_on(wall_on),
     .wall_color(wall_color)
     );
@@ -172,7 +193,11 @@ module mb_usb_hdmi_top(
         .Blue(blue),
         // new
         .wall_color(wall_color),
-        .wall_on(wall_on)
+        .wall_on(wall_on),
+        
+        .debugX(checkXsig),
+        .debugY(checkYsig),
+        .debug_color(distancesig[27:16])
     );
     
 endmodule

@@ -18,6 +18,9 @@ module  color_mapper ( input  logic [9:0] X, Y, DrawX, DrawY, size,
                        input  logic [7:0] x_vec, y_vec,
                        input logic wall_on,
                        input logic [11:0] wall_color,
+                       
+                       input  logic [9:0] debugX, debugY,
+                       input  logic [11:0] debug_color,
                        output logic [3:0]  Red, Green, Blue );
     
     logic player_on;
@@ -41,41 +44,35 @@ module  color_mapper ( input  logic [9:0] X, Y, DrawX, DrawY, size,
     
     always_comb
     begin
-        x_vec_coords[11] = X+{x_vec[7],x_vec[7],x_vec};
-        y_vec_coords[11] = Y+{y_vec[7],y_vec[7],y_vec};
+        x_vec_coords[9] = X+{x_vec[7],x_vec[7],x_vec};
+        y_vec_coords[9] = Y+{y_vec[7],y_vec[7],y_vec};
         
-        x_vec_coords[7] = X+{x_vec[7],x_vec[7],x_vec[7],x_vec[7:1]};
-        y_vec_coords[7] = Y+{y_vec[7],y_vec[7],y_vec[7],y_vec[7:1]};
+        x_vec_coords[5] = X+{x_vec[7],x_vec[7],x_vec[7],x_vec[7:1]};
+        y_vec_coords[5] = Y+{y_vec[7],y_vec[7],y_vec[7],y_vec[7:1]};
         
-        x_vec_coords[5] = X+{x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:2]};
-        y_vec_coords[5] = Y+{y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:2]};
+        x_vec_coords[3] = X+{x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:2]};
+        y_vec_coords[3] = Y+{y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:2]};
         
-        x_vec_coords[4] = X+{x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:3]};
-        y_vec_coords[4] = Y+{y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:3]};
+        x_vec_coords[2] = X+{x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:3]};
+        y_vec_coords[2] = Y+{y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:3]};
         
-        x_vec_coords[3] = X+{x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:4]};
-        y_vec_coords[3] = Y+{y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:4]};
-        
-        x_vec_coords[2] = X+{x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:5]};
-        y_vec_coords[2] = Y+{y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:5]};
-        
-        x_vec_coords[1] = X+{x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:6]};
-        y_vec_coords[1] = Y+{y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:6]};
+        x_vec_coords[1] = X+{x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:4]};
+        y_vec_coords[1] = Y+{y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:4]};
         
         x_vec_coords[0] = X+{x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7]};
         y_vec_coords[0] = Y+{y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7]};
         
-        x_vec_coords[9] = X + {x_vec[7],x_vec[7],x_vec[7],x_vec[7:1]} + {x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:2]};
-        y_vec_coords[9] = Y + {y_vec[7],y_vec[7],y_vec[7],y_vec[7:1]} + {y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:2]};
+        x_vec_coords[7] = X + {x_vec[7],x_vec[7],x_vec[7],x_vec[7:1]} + {x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:2]};
+        y_vec_coords[7] = Y + {y_vec[7],y_vec[7],y_vec[7],y_vec[7:1]} + {y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:2]};
         
-        x_vec_coords[10] = X + {x_vec[7],x_vec[7],x_vec[7],x_vec[7:1]} + {x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:2]} + {x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:3]};
-        y_vec_coords[10] = Y + {y_vec[7],y_vec[7],y_vec[7],y_vec[7:1]} + {y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:2]} + {y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:3]};
+        x_vec_coords[8] = X + {x_vec[7],x_vec[7],x_vec[7],x_vec[7:1]} + {x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:2]} + {x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:3]};
+        y_vec_coords[8] = Y + {y_vec[7],y_vec[7],y_vec[7],y_vec[7:1]} + {y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:2]} + {y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:3]};
         
-        x_vec_coords[8] = X + {x_vec[7],x_vec[7],x_vec[7],x_vec[7:1]} + {x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:3]};
-        y_vec_coords[8] = Y + {y_vec[7],y_vec[7],y_vec[7],y_vec[7:1]} + {y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:3]};
+        x_vec_coords[6] = X + {x_vec[7],x_vec[7],x_vec[7],x_vec[7:1]} + {x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:3]};
+        y_vec_coords[6] = Y + {y_vec[7],y_vec[7],y_vec[7],y_vec[7:1]} + {y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:3]};
         
-        x_vec_coords[6] = X + {x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:2]} + {x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:3]};
-        y_vec_coords[6] = Y + {y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:2]} + {y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:3]};
+        x_vec_coords[4] = X + {x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:2]} + {x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:3]};
+        y_vec_coords[4] = Y + {y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:2]} + {y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:3]};
     end
     
     always_comb
@@ -122,20 +119,26 @@ module  color_mapper ( input  logic [9:0] X, Y, DrawX, DrawY, size,
             Green = 4'hf;
         end
         if (DrawY>=y_vec_coords[0]-ray_width  && DrawX>=x_vec_coords[0]-ray_width  && DrawY<=y_vec_coords[0]+ray_width  && DrawX<=x_vec_coords[0]+ray_width ||
+            DrawY>=y_vec_coords[1]-ray_width  && DrawX>=x_vec_coords[1]-ray_width  && DrawY<=y_vec_coords[1]+ray_width  && DrawX<=x_vec_coords[1]+ray_width ||
+            DrawY>=y_vec_coords[2]-ray_width  && DrawX>=x_vec_coords[2]-ray_width  && DrawY<=y_vec_coords[2]+ray_width  && DrawX<=x_vec_coords[2]+ray_width ||
             DrawY>=y_vec_coords[3]-ray_width  && DrawX>=x_vec_coords[3]-ray_width  && DrawY<=y_vec_coords[3]+ray_width  && DrawX<=x_vec_coords[3]+ray_width ||
             DrawY>=y_vec_coords[4]-ray_width  && DrawX>=x_vec_coords[4]-ray_width  && DrawY<=y_vec_coords[4]+ray_width  && DrawX<=x_vec_coords[4]+ray_width ||
             DrawY>=y_vec_coords[5]-ray_width  && DrawX>=x_vec_coords[5]-ray_width  && DrawY<=y_vec_coords[5]+ray_width  && DrawX<=x_vec_coords[5]+ray_width ||
             DrawY>=y_vec_coords[6]-ray_width  && DrawX>=x_vec_coords[6]-ray_width  && DrawY<=y_vec_coords[6]+ray_width  && DrawX<=x_vec_coords[6]+ray_width ||
             DrawY>=y_vec_coords[7]-ray_width  && DrawX>=x_vec_coords[7]-ray_width  && DrawY<=y_vec_coords[7]+ray_width  && DrawX<=x_vec_coords[7]+ray_width ||
             DrawY>=y_vec_coords[8]-ray_width  && DrawX>=x_vec_coords[8]-ray_width  && DrawY<=y_vec_coords[8]+ray_width  && DrawX<=x_vec_coords[8]+ray_width ||
-            DrawY>=y_vec_coords[9]-ray_width  && DrawX>=x_vec_coords[9]-ray_width  && DrawY<=y_vec_coords[9]+ray_width  && DrawX<=x_vec_coords[9]+ray_width ||
-            DrawY>=y_vec_coords[10]-ray_width && DrawX>=x_vec_coords[10]-ray_width && DrawY<=y_vec_coords[10]+ray_width && DrawX<=x_vec_coords[10]+ray_width||
-            DrawY>=y_vec_coords[11]-ray_width && DrawX>=x_vec_coords[11]-ray_width && DrawY<=y_vec_coords[11]+ray_width && DrawX<=x_vec_coords[11]+ray_width
+            DrawY>=y_vec_coords[9]-ray_width  && DrawX>=x_vec_coords[9]-ray_width  && DrawY<=y_vec_coords[9]+ray_width  && DrawX<=x_vec_coords[9]+ray_width
             )
         begin
                 Blue = 4'hf;
                 Red = 4'hf;
                 Green = 4'hf;
+        end
+        if (DrawY >= debugY-ray_width && DrawY <= debugY+ray_width && DrawX >= debugX-ray_width && DrawX <= debugX+ray_width)
+        begin
+            Red = debug_color[11:8];
+            Green = debug_color[7:4];
+            Blue = debug_color[3:0];
         end
     end
 endmodule

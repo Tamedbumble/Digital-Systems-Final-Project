@@ -94,6 +94,7 @@ read_verilog -library xil_defaultlib -sv {
   C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/ball.sv
   C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom.sv
   C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/hex_driver.sv
+  C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray.sv
   C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/sin_rom.sv
   C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/walls.sv
   C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/mb_usb_hdmi_top.sv

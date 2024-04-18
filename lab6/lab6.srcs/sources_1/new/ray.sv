@@ -57,21 +57,23 @@ module ray(
             distance <= 32'b0;
             wall_found <= 1'b0;
         end
-        if (HitWall)
-            wall_found <= 1'b1;
         else begin
-            if (~wall_found) begin
-                if (step_x)
-                    curX <= Xnext;
-                else
-                    curY <= Ynext;
-            end
-            else if (wall_found && (curX[16:12] != checkX) && (curY[16:12] != checkY)) begin // wall detected, take smaller steps
-                curX <= curX + Xvec;
-                curY <= curY + Yvec;
-            end
-            else begin // wall found & cur pos in cell, can calculate dist
-                distance <= (curX - startX)*(curX - startX) + (curY - startY)*(curY - startY);
+            if (HitWall)
+                wall_found <= 1'b1;
+            else begin
+                if (~wall_found) begin
+                    if (step_x)
+                        curX <= Xnext;
+                    else
+                        curY <= Ynext;
+                end
+                else if ((curX[16:12] != checkX) && (curY[16:12] != checkY)) begin // wall detected, take smaller steps
+                    curX <= curX + Xvec;
+                    curY <= curY + Yvec;
+                end
+                else begin // wall found & cur pos in cell, can calculate dist
+                    distance <= (curX - startX)*(curX - startX) + (curY - startY)*(curY - startY);
+                end
             end
         end
     end
