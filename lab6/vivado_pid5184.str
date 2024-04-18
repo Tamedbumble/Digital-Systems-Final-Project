@@ -1,0 +1,1631 @@
+/*
+
+Xilinx Vivado v2022.2 (64-bit) [Major: 2022, Minor: 2]
+SW Build: 3671981 on Fri Oct 14 05:00:03 MDT 2022
+IP Build: 3669848 on Fri Oct 14 08:30:02 MDT 2022
+
+Process ID (PID): 5184
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Wed Apr 17 20:09:33 CDT 2024
+Time zone: 	Central Standard Time (America/Chicago)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 6
+
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+
+Java version: 	11.0.11 64-bit
+Java home: 	W:/Xilinx/Vivado/2022.2/tps/win64/jre11.0.11_9
+Java executable: 	W:/Xilinx/Vivado/2022.2/tps/win64/jre11.0.11_9/bin/java.exe
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Dsun.java2d.d3d=false, -Dsun.awt.nopixfmt=true, -Dsun.java2d.dpiaware=true, -Dsun.java2d.uiScale.enabled=false, -Xverify:none, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, --add-opens=java.desktop/com.sun.awt=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, -XX:NewSize=60m, -XX:MaxNewSize=60m, -Xms256m, -Xmx3072m, -Xss5m]
+Java initial memory (-Xms): 	256 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	tamed
+User home directory: C:/Users/tamed
+User working directory: C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: W:/Xilinx/Vivado
+HDI_APPROOT: W:/Xilinx/Vivado/2022.2
+RDI_DATADIR: W:/Xilinx/Vivado/2022.2/data
+RDI_BINDIR: W:/Xilinx/Vivado/2022.2/bin
+
+Vivado preferences file: C:/Users/tamed/AppData/Roaming/Xilinx/Vivado/2022.2/vivado.xml
+Vivado preferences directory: C:/Users/tamed/AppData/Roaming/Xilinx/Vivado/2022.2/
+Vivado layouts directory: C:/Users/tamed/AppData/Roaming/Xilinx/Vivado/2022.2/data/layouts
+PlanAhead jar file: 	W:/Xilinx/Vivado/2022.2/lib/classes/planAhead.jar
+Vivado log file: 	C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/vivado.log
+Vivado journal file: 	C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/vivado.jou
+Engine tmp dir: 	C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/.Xil/Vivado-5184-DESKTOP-HL0SD2E
+
+Xilinx Environment Variables
+----------------------------
+RDI_APPROOT: W:/Xilinx/Vivado/2022.2
+RDI_ARGS:  -gui_launcher_event rodinguilauncherevent14856 "C:\Users\tamed\OneDrive\Desktop\UIUC Spring 2024\ECE385\Digital-Systems-Final-Project\lab6\lab6.xpr"
+RDI_ARGS_FUNCTION: RDI_EXEC_DEFAULT
+RDI_BASEROOT: W:/Xilinx/Vivado
+RDI_BINDIR: W:/Xilinx/Vivado/2022.2/bin
+RDI_BINROOT: W:/Xilinx/Vivado/2022.2/bin
+RDI_BUILD: yes
+RDI_CHECK_PROG: True
+RDI_DATADIR: W:/Xilinx/Vivado/2022.2/data
+RDI_INSTALLROOT: W:/Xilinx
+RDI_INSTALLVER: 2022.2
+RDI_INSTALLVERSION: 2022.2
+RDI_ISE_PLATFORM: nt64
+RDI_JAVACEFROOT: W:/Xilinx/Vivado/2022.2/tps/win64/java-cef-95.0.4638.69
+RDI_JAVAFXROOT: W:/Xilinx/Vivado/2022.2/tps/win64/javafx-sdk-11.0.2
+RDI_JAVAROOT: W:/Xilinx/Vivado/2022.2/tps/win64/jre11.0.11_9
+RDI_JAVA_VERSION: 11.0.11_9
+RDI_LIBDIR: W:/Xilinx/Vivado/2022.2/lib/win64.o
+RDI_MINGW_LIB: W:/Xilinx/Vivado/2022.2\tps\mingw\6.2.0\win64.o\nt\bin;W:/Xilinx/Vivado/2022.2\tps\mingw\6.2.0\win64.o\nt\libexec\gcc\x86_64-w64-mingw32\6.2.0
+RDI_OPT_EXT: .o
+RDI_PLATFORM: win64
+RDI_PREPEND_PATH: W:/Xilinx/Vitis/2022.2/bin;W:/Xilinx/Vivado/2022.2/ids_lite/ISE/bin/nt64;W:/Xilinx/Vivado/2022.2/ids_lite/ISE/lib/nt64
+RDI_PROG: W:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/vivado.exe
+RDI_PROGNAME: vivado.exe
+RDI_PYTHON3: W:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3
+RDI_PYTHON3_VERSION: 3.8.3
+RDI_PYTHONHOME: W:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3
+RDI_PYTHONPATH: W:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3;W:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3\bin;W:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3\lib;W:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3\lib\site-packages
+RDI_PYTHON_LD_LIBPATH: W:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3\lib
+RDI_TPS_ROOT: W:/Xilinx/Vivado/2022.2/tps/win64
+RDI_USE_JDK11: True
+RDI_VERBOSE: False
+XILINX: W:/Xilinx/Vivado/2022.2/ids_lite/ISE
+XILINX_DSP: W:/Xilinx/Vivado/2022.2/ids_lite/ISE
+XILINX_HLS: W:/Xilinx/Vitis_HLS/2022.2
+XILINX_PLANAHEAD: W:/Xilinx/Vivado/2022.2
+XILINX_SDK: W:/Xilinx/Vitis/2022.2
+XILINX_VITIS: W:/Xilinx/Vitis/2022.2
+XILINX_VIVADO: W:/Xilinx/Vivado/2022.2
+XILINX_VIVADO_HLS: W:/Xilinx/Vivado/2022.2
+_RDI_BINROOT: W:\Xilinx\Vivado\2022.2\bin
+_RDI_CWD: C:\Users\tamed\OneDrive\Desktop\UIUC Spring 2024\ECE385\Digital-Systems-Final-Project\lab6
+
+
+GUI allocated memory:	256 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,355 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 90 MB (+91663kb) [00:00:11]
+// [Engine Memory]: 1,235 MB (+1143409kb) [00:00:11]
+// Opening Vivado Project: C:\Users\tamed\OneDrive\Desktop\UIUC Spring 2024\ECE385\Digital-Systems-Final-Project\lab6\lab6.xpr. Version: Vivado v2022.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// Tcl Message: open_project {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.xpr} 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6' 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,400 MB. GUI used memory: 59 MB. Current time: 4/17/24, 8:09:36 PM CDT
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 1,571 MB (+288128kb) [00:00:24]
+// [GUI Memory]: 96 MB (+1621kb) [00:00:26]
+// [GUI Memory]: 120 MB (+20641kb) [00:00:27]
+// WARNING: HEventQueue.dispatchEvent() is taking  3892 ms.
+// Tcl Message: open_project {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.xpr} 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6' 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6_2_provided/hdmi_tx_1.0'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'W:/Xilinx/Vivado/2022.2/data/ip'. 
+// [GUI Memory]: 130 MB (+3364kb) [00:00:28]
+// [Engine Memory]: 1,658 MB (+8810kb) [00:00:28]
+// WARNING: HEventQueue.dispatchEvent() is taking  1898 ms.
+// Tcl Message: open_project: Time (s): cpu = 00:00:28 ; elapsed = 00:00:16 . Memory (MB): peak = 1799.543 ; gain = 393.254 
+// Project name: lab6; location: C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6; part: xc7s50csga324-1
+dismissDialog("Open Project"); // bq
+// HMemoryUtils.trashcanNow. Engine heap size: 1,676 MB. GUI used memory: 78 MB. Current time: 4/17/24, 8:09:50 PM CDT
+// Tcl Message: update_compile_order -fileset sources_1 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv)]", 1); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), ball_instance : ball (ball.sv)]", 8); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), ball_instance : ball (ball.sv), sin : sin_rom (sin_rom.sv)]", 10, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), ball_instance : ball (ball.sv), sin : sin_rom (sin_rom.sv)]", 10, false, false, false, false, false, true); // D - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), ball_instance : ball (ball.sv), cos : cos_rom (cos_rom.sv)]", 9, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), ball_instance : ball (ball.sv), cos : cos_rom (cos_rom.sv)]", 9, false, false, false, false, false, true); // D - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "sin_rom.sv", 1); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cos_rom.sv", 2); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // o
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), HexA : hex_driver (hex_driver.sv)]", 2, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), HexA : hex_driver (hex_driver.sv)]", 2, true, false, false, false, false, true); // D - Double Click - Node
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), HexA : hex_driver (hex_driver.sv)]", 2); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), color_instance : color_mapper (Color_Mapper.sv)]", 11, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), color_instance : color_mapper (Color_Mapper.sv)]", 11, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("Color_Mapper.sv", 754, 432); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,696 MB. GUI used memory: 81 MB. Current time: 4/17/24, 8:10:25 PM CDT
+// Elapsed time: 14 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager]", 21, true); // f - Node
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Tcl Command: 'load_features labtools'
+// TclEventType: LOAD_FEATURE
+// TclEventType: HW_SESSION_OPEN
+// WARNING: HEventQueue.dispatchEvent() is taking  2151 ms.
+// Tcl Message: open_hw_manager 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // t
+// 'K' command handler elapsed time: 3 seconds
+dismissDialog("Open Hardware Manager"); // bq
+// [GUI Memory]: 144 MB (+7974kb) [00:01:13]
+// Elapsed time: 302 seconds
+selectCodeEditor("sin_rom.sv", 1050, 448); // ac
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // g
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ao
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// Tcl Message: connect_hw_server -allow_non_jtag 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// Tcl Message: INFO: [Labtools 27-2222] Launching hw_server... 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,716 MB. GUI used memory: 85 MB. Current time: 4/17/24, 8:15:40 PM CDT
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2022.2   **** Build date : Oct 14 2022 at 05:18:10     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.   INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0 INFO: [Labtools 27-3417] Launching cs_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:   ******** Xilinx cs_server v2022.2.0   ****** Build date   : Oct 04 2022-18:25:37     **** Build number : 2022.2.1664925937       ** Copyright 2017-2024 Xilinx, Inc. All Rights Reserved.    
+// Tcl Message: connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1843.285 ; gain = 8.777 
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// WARNING: HEventQueue.dispatchEvent() is taking  7050 ms.
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/8874292301F8A 
+// Tcl Message: open_hw_target: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 4003.258 ; gain = 2159.973 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7s50_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// [Engine Memory]: 3,839 MB (+2199193kb) [00:06:32]
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7s50_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1435] Device xc7s50 (JTAG device index = 0) is not programmed (DONE status = 0). 
+// Elapsed time: 14 seconds
+dismissDialog("Auto Connect"); // bq
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // g
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // aP
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7s50_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7s50_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7s50 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'D' command handler elapsed time: 3 seconds
+dismissDialog("Program Device"); // bq
+// HMemoryUtils.trashcanNow. Engine heap size: 3,850 MB. GUI used memory: 86 MB. Current time: 4/17/24, 8:16:05 PM CDT
+// Elapsed time: 25 seconds
+selectCodeEditor("sin_rom.sv", 1027, 125); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "hex_driver.sv", 2); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Color_Mapper.sv", 3); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "hex_driver.sv", 2); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cos_rom.sv", 1); // o
+// Elapsed time: 12 seconds
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "localhost (1) ; Connected", 0, "localhost (1)", 0, true); // m - Node
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "xc7s50_0 (1) ; Programmed", 2, "xc7s50_0 (1)", 0, true); // m - Node
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "xilinx_tcf/Xilinx/8874292301F8A (1) ; Open", 1, "xilinx_tcf/Xilinx/8874292301F8A (1)", 0, true); // m - Node
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Add Sources]", 2, false); // f
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+dismissDialog("Add Sources"); // c
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, null, -1, null, -1, false, false, false, false, true, false); // m - Popup Trigger
+unMinimizeFrame(PAResourceOtoP.PAViews_HARDWARE, "Hardware"); // R
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "sin_rom.sv", 0); // o
+// Elapsed time: 89 seconds
+selectCodeEditor("sin_rom.sv", 1076, 175); // ac
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "xilinx_tcf/Xilinx/8874292301F8A (1) ; Open", 1, "xilinx_tcf/Xilinx/8874292301F8A (1)", 0, true, false, false, false, true, false); // m - Popup Trigger - Node
+selectMenuItem(PAResourceCommand.PACommandNames_CLOSE_TARGET, "Close Target"); // ao
+// Run Command: PAResourceCommand.PACommandNames_CLOSE_TARGET
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// Tcl Message: close_hw_target {localhost:3121/xilinx_tcf/Xilinx/8874292301F8A} 
+// Tcl Message: INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/8874292301F8A 
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_SERVER_UPDATE
+selectCodeEditor("sin_rom.sv", 1105, 94); // ac
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // j
+closeTask("Program and Debug", "Hardware Manager", "DesignTask.PROGRAM_DEBUG");
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Confirm Close"); // u
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// TclEventType: HW_SESSION_CLOSE
+// WARNING: HEventQueue.dispatchEvent() is taking  1859 ms.
+// Tcl Message: close_hw_manager 
+dismissDialog("Close Hardware Manager"); // bq
+// HMemoryUtils.trashcanNow. Engine heap size: 3,882 MB. GUI used memory: 87 MB. Current time: 4/17/24, 8:18:55 PM CDT
+// Elapsed time: 17 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "hex_driver.sv", 3); // o
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv)]", 1, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv)]", 1, true, false, false, false, false, true); // D - Double Click - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv)]", 1); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), ball_instance : ball (ball.sv)]", 8, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), ball_instance : ball (ball.sv)]", 8, true, false, false, false, false, true); // D - Double Click - Node
+// Elapsed time: 30 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), color_instance : color_mapper (Color_Mapper.sv)]", 9, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), color_instance : color_mapper (Color_Mapper.sv)]", 9, false, false, false, false, false, true); // D - Double Click
+// Elapsed time: 283 seconds
+selectCodeEditor("Color_Mapper.sv", 200, 305); // ac
+selectCodeEditor("Color_Mapper.sv", 133, 224); // ac
+selectCodeEditor("Color_Mapper.sv", 118, 222); // ac
+selectCodeEditor("Color_Mapper.sv", 248, 288); // ac
+selectCodeEditor("Color_Mapper.sv", 259, 293); // ac
+selectCodeEditor("Color_Mapper.sv", 118, 191); // ac
+selectCodeEditor("Color_Mapper.sv", 75, 190); // ac
+selectCodeEditor("Color_Mapper.sv", 262, 293); // ac
+// Elapsed time: 25 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), HexA : hex_driver (hex_driver.sv)]", 2); // D
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), HexA : hex_driver (hex_driver.sv)]", 2); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), ball_instance : ball (ball.sv)]", 8, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), ball_instance : ball (ball.sv)]", 8, true, false, false, false, false, true); // D - Double Click - Node
+// Elapsed time: 694 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), color_instance : color_mapper (Color_Mapper.sv)]", 11, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), color_instance : color_mapper (Color_Mapper.sv)]", 11, false, false, false, false, false, true); // D - Double Click
+// Elapsed time: 413 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ball.sv", 6); // o
+// Elapsed time: 45 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), color_instance : color_mapper (Color_Mapper.sv)]", 11, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), color_instance : color_mapper (Color_Mapper.sv)]", 11, false, false, false, false, false, true); // D - Double Click
+// Elapsed time: 27 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), ball_instance : ball (ball.sv)]", 8, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), ball_instance : ball (ball.sv)]", 8, true, false, false, false, false, true); // D - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), color_instance : color_mapper (Color_Mapper.sv)]", 9, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv), color_instance : color_mapper (Color_Mapper.sv)]", 9, false, false, false, false, false, true); // D - Double Click
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a
+dismissFileChooser();
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a
+selectComboBox(PAResourceAtoD.CreateSrcFileDialog_FILE_TYPE, "SystemVerilog", 2); // bc
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "walls"); // Q
+selectComboBox(PAResourceAtoD.CreateSrcFileDialog_FILE_LOCATION, "Choose Location...", 1); // d
+// Elapsed time: 11 seconds
+setFolderChooser("C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new");
+selectComboBox(PAResourceAtoD.CreateSrcFileDialog_FILE_LOCATION, "Choose Location...", 2); // d
+setFolderChooser("C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new");
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Create Source File"); // m
+selectButton("FINISH", "Finish"); // JButton
+// 'f' command handler elapsed time: 48 seconds
+dismissDialog("Add Sources"); // c
+// Tcl Message: close [ open {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/walls.sv} w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files {{C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/walls.sv}} 
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+selectButton("OptionPane.button", "Yes"); // JButton
+dismissDialog("Define Module"); // p
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 14 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "hex_driver.sv", 3); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cos_rom.sv", 2); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Color_Mapper.sv", 4); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ball.sv", 6); // o
+// Elapsed time: 16 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Color_Mapper.sv", 4); // o
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // E
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "sin_rom.sv", 1); // o
+// Elapsed time: 10 seconds
+selectCodeEditor("sin_rom.sv", 70, 73); // ac
+typeControlKey((HResource) null, "sin_rom.sv", 'c'); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ball.sv", 4); // o
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, walls (walls.sv)]", 12, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, walls (walls.sv)]", 12, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("walls.sv", 72, 411); // ac
+selectCodeEditor("walls.sv", 2, 444); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 22, 452); // ac
+selectCodeEditor("walls.sv", 6, 436); // ac
+selectCodeEditor("walls.sv", 4, 449); // ac
+selectCodeEditor("walls.sv", 90, 445); // ac
+selectCodeEditor("walls.sv", 67, 453); // ac
+selectCodeEditor("walls.sv", 69, 449, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("walls.sv", 63, 449); // ac
+selectCodeEditor("walls.sv", 128, 453); // ac
+selectCodeEditor("walls.sv", 99, 447); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Color_Mapper.sv", 2); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mb_usb_hdmi_top.sv", 3); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ball.sv", 4); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "sin_rom.sv", 1); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Color_Mapper.sv", 2); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "sin_rom.sv", 1); // o
+selectCodeEditor("sin_rom.sv", 255, 121); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "walls.sv", 5); // o
+selectCodeEditor("walls.sv", 11, 432); // ac
+selectCodeEditor("walls.sv", 73, 430); // ac
+selectCodeEditor("walls.sv", 100, 428); // ac
+selectCodeEditor("walls.sv", 148, 431); // ac
+// HMemoryUtils.trashcanNow. Engine heap size: 3,884 MB. GUI used memory: 91 MB. Current time: 4/17/24, 8:48:55 PM CDT
+// Elapsed time: 776 seconds
+selectCodeEditor("walls.sv", 152, 434); // ac
+selectCodeEditor("walls.sv", 104, 432); // ac
+selectCodeEditor("walls.sv", 70, 432); // ac
+selectCodeEditor("walls.sv", 134, 387); // ac
+selectCodeEditor("walls.sv", 187, 435); // ac
+selectCodeEditor("walls.sv", 170, 435); // ac
+selectCodeEditor("walls.sv", 102, 429); // ac
+selectCodeEditor("walls.sv", 1, 437); // ac
+selectCodeEditor("walls.sv", 167, 399); // ac
+selectCodeEditor("walls.sv", 214, 433); // ac
+selectCodeEditor("walls.sv", 187, 440); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Color_Mapper.sv", 2); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mb_usb_hdmi_top.sv", 3); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "sin_rom.sv", 1); // o
+selectCodeEditor("sin_rom.sv", 78, 349); // ac
+typeControlKey((HResource) null, "sin_rom.sv", 'c'); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "walls.sv", 5); // o
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 0, 245); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mb_usb_hdmi_top.sv", 3); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ball.sv", 4); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mb_usb_hdmi_top.sv", 3); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Color_Mapper.sv", 2); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "sin_rom.sv", 1); // o
+selectCodeEditor("sin_rom.sv", 202, 107); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "walls.sv", 5); // o
+selectCodeEditor("walls.sv", 81, 412); // ac
+selectCodeEditor("walls.sv", 93, 349); // ac
+selectCodeEditor("walls.sv", 90, 333); // ac
+selectCodeEditor("walls.sv", 85, 313); // ac
+selectCodeEditor("walls.sv", 83, 295); // ac
+selectCodeEditor("walls.sv", 82, 286); // ac
+selectCodeEditor("walls.sv", 81, 266); // ac
+selectCodeEditor("walls.sv", 79, 249); // ac
+selectCodeEditor("walls.sv", 79, 231); // ac
+selectCodeEditor("walls.sv", 78, 220); // ac
+selectCodeEditor("walls.sv", 76, 201); // ac
+selectCodeEditor("walls.sv", 76, 190); // ac
+selectCodeEditor("walls.sv", 77, 177); // ac
+selectCodeEditor("walls.sv", 74, 162); // ac
+selectCodeEditor("walls.sv", 36, 161); // ac
+selectCodeEditor("walls.sv", 56, 162); // ac
+selectCodeEditor("walls.sv", 92, 174); // ac
+selectCodeEditor("walls.sv", 63, 175); // ac
+selectCodeEditor("walls.sv", 45, 179); // ac
+selectCodeEditor("walls.sv", 180, 178); // ac
+selectCodeEditor("walls.sv", 203, 153); // ac
+selectCodeEditor("walls.sv", 188, 172); // ac
+selectCodeEditor("walls.sv", 188, 162); // ac
+selectCodeEditor("walls.sv", 188, 176); // ac
+selectCodeEditor("walls.sv", 62, 173); // ac
+selectCodeEditor("walls.sv", 201, 173); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("walls.sv", 183, 174); // ac
+typeControlKey((HResource) null, "walls.sv", 'c'); // ac
+selectCodeEditor("walls.sv", 72, 197); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 70, 214); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 69, 234); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 71, 249); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 68, 264); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 69, 286); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 69, 300); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 69, 324); // ac
+selectCodeEditor("walls.sv", 73, 313); // ac
+selectCodeEditor("walls.sv", 73, 315, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 84, 331); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 56, 159); // ac
+selectCodeEditor("walls.sv", 124, 142); // ac
+selectCodeEditor("walls.sv", 128, 86); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("walls.sv", 181, 316); // ac
+selectCodeEditor("walls.sv", 181, 163); // ac
+typeControlKey((HResource) null, "walls.sv", 'c'); // ac
+selectCodeEditor("walls.sv", 78, 345); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 234, 297); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("walls.sv", 167, 362); // ac
+// Elapsed time: 111 seconds
+selectCodeEditor("walls.sv", 209, 345); // ac
+selectCodeEditor("walls.sv", 133, 396); // ac
+selectCodeEditor("walls.sv", 122, 295); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Color_Mapper.sv", 2); // o
+selectCodeEditor("Color_Mapper.sv", 419, 277); // ac
+typeControlKey((HResource) null, "Color_Mapper.sv", 'c'); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "walls.sv", 5); // o
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 298, 297); // ac
+selectCodeEditor("walls.sv", 217, 300); // ac
+selectCodeEditor("walls.sv", 257, 300); // ac
+selectCodeEditor("walls.sv", 251, 300); // ac
+selectCodeEditor("walls.sv", 306, 303); // ac
+selectCodeEditor("walls.sv", 344, 299); // ac
+selectCodeEditor("walls.sv", 267, 313); // ac
+selectCodeEditor("walls.sv", 341, 294); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Color_Mapper.sv", 2); // o
+selectCodeEditor("Color_Mapper.sv", 406, 69); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "walls.sv", 5); // o
+selectCodeEditor("walls.sv", 39, 301); // ac
+selectCodeEditor("walls.sv", 39, 301, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("walls.sv", 29, 290); // ac
+selectCodeEditor("walls.sv", 243, 263); // ac
+// Elapsed time: 10 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Color_Mapper.sv", 2); // o
+// Elapsed time: 17 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "walls.sv", 5); // o
+selectCodeEditor("walls.sv", 259, 133); // ac
+// Elapsed time: 12 seconds
+selectCodeEditor("walls.sv", 299, 124); // ac
+selectCodeEditor("walls.sv", 225, 173); // ac
+selectCodeEditor("walls.sv", 346, 148); // ac
+selectCodeEditor("walls.sv", 244, 165); // ac
+selectCodeEditor("walls.sv", 63, 169); // ac
+selectCodeEditor("walls.sv", 168, 433); // ac
+// Elapsed time: 23 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mb_usb_hdmi_top.sv", 3); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Color_Mapper.sv", 2); // o
+// Elapsed time: 20 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "walls.sv", 5); // o
+selectCodeEditor("walls.sv", 313, 425); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 15 seconds
+selectCodeEditor("walls.sv", 266, 463); // ac
+selectCodeEditor("walls.sv", 304, 442); // ac
+// Elapsed time: 36 seconds
+selectCodeEditor("walls.sv", 315, 440); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("walls.sv", 192, 164); // ac
+// Elapsed time: 16 seconds
+selectCodeEditor("walls.sv", 190, 140); // ac
+selectCodeEditor("walls.sv", 165, 176); // ac
+selectCodeEditor("walls.sv", 120, 172); // ac
+selectCodeEditor("walls.sv", 40, 373); // ac
+selectCodeEditor("walls.sv", 31, 382); // ac
+// Elapsed time: 10 seconds
+selectCodeEditor("walls.sv", 151, 424); // ac
+selectCodeEditor("walls.sv", 143, 441); // ac
+selectCodeEditor("walls.sv", 117, 441); // ac
+selectCodeEditor("walls.sv", 321, 378); // ac
+// Elapsed time: 25 seconds
+selectCodeEditor("walls.sv", 138, 402); // ac
+// Elapsed time: 100 seconds
+selectCodeEditor("walls.sv", 130, 395); // ac
+// [GUI Memory]: 151 MB (+274kb) [01:01:23]
+// Elapsed time: 56 seconds
+selectCodeEditor("walls.sv", 202, 401); // ac
+selectCodeEditor("walls.sv", 209, 399); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("walls.sv", 198, 401); // ac
+selectCodeEditor("walls.sv", 240, 398); // ac
+selectCodeEditor("walls.sv", 200, 419); // ac
+selectCodeEditor("walls.sv", 188, 430); // ac
+selectCodeEditor("walls.sv", 124, 279); // ac
+selectCodeEditor("walls.sv", 127, 261); // ac
+selectCodeEditor("walls.sv", 126, 283); // ac
+selectCodeEditor("walls.sv", 133, 271); // ac
+selectCodeEditor("walls.sv", 133, 287); // ac
+selectCodeEditor("walls.sv", 134, 289); // ac
+selectCodeEditor("walls.sv", 130, 288); // ac
+// Elapsed time: 19 seconds
+selectCodeEditor("walls.sv", 127, 378); // ac
+selectCodeEditor("walls.sv", 157, 380); // ac
+selectCodeEditor("walls.sv", 161, 385); // ac
+// Elapsed time: 50 seconds
+selectCodeEditor("walls.sv", 159, 357); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 183 seconds
+selectCodeEditor("walls.sv", 638, 282); // ac
+selectCodeEditor("walls.sv", 61, 178); // ac
+selectCodeEditor("walls.sv", 216, 159); // ac
+selectCodeEditor("walls.sv", 166, 177); // ac
+selectCodeEditor("walls.sv", 188, 163); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 14 seconds
+selectCodeEditor("walls.sv", 198, 279); // ac
+selectCodeEditor("walls.sv", 170, 277); // ac
+selectCodeEditor("walls.sv", 41, 89); // ac
+selectCodeEditor("walls.sv", 43, 94); // ac
+typeControlKey((HResource) null, "walls.sv", 'c'); // ac
+selectCodeEditor("walls.sv", 43, 105); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 42, 124); // ac
+selectCodeEditor("walls.sv", 43, 126); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 42, 141); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 41, 160); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 44, 177); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 42, 193); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 42, 213); // ac
+selectCodeEditor("walls.sv", 31, 211, false, true, false, false, false); // ac - Control Key
+selectCodeEditor("walls.sv", 42, 214); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 40, 227); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 40, 243); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 40, 262); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 38, 279); // ac
+selectCodeEditor("walls.sv", 40, 278); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 168, 96); // ac
+selectCodeEditor("walls.sv", 179, 106); // ac
+selectCodeEditor("walls.sv", 179, 103, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("walls.sv", 179, 97); // ac
+selectCodeEditor("walls.sv", 179, 112); // ac
+selectCodeEditor("walls.sv", 177, 102); // ac
+selectCodeEditor("walls.sv", 179, 95); // ac
+selectCodeEditor("walls.sv", 183, 115); // ac
+selectCodeEditor("walls.sv", 184, 127); // ac
+selectCodeEditor("walls.sv", 184, 144); // ac
+selectCodeEditor("walls.sv", 181, 158); // ac
+selectCodeEditor("walls.sv", 177, 175); // ac
+selectCodeEditor("walls.sv", 175, 190); // ac
+selectCodeEditor("walls.sv", 175, 211); // ac
+selectCodeEditor("walls.sv", 201, 238); // ac
+selectCodeEditor("walls.sv", 201, 235, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("walls.sv", 196, 244); // ac
+selectCodeEditor("walls.sv", 185, 260); // ac
+selectCodeEditor("walls.sv", 186, 279); // ac
+selectCodeEditor("walls.sv", 170, 284); // ac
+selectCodeEditor("walls.sv", 176, 265); // ac
+typeControlKey((HResource) null, "walls.sv", 'c'); // ac
+selectCodeEditor("walls.sv", 209, 264); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 198, 311); // ac
+selectCodeEditor("walls.sv", 192, 253); // ac
+selectCodeEditor("walls.sv", 182, 150); // ac
+selectCodeEditor("walls.sv", 181, 109); // ac
+selectCodeEditor("walls.sv", 176, 94); // ac
+selectCodeEditor("walls.sv", 110, 86); // ac
+// Elapsed time: 13 seconds
+selectCodeEditor("walls.sv", 150, 126); // ac
+typeControlKey((HResource) null, "walls.sv", 'c'); // ac
+selectCodeEditor("walls.sv", 118, 131); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 273, 141); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 23 seconds
+selectCodeEditor("walls.sv", 141, 308); // ac
+// Elapsed time: 31 seconds
+selectCodeEditor("walls.sv", 139, 330); // ac
+typeControlKey((HResource) null, "walls.sv", 'c'); // ac
+selectCodeEditor("walls.sv", 138, 348); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 188, 304); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 11 seconds
+selectCodeEditor("walls.sv", 51, 329); // ac
+typeControlKey((HResource) null, "walls.sv", 'c'); // ac
+selectCodeEditor("walls.sv", 52, 349); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 49, 331); // ac
+selectCodeEditor("walls.sv", 35, 349); // ac
+selectCodeEditor("walls.sv", 202, 310); // ac
+selectCodeEditor("walls.sv", 195, 298); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("walls.sv", 150, 336); // ac
+selectCodeEditor("walls.sv", 154, 358); // ac
+selectCodeEditor("walls.sv", 185, 346); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 36, 365); // ac
+selectCodeEditor("walls.sv", 39, 338); // ac
+selectCodeEditor("walls.sv", 231, 287); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("walls.sv", 100, 436); // ac
+selectCodeEditor("walls.sv", 174, 412); // ac
+selectCodeEditor("walls.sv", 145, 425); // ac
+selectCodeEditor("walls.sv", 177, 412); // ac
+selectCodeEditor("walls.sv", 72, 431); // ac
+typeControlKey(null, null, 'z');
+selectCodeEditor("walls.sv", 46, 428); // ac
+selectCodeEditor("walls.sv", 40, 433); // ac
+selectCodeEditor("walls.sv", 81, 438); // ac
+// HMemoryUtils.trashcanNow. Engine heap size: 3,884 MB. GUI used memory: 83 MB. Current time: 4/17/24, 9:18:55 PM CDT
+selectCodeEditor("walls.sv", 27, 469); // ac
+selectCodeEditor("walls.sv", 166, 441); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 14 seconds
+selectCodeEditor("walls.sv", 178, 291); // ac
+selectCodeEditor("walls.sv", 181, 294, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("walls.sv", 245, 297); // ac
+selectCodeEditor("walls.sv", 179, 297); // ac
+selectCodeEditor("walls.sv", 182, 296); // ac
+selectCodeEditor("walls.sv", 176, 297); // ac
+selectCodeEditor("walls.sv", 1, 313); // ac
+selectCodeEditor("walls.sv", 374, 268); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("walls.sv", 107, 426); // ac
+selectCodeEditor("walls.sv", 120, 419); // ac
+selectCodeEditor("walls.sv", 183, 280); // ac
+// Elapsed time: 11 seconds
+selectCodeEditor("walls.sv", 203, 268); // ac
+selectCodeEditor("walls.sv", 54, 258); // ac
+selectCodeEditor("walls.sv", 54, 241); // ac
+selectCodeEditor("walls.sv", 113, 346); // ac
+selectCodeEditor("walls.sv", 112, 397); // ac
+selectCodeEditor("walls.sv", 287, 267); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("walls.sv", 62, 241); // ac
+selectCodeEditor("walls.sv", 64, 258); // ac
+selectCodeEditor("walls.sv", 171, 210); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 106 seconds
+selectCodeEditor("walls.sv", 353, 381); // ac
+selectCodeEditor("walls.sv", 110, 282); // ac
+selectCodeEditor("walls.sv", 118, 348); // ac
+selectCodeEditor("walls.sv", 118, 398); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("walls.sv", 549, 233); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ball.sv", 4); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "walls.sv", 5); // o
+// Elapsed time: 29 seconds
+selectCodeEditor("walls.sv", 920, 341); // ac
+// Elapsed time: 91 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Color_Mapper.sv", 2); // o
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv)]", 1, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv)]", 1, true, false, false, false, false, true); // D - Double Click - Node
+selectCodeEditor("mb_usb_hdmi_top.sv", 105, 229); // ac
+selectCodeEditor("mb_usb_hdmi_top.sv", 44, 244); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 17 seconds
+selectCodeEditor("mb_usb_hdmi_top.sv", 159, 247); // ac
+// Elapsed time: 12 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "walls.sv", 5); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mb_usb_hdmi_top.sv", 3); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "walls.sv", 5); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mb_usb_hdmi_top.sv", 3); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "walls.sv", 5); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mb_usb_hdmi_top.sv", 3); // o
+selectCodeEditor("mb_usb_hdmi_top.sv", 123, 364); // ac
+selectCodeEditor("mb_usb_hdmi_top.sv", 124, 349); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("mb_usb_hdmi_top.sv", 77, 351); // ac
+selectCodeEditor("mb_usb_hdmi_top.sv", 78, 365); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectCodeEditor("mb_usb_hdmi_top.sv", 205, 298); // ac
+selectCodeEditor("mb_usb_hdmi_top.sv", 116, 311); // ac
+selectCodeEditor("mb_usb_hdmi_top.sv", 74, 311); // ac
+selectCodeEditor("mb_usb_hdmi_top.sv", 71, 310, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("mb_usb_hdmi_top.sv", 124, 317); // ac
+selectCodeEditor("mb_usb_hdmi_top.sv", 120, 311); // ac
+typeControlKey((HResource) null, "mb_usb_hdmi_top.sv", 'c'); // ac
+selectCodeEditor("mb_usb_hdmi_top.sv", 90, 297); // ac
+typeControlKey((HResource) null, "mb_usb_hdmi_top.sv", 'v'); // ac
+selectCodeEditor("mb_usb_hdmi_top.sv", 155, 311); // ac
+selectCodeEditor("mb_usb_hdmi_top.sv", 168, 316); // ac
+selectCodeEditor("mb_usb_hdmi_top.sv", 187, 329); // ac
+typeControlKey((HResource) null, "mb_usb_hdmi_top.sv", 'c'); // ac
+selectCodeEditor("mb_usb_hdmi_top.sv", 112, 330); // ac
+typeControlKey((HResource) null, "mb_usb_hdmi_top.sv", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("mb_usb_hdmi_top.sv", 223, 337); // ac
+selectCodeEditor("mb_usb_hdmi_top.sv", 160, 379); // ac
+selectCodeEditor("mb_usb_hdmi_top.sv", 136, 433); // ac
+// Elapsed time: 14 seconds
+selectCodeEditor("mb_usb_hdmi_top.sv", 276, 372); // ac
+selectCodeEditor("mb_usb_hdmi_top.sv", 148, 431); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Color_Mapper.sv", 2); // o
+selectCodeEditor("Color_Mapper.sv", 221, 111); // ac
+selectCodeEditor("Color_Mapper.sv", 402, 296); // ac
+selectCodeEditor("Color_Mapper.sv", 490, 269); // ac
+selectCodeEditor("Color_Mapper.sv", 462, 315); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("Color_Mapper.sv", 399, 301); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "sin_rom.sv", 1); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Color_Mapper.sv", 2); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "sin_rom.sv", 1); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mb_usb_hdmi_top.sv", 3); // o
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("mb_usb_hdmi_top.sv", 241, 429); // ac
+selectCodeEditor("mb_usb_hdmi_top.sv", 234, 434); // ac
+selectCodeEditor("mb_usb_hdmi_top.sv", 239, 408); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("mb_usb_hdmi_top.sv", 128, 344); // ac
+selectCodeEditor("mb_usb_hdmi_top.sv", 143, 344); // ac
+selectCodeEditor("mb_usb_hdmi_top.sv", 148, 369); // ac
+selectCodeEditor("mb_usb_hdmi_top.sv", 182, 369); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Color_Mapper.sv", 2); // o
+selectCodeEditor("Color_Mapper.sv", 56, 178); // ac
+// Elapsed time: 10 seconds
+selectCodeEditor("Color_Mapper.sv", 81, 248); // ac
+selectCodeEditor("Color_Mapper.sv", 288, 262); // ac
+// Elapsed time: 32 seconds
+selectCodeEditor("Color_Mapper.sv", 347, 296); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "walls.sv", 5); // o
+// Elapsed time: 30 seconds
+selectCodeEditor("walls.sv", 288, 400); // ac
+// Elapsed time: 13 seconds
+selectCodeEditor("walls.sv", 484, 364); // ac
+// Elapsed time: 71 seconds
+selectCodeEditor("walls.sv", 346, 180); // ac
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // f
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Run Synthesis"); // u
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: INFO: [Project 1-1161] Replacing file C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.srcs/utils_1/imports/synth_1/mb_intro_top.dcp with file C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/mb_usb_hdmi_top.dcp 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 -jobs 3 
+// Tcl Message: [Wed Apr 17 21:29:55 2024] Launched synth_1... Run output will be captured here: C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bq
+// TclEventType: RUN_STATUS_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mb_usb_hdmi_top.sv", 4); // o
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 106 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -jobs 3 
+// Tcl Message: [Wed Apr 17 21:31:43 2024] Launched impl_1... Run output will be captured here: C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bq
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 145 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "Generate Bitstream"); // a
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+dismissDialog("Implementation Completed"); // S.a
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 3 
+// Tcl Message: [Wed Apr 17 21:34:10 2024] Launched impl_1... Run output will be captured here: C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Color_Mapper.sv", 2); // o
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 70 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER, "Open Hardware Manager"); // a
+// Elapsed time: 12 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// TclEventType: HW_SESSION_OPEN
+// WARNING: HEventQueue.dispatchEvent() is taking  2109 ms.
+// Tcl Message: open_hw_manager 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // t
+dismissDialog("Open Hardware Manager"); // bq
+// Elapsed time: 42 seconds
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // g
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ao
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// Tcl Message: connect_hw_server -allow_non_jtag 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// Tcl Message: INFO: [Labtools 27-2222] Launching hw_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2022.2   **** Build date : Oct 14 2022 at 05:18:10     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.   INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0 INFO: [Labtools 27-3417] Launching cs_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:   ******** Xilinx cs_server v2022.2.0   ****** Build date   : Oct 04 2022-18:25:37     **** Build number : 2022.2.1664925937       ** Copyright 2017-2024 Xilinx, Inc. All Rights Reserved.    
+// Tcl Message: connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 4080.258 ; gain = 0.000 
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/8874292301F8A 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7s50_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7s50_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1435] Device xc7s50 (JTAG device index = 0) is not programmed (DONE status = 0). 
+dismissDialog("Auto Connect"); // bq
+// [GUI Memory]: 159 MB (+44kb) [01:27:11]
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // g
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // aP
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7s50_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7s50_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7s50 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'D' command handler elapsed time: 3 seconds
+dismissDialog("Program Device"); // bq
+// Elapsed time: 79 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mb_usb_hdmi_top.sv", 2); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Color_Mapper.sv", 1); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ball.sv", 3); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mb_usb_hdmi_top.sv", 2); // o
+// Elapsed time: 12 seconds
+selectCodeEditor("mb_usb_hdmi_top.sv", 1101, 209); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ball.sv", 3); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "walls.sv", 4); // o
+// Elapsed time: 26 seconds
+selectTab((HResource) null, (HResource) null, "Messages", 1); // aa
+// Elapsed time: 28 seconds
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aa
+// Elapsed time: 32 seconds
+selectCodeEditor("walls.sv", 225, 100); // ac
+selectCodeEditor("walls.sv", 220, 109); // ac
+selectCodeEditor("walls.sv", 215, 126); // ac
+selectCodeEditor("walls.sv", 215, 146); // ac
+selectCodeEditor("walls.sv", 213, 163); // ac
+selectCodeEditor("walls.sv", 209, 184); // ac
+selectCodeEditor("walls.sv", 208, 200); // ac
+selectCodeEditor("walls.sv", 207, 211); // ac
+selectCodeEditor("walls.sv", 206, 228); // ac
+selectCodeEditor("walls.sv", 204, 249); // ac
+selectCodeEditor("walls.sv", 204, 264); // ac
+selectCodeEditor("walls.sv", 205, 279); // ac
+selectCodeEditor("walls.sv", 205, 297); // ac
+selectCodeEditor("walls.sv", 205, 311); // ac
+selectCodeEditor("walls.sv", 202, 331); // ac
+// Elapsed time: 12 seconds
+selectCodeEditor("walls.sv", 61, 91); // ac
+// Elapsed time: 15 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Color_Mapper.sv", 1); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "sin_rom.sv", 0); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "walls.sv", 4); // o
+// Elapsed time: 56 seconds
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // j
+closeTask("Program and Debug", "Hardware Manager", "DesignTask.PROGRAM_DEBUG");
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Confirm Close"); // u
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// TclEventType: HW_SESSION_CLOSE
+// WARNING: HEventQueue.dispatchEvent() is taking  1909 ms.
+// Tcl Message: close_hw_manager 
+dismissDialog("Close Hardware Manager"); // bq
+// Elapsed time: 120 seconds
+selectCodeEditor("Color_Mapper.sv", 286, 259); // ac
+// Elapsed time: 20 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "walls.sv", 3); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mb_usb_hdmi_top.sv", 4); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "walls.sv", 3); // o
+// Elapsed time: 131 seconds
+selectCodeEditor("walls.sv", 403, 227); // ac
+selectCodeEditor("walls.sv", 138, 242); // ac
+selectCodeEditor("walls.sv", 137, 259); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("walls.sv", 162, 265); // ac
+selectCodeEditor("walls.sv", 177, 245); // ac
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // f
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // u
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.srcs/utils_1/imports/synth_1/mb_intro_top.dcp with file C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/mb_usb_hdmi_top.dcp 
+dismissDialog("Resetting Runs"); // bq
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 3 
+// Tcl Message: [Wed Apr 17 21:46:23 2024] Launched synth_1... Run output will be captured here: C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/runme.log [Wed Apr 17 21:46:23 2024] Launched impl_1... Run output will be captured here: C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bq
+// TclEventType: RUN_STATUS_CHANGE
+// [GUI Memory]: 167 MB (+12kb) [01:37:05]
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// HMemoryUtils.trashcanNow. Engine heap size: 3,884 MB. GUI used memory: 92 MB. Current time: 4/17/24, 9:48:56 PM CDT
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 232 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// TclEventType: HW_SESSION_OPEN
+// WARNING: HEventQueue.dispatchEvent() is taking  2010 ms.
+// Tcl Message: open_hw_manager 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // t
+dismissDialog("Open Hardware Manager"); // bq
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // g
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ao
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// Tcl Message: connect_hw_server -allow_non_jtag 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// Tcl Message: INFO: [Labtools 27-2222] Launching hw_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2022.2   **** Build date : Oct 14 2022 at 05:18:10     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.   INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0 INFO: [Labtools 27-3417] Launching cs_server... 
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:   ******** Xilinx cs_server v2022.2.0   ****** Build date   : Oct 04 2022-18:25:37     **** Build number : 2022.2.1664925937       ** Copyright 2017-2024 Xilinx, Inc. All Rights Reserved.    
+// Tcl Message: connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 4105.590 ; gain = 0.000 
+dismissDialog("Auto Connect"); // bq
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // g
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ao
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// Tcl Message: disconnect_hw_server localhost:3121 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: connect_hw_server -allow_non_jtag 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0 INFO: [Labtools 27-3417] Launching cs_server... 
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:   ******** Xilinx cs_server v2022.2.0   ****** Build date   : Oct 04 2022-18:25:37     **** Build number : 2022.2.1664925937       ** Copyright 2017-2024 Xilinx, Inc. All Rights Reserved.    
+dismissDialog("Auto Connect"); // bq
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_SERVER_UPDATE
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // g
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ao
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// Tcl Message: disconnect_hw_server localhost:3121 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: connect_hw_server -allow_non_jtag 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0 INFO: [Labtools 27-3417] Launching cs_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:   ******** Xilinx cs_server v2022.2.0   ****** Build date   : Oct 04 2022-18:25:37     **** Build number : 2022.2.1664925937       ** Copyright 2017-2024 Xilinx, Inc. All Rights Reserved.    
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/8874292301F8A 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7s50_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7s50_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1435] Device xc7s50 (JTAG device index = 0) is not programmed (DONE status = 0). 
+dismissDialog("Auto Connect"); // bq
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // g
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // aP
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7s50_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7s50_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7s50 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'D' command handler elapsed time: 3 seconds
+dismissDialog("Program Device"); // bq
+// Elapsed time: 15 seconds
+selectCodeEditor("sin_rom.sv", 1012, 3); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mb_usb_hdmi_top.sv", 3); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ball.sv", 4); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "walls.sv", 2); // o
+selectCodeEditor("walls.sv", 117, 226); // ac
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // j
+closeTask("Program and Debug", "Hardware Manager", "DesignTask.PROGRAM_DEBUG");
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Confirm Close"); // u
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// TclEventType: HW_SESSION_CLOSE
+// WARNING: HEventQueue.dispatchEvent() is taking  1910 ms.
+// Tcl Message: close_hw_manager 
+dismissDialog("Close Hardware Manager"); // bq
+selectCodeEditor("walls.sv", 115, 246); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 19 seconds
+selectCodeEditor("walls.sv", 288, 242); // ac
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // f
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // u
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.srcs/utils_1/imports/synth_1/mb_intro_top.dcp with file C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/mb_usb_hdmi_top.dcp 
+dismissDialog("Resetting Runs"); // bq
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 3 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: [Wed Apr 17 21:51:41 2024] Launched synth_1... Run output will be captured here: C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/runme.log [Wed Apr 17 21:51:41 2024] Launched impl_1... Run output will be captured here: C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bq
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 162 seconds
+selectCodeEditor("walls.sv", 436, 232); // ac
+selectCodeEditor("walls.sv", 202, 248); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 63 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// TclEventType: HW_SESSION_OPEN
+// WARNING: HEventQueue.dispatchEvent() is taking  2089 ms.
+// Tcl Message: open_hw_manager 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // t
+dismissDialog("Open Hardware Manager"); // bq
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // g
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ao
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// Tcl Message: connect_hw_server -allow_non_jtag 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// Tcl Message: INFO: [Labtools 27-2222] Launching hw_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2022.2   **** Build date : Oct 14 2022 at 05:18:10     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.   INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0 INFO: [Labtools 27-3417] Launching cs_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:   ******** Xilinx cs_server v2022.2.0   ****** Build date   : Oct 04 2022-18:25:37     **** Build number : 2022.2.1664925937       ** Copyright 2017-2024 Xilinx, Inc. All Rights Reserved.    
+// Tcl Message: connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 4106.789 ; gain = 0.000 
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/8874292301F8A 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7s50_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7s50_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7s50 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Auto Connect"); // bq
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // g
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // aP
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7s50_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7s50_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7s50 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'D' command handler elapsed time: 3 seconds
+dismissDialog("Program Device"); // bq
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// Tcl Message: ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/8874292301F8A 
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_SERVER_UPDATE
+// Elapsed time: 28 seconds
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f
+dismissDialog("Close Hardware Target"); // j.a
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // j
+closeTask("Program and Debug", "Hardware Manager", "DesignTask.PROGRAM_DEBUG");
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Confirm Close"); // u
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// TclEventType: HW_SESSION_CLOSE
+// WARNING: HEventQueue.dispatchEvent() is taking  1981 ms.
+// Tcl Message: close_hw_manager 
+dismissDialog("Close Hardware Manager"); // bq
+selectCodeEditor("walls.sv", 118, 244); // ac
+selectCodeEditor("walls.sv", 125, 240); // ac
+selectCodeEditor("walls.sv", 109, 243); // ac
+selectCodeEditor("walls.sv", 112, 243); // ac
+selectCodeEditor("walls.sv", 110, 244); // ac
+selectCodeEditor("walls.sv", 120, 185); // ac
+// Elapsed time: 16 seconds
+selectCodeEditor("walls.sv", 260, 260); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("walls.sv", 193, 325); // ac
+selectCodeEditor("walls.sv", 26, 314); // ac
+selectCodeEditor("walls.sv", 130, 320); // ac
+// Elapsed time: 10 seconds
+selectCodeEditor("walls.sv", 246, 223); // ac
+selectCodeEditor("walls.sv", 233, 315); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("walls.sv", 242, 281); // ac
+selectCodeEditor("walls.sv", 136, 330); // ac
+selectCodeEditor("walls.sv", 167, 330); // ac
+typeControlKey((HResource) null, "walls.sv", 'c'); // ac
+selectCodeEditor("walls.sv", 148, 351); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 165, 330); // ac
+selectCodeEditor("walls.sv", 172, 346); // ac
+selectCodeEditor("walls.sv", 132, 347); // ac
+selectCodeEditor("walls.sv", 261, 281); // ac
+selectCodeEditor("walls.sv", 208, 319); // ac
+typeControlKey((HResource) null, "walls.sv", 'c'); // ac
+selectCodeEditor("walls.sv", 200, 316); // ac
+typeControlKey((HResource) null, "walls.sv", 'v'); // ac
+selectCodeEditor("walls.sv", 90, 330); // ac
+selectCodeEditor("walls.sv", 146, 329); // ac
+selectCodeEditor("walls.sv", 147, 247); // ac
+selectCodeEditor("walls.sv", 155, 246); // ac
+selectCodeEditor("walls.sv", 177, 266); // ac
+selectCodeEditor("walls.sv", 168, 280); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("walls.sv", 147, 327); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 35 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // f
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // u
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.srcs/utils_1/imports/synth_1/mb_intro_top.dcp with file C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/mb_usb_hdmi_top.dcp 
+dismissDialog("Resetting Runs"); // bq
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 3 
+// Tcl Message: [Wed Apr 17 21:58:17 2024] Launched synth_1... Run output will be captured here: C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/runme.log [Wed Apr 17 21:58:17 2024] Launched impl_1... Run output will be captured here: C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bq
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// [GUI Memory]: 179 MB (+3528kb) [01:51:23]
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 240 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// TclEventType: HW_SESSION_OPEN
+// WARNING: HEventQueue.dispatchEvent() is taking  2064 ms.
+// Tcl Message: open_hw_manager 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // t
+dismissDialog("Open Hardware Manager"); // bq
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // g
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ao
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// Tcl Message: connect_hw_server -allow_non_jtag 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// Tcl Message: INFO: [Labtools 27-2222] Launching hw_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2022.2   **** Build date : Oct 14 2022 at 05:18:10     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.   INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0 INFO: [Labtools 27-3417] Launching cs_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:   ******** Xilinx cs_server v2022.2.0   ****** Build date   : Oct 04 2022-18:25:37     **** Build number : 2022.2.1664925937       ** Copyright 2017-2024 Xilinx, Inc. All Rights Reserved.    
+// Tcl Message: connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 4109.086 ; gain = 0.000 
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/8874292301F8A 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7s50_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7s50_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1435] Device xc7s50 (JTAG device index = 0) is not programmed (DONE status = 0). 
+dismissDialog("Auto Connect"); // bq
+// Elapsed time: 61 seconds
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // g
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // aP
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7s50_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7s50_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7s50 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bq
+// Elapsed time: 28 seconds
+selectCodeEditor("sin_rom.sv", 1119, 165); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "walls.sv", 2); // o
+selectCodeEditor("walls.sv", 431, 99); // ac
+// Elapsed time: 43 seconds
+selectCodeEditor("walls.sv", 1034, 255); // ac
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// Tcl Message: ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/8874292301F8A 
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_SERVER_UPDATE
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f
+dismissDialog("Close Hardware Target"); // j.a
+selectCodeEditor("walls.sv", 173, 228); // ac
+selectCodeEditor("walls.sv", 157, 239); // ac
+selectCodeEditor("walls.sv", 161, 251); // ac
+selectCodeEditor("walls.sv", 141, 246); // ac
+selectCodeEditor("walls.sv", 170, 179); // ac
+selectCodeEditor("walls.sv", 173, 179); // ac
+selectCodeEditor("walls.sv", 95, 357); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // f
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // u
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.srcs/utils_1/imports/synth_1/mb_intro_top.dcp with file C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/mb_usb_hdmi_top.dcp 
+dismissDialog("Resetting Runs"); // bq
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 3 
+// Tcl Message: [Wed Apr 17 22:05:16 2024] Launched synth_1... Run output will be captured here: C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/runme.log [Wed Apr 17 22:05:16 2024] Launched impl_1... Run output will be captured here: C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bq
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 166 seconds
+selectCodeEditor("walls.sv", 1179, 232); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Color_Mapper.sv", 1); // o
+// [GUI Memory]: 188 MB (+315kb) [01:58:55]
+// Elapsed time: 12 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "walls.sv", 2); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mb_usb_hdmi_top.sv", 3); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Color_Mapper.sv", 1); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "sin_rom.sv", 0); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Color_Mapper.sv", 1); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "walls.sv", 2); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mb_usb_hdmi_top.sv", 3); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "walls.sv", 2); // o
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 36 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a
+dismissDialog("Bitstream Generation Completed"); // S.a
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // g
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ao
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// Tcl Message: disconnect_hw_server localhost:3121 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: connect_hw_server -allow_non_jtag 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0 INFO: [Labtools 27-3417] Launching cs_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:   ******** Xilinx cs_server v2022.2.0   ****** Build date   : Oct 04 2022-18:25:37     **** Build number : 2022.2.1664925937       ** Copyright 2017-2024 Xilinx, Inc. All Rights Reserved.    
+// Tcl Message: ERROR: [Labtoolstcl 44-494] There is no active target available for server at localhost.  Targets(s) ", jsn1" may be locked by another hw_server. 
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Labtoolstcl 44-494] There is no active target available for server at localhost.  Targets(s) ", jsn1" may be locked by another hw_server.  
+dismissDialog("Auto Connect"); // bq
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f
+dismissDialog("Critical Messages"); // a
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_SERVER_UPDATE
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // g
+selectMenu(PAResourceOtoP.ProgramDebugTab_AVAILABLE_TARGETS_ON_SERVER, "Available Targets on Server"); // al
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ao
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// Tcl Message: disconnect_hw_server localhost:3121 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: connect_hw_server -allow_non_jtag 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0 INFO: [Labtools 27-3417] Launching cs_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:   ******** Xilinx cs_server v2022.2.0   ****** Build date   : Oct 04 2022-18:25:37     **** Build number : 2022.2.1664925937       ** Copyright 2017-2024 Xilinx, Inc. All Rights Reserved.    
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/8874292301F8A 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7s50_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7s50_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1435] Device xc7s50 (JTAG device index = 0) is not programmed (DONE status = 0). 
+dismissDialog("Auto Connect"); // bq
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // g
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // aP
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7s50_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7s50_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7s50 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bq
+// Elapsed time: 36 seconds
+selectCodeEditor("walls.sv", 1046, 252); // ac
+// Elapsed time: 239 seconds
+selectCodeEditor("walls.sv", 1163, 98); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ball.sv", 4); // o
+// Elapsed time: 66 seconds
+selectCodeEditor("ball.sv", 1195, 376); // ac
+// Elapsed time: 17 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Color_Mapper.sv", 1); // o
+// HMemoryUtils.trashcanNow. Engine heap size: 3,884 MB. GUI used memory: 107 MB. Current time: 4/17/24, 10:18:56 PM CDT
+// Elapsed time: 940 seconds
+selectCodeEditor("Color_Mapper.sv", 1140, 307); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mb_usb_hdmi_top.sv", 3); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "walls.sv", 2); // o
+selectCodeEditor("walls.sv", 235, 233); // ac
+// Elapsed time: 36 seconds
+selectCodeEditor("walls.sv", 1136, 47); // ac
+selectCodeEditor("walls.sv", 435, 338); // ac
+typeControlKey((HResource) null, "walls.sv", 'c'); // ac
+selectCodeEditor("walls.sv", 438, 327); // ac
+selectCodeEditor("walls.sv", 4, 449); // ac
+selectCodeEditor("walls.sv", 33, 446); // ac
+selectCodeEditor("walls.sv", 280, 410); // ac
+typeControlKey((HResource) null, "walls.sv", 'c'); // ac
+selectCodeEditor("walls.sv", 293, 408); // ac
+// Elapsed time: 74 seconds
+selectCodeEditor("walls.sv", 1185, 270); // ac
+selectCodeEditor("walls.sv", 1198, 199); // ac
+// Elapsed time: 27 seconds
+selectCodeEditor("walls.sv", 228, 207); // ac
+selectCodeEditor("walls.sv", 230, 197); // ac
+selectCodeEditor("walls.sv", 230, 203); // ac
+selectCodeEditor("walls.sv", 231, 209); // ac

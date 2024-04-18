@@ -16,26 +16,14 @@
 
 module  color_mapper ( input  logic [9:0] X, Y, DrawX, DrawY, size,
                        input  logic [7:0] x_vec, y_vec,
+                       input logic wall_on,
+                       input logic [11:0] wall_color,
                        output logic [3:0]  Red, Green, Blue );
     
     logic player_on;
     logic [7:0] x_vec, y_vec;
     logic [9:0] x_vec_coords[12], y_vec_coords[12];
     logic [9:0] ray_width;
-	 
- /* Old Ball: Generated square box by checking if the current pixel is within a square of length
-    2*BallS, centered at (BallX, BallY).  Note that this requires unsigned comparisons.
-	 
-    if ((DrawX >= BallX - Ball_size) &&
-       (DrawX <= BallX + Ball_size) &&
-       (DrawY >= BallY - Ball_size) &&
-       (DrawY <= BallY + Ball_size))
-       )
-
-     New Ball: Generates (pixelated) circle by using the standard circle formula.  Note that while 
-     this single line is quite powerful descriptively, it causes the synthesis tool to use up three
-     of the 120 available multipliers on the chip!  Since the multiplicants are required to be signed,
-	  we have to first cast them from logic to int (signed by default) before they are multiplied). */
 	  
     int DistX, DistY, Size;
     assign DistX = DrawX - X;
@@ -96,6 +84,11 @@ module  color_mapper ( input  logic [9:0] X, Y, DrawX, DrawY, size,
             Red = 4'hf;
             Green = 4'h7;
             Blue = 4'h0;
+        end
+        else if(wall_on == 1'b1) begin
+            Red = wall_color[11:8];
+            Green = wall_color[7:4];
+            Blue = wall_color[3:0];
         end     
         else begin 
             Red = 4'h0; 

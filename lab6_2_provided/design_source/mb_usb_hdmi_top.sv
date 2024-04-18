@@ -46,6 +46,8 @@ module mb_usb_hdmi_top(
     logic [9:0] drawX, drawY, xsig, ysig, sizesig;
     logic [5:0] anglesig;
     logic [7:0] xvec, yvec;
+    logic wall_on;
+    logic [11:0] wall_color;
 
     logic hsync, vsync, vde;
     logic [3:0] red, green, blue;
@@ -149,6 +151,13 @@ module mb_usb_hdmi_top(
         .Y_vec(yvec)
     );
     
+    walls walls_inst (
+    .DrawX(drawX),
+    .DrawY(drawY),
+    .wall_on(wall_on),
+    .wall_color(wall_color)
+    );
+    
     //Color Mapper Module   
     color_mapper color_instance(
         .X(xsig),
@@ -160,7 +169,10 @@ module mb_usb_hdmi_top(
         .y_vec(yvec),
         .Red(red),
         .Green(green),
-        .Blue(blue)
+        .Blue(blue),
+        // new
+        .wall_color(wall_color),
+        .wall_on(wall_on)
     );
     
 endmodule
