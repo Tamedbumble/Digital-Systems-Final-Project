@@ -165,7 +165,7 @@ module mb_usb_hdmi_top(
         .reset(vsync), 
         .clk(Clk),
         .checkX(checkXsig), 
-        .checkY(checkXsig),
+        .checkY(checkYsig),
         .distance(distancesig)
     );
     
