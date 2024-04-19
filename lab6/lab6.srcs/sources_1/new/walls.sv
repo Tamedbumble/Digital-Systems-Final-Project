@@ -22,12 +22,15 @@
 
 module walls(input logic [9:0] DrawX, DrawY,
              input logic [4:0] RayX, RayY,
+             input logic [4:0] X_next, Y_next,
              output logic RayWall,
              output logic wall_on,
+             output logic coll_next, // 1 if collide with wall on next frame
              output logic [11:0] wall_color 
     );
     
 // each wall tile is 32x32 (640x480 turns into 20/15)
+// TODO: allow for array accessing of levels ex: wall[0]
 logic [19:0] walls_0 [15] = {
     20'b11111111111111111111,
     20'b10000000000000001001,
@@ -72,6 +75,14 @@ always_comb begin
         RayWall = 1'b1;
     else 
         RayWall = walls_0[RayY][RayX];
+        
+    // 1 if inside wall next frame, 0 if not
+    if(walls_0[Y_next][X_next] == 1'b1) begin
+        coll_next = 1'b1;
+    end
+    else begin
+        coll_next = 1'b0;
+    end
 
 end
     

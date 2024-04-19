@@ -20,13 +20,16 @@ module  ball
     input  logic        Reset, 
     input  logic        frame_clk,
     input  logic [63:0]  keycode,
+    input logic coll_next, // 1 if collision on next frame
 
     output logic [9:0]  X, 
     output logic [9:0]  Y, 
     output logic [9:0]  S,
     output logic [5:0]  Angle,
     output logic [7:0]  X_vec,
-    output logic [7:0]  Y_vec
+    output logic [7:0]  Y_vec,
+    output logic [4:0] X_coll, // variables to check for collision
+    output logic [4:0] Y_coll
 );
     
 
@@ -123,6 +126,8 @@ module  ball
     assign X_next = (X_pos + X_Motion_next);
     assign Y_next = (Y_pos + Y_Motion_next);
     assign Angle_next = (Angle + Angle_Motion_next);
+    assign Y_coll = Y_next[16:12];
+    assign X_coll = X_next[16:12];
    
     always_ff @(posedge frame_clk) //make sure the frame clock is instantiated correctly
     begin: Move_Ball
@@ -140,18 +145,19 @@ module  ball
         end
         else 
         begin 
-
-			Y_Motion <= Y_Motion_next; 
-			X_Motion <= X_Motion_next; 
-			Angle_Motion <= Angle_Motion_next;
-
-            Y_pos <= Y_next;
-            X_pos <= X_next;
-            Angle <= Angle_next;
-            
-            Y <= Y_pos[16:7];
-            X <= X_pos[16:7];
-			
+            // only allow movement if it wont result in being inside a wall
+            if(coll_next == 1'b0) begin
+                Y_Motion <= Y_Motion_next; 
+                X_Motion <= X_Motion_next; 
+                Angle_Motion <= Angle_Motion_next;
+    
+                Y_pos <= Y_next;
+                X_pos <= X_next;
+                Angle <= Angle_next;
+                
+                Y <= Y_pos[16:7];
+                X <= X_pos[16:7];
+            end
 		end  
     end
 

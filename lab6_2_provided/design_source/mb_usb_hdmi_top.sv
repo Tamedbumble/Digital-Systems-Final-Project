@@ -54,6 +54,8 @@ module mb_usb_hdmi_top(
     logic reset_ah;
     
     logic [4:0] checkXsig, checkYsig;
+    logic [4:0] checkX_next, checkY_next;
+    logic will_collide;
     logic [31:0] distancesig;
     logic RayWallHit;
     
@@ -142,7 +144,7 @@ module mb_usb_hdmi_top(
     );
 
     
-    //Ball Module
+    //"Ball" Module
     ball ball_instance(
         .Reset(reset_ah),
         .frame_clk(vsync),           //Figure out what this should be so that the ball will move
@@ -152,7 +154,10 @@ module mb_usb_hdmi_top(
         .S(sizesig),
         .Angle(anglesig),
         .X_vec(xvec),
-        .Y_vec(yvec)
+        .Y_vec(yvec),
+        .X_coll(checkX_next),
+        .Y_coll(checkY_next),
+        .coll_next(will_collide)
     );
     
     //Raycaster Module
@@ -174,6 +179,9 @@ module mb_usb_hdmi_top(
     .DrawY(drawY),
     .RayX(checkXsig),
     .RayY(checkYsig),
+    .X_next(checkX_next),
+    .Y_next(checkY_next),
+    .coll_next(will_collide),
     .RayWall(RayWallHit),
     .wall_on(wall_on),
     .wall_color(wall_color)
