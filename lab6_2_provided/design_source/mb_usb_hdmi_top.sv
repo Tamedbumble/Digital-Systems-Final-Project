@@ -43,11 +43,12 @@ module mb_usb_hdmi_top(
     logic [31:0] keycode0_gpio, keycode1_gpio;
     logic clk_25MHz, clk_125MHz, clk, clk_100MHz;
     logic locked;
-    logic [9:0] drawX, drawY, xsig, ysig, sizesig;
+    logic [9:0] drawX, drawY, sizesig, debugx, debugy;
+    logic [16:0] xsig, ysig;
     logic [5:0] anglesig;
     logic [7:0] xvec, yvec;
     logic wall_on;
-    logic [11:0] wall_color;
+    logic [11:0] wall_color, debugcolor;
 
     logic hsync, vsync, vde;
     logic [3:0] red, green, blue;
@@ -58,6 +59,7 @@ module mb_usb_hdmi_top(
     logic will_collide;
     logic [31:0] distancesig;
     logic RayWallHit;
+    logic [9:0] curRayX, curRayY;
     
     assign reset_ah = reset_rtl_0;
     
@@ -148,10 +150,10 @@ module mb_usb_hdmi_top(
     ball ball_instance(
         .Reset(reset_ah),
         .frame_clk(vsync),           //Figure out what this should be so that the ball will move
-        .keycode({keycode1_gpio, keycode0_gpio}),    //Notice: only one keycode connected to ball by default
+        .keycode({keycode1_gpio, keycode0_gpio}),    
         .X(xsig),
         .Y(ysig),
-        .S(sizesig),
+        .Size(sizesig),
         .Angle(anglesig),
         .X_vec(xvec),
         .Y_vec(yvec),
@@ -162,16 +164,18 @@ module mb_usb_hdmi_top(
     
     //Raycaster Module
     ray ray_caster (
-        .Xvec(xvec), 
-        .Yvec(yvec),
-        .startX(X), 
-        .startY(Y),
+        .Xvec({{10{xvec[7]}},xvec}), 
+        .Yvec({{10{yvec[7]}},yvec}),
+        .startX(xsig), 
+        .startY(ysig),
         .HitWall(RayWallHit), 
-        .reset(vsync), 
-        .clk(Clk),
+        .reset(keycode0_gpio[7:0]==8'h15),//vsync), 
+        .clk(vsync),//Clk),
         .checkX(checkXsig), 
         .checkY(checkYsig),
-        .distance(distancesig)
+        .distance(distancesig),
+        .debug_curX(curRayX),
+        .debug_curY(curRayY)
     );
     
     walls walls_inst (
@@ -189,8 +193,8 @@ module mb_usb_hdmi_top(
     
     //Color Mapper Module   
     color_mapper color_instance(
-        .X(xsig),
-        .Y(ysig),
+        .X(xsig[16:7]),
+        .Y(ysig[16:7]),
         .DrawX(drawX),
         .DrawY(drawY),
         .size(sizesig),
@@ -203,9 +207,16 @@ module mb_usb_hdmi_top(
         .wall_color(wall_color),
         .wall_on(wall_on),
         
-        .debugX(checkXsig),
-        .debugY(checkYsig),
-        .debug_color(distancesig[27:16])
+        .debugX(debugx),
+        .debugY(debugy),
+        .debug_color(debugcolor)
     );
+    
+    always_ff @ (posedge Clk)
+    begin
+        debugx <= curRayX;
+        debugy <= curRayY;
+        debugcolor <= distancesig[27:16];
+    end
     
 endmodule

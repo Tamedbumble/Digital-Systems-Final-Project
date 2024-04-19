@@ -44,35 +44,32 @@ module  color_mapper ( input  logic [9:0] X, Y, DrawX, DrawY, size,
     
     always_comb
     begin
-        x_vec_coords[9] = X+{x_vec[7],x_vec[7],x_vec};
-        y_vec_coords[9] = Y+{y_vec[7],y_vec[7],y_vec};
+        x_vec_coords[8] = X + {{2{x_vec[7]}},x_vec}; // X+{x_vec[7],x_vec[7],x_vec};
+        y_vec_coords[8] = Y + {{2{y_vec[7]}},y_vec}; //{y_vec[7],y_vec[7],y_vec};
         
-        x_vec_coords[5] = X+{x_vec[7],x_vec[7],x_vec[7],x_vec[7:1]};
-        y_vec_coords[5] = Y+{y_vec[7],y_vec[7],y_vec[7],y_vec[7:1]};
+        x_vec_coords[4] = X+{x_vec[7],x_vec[7],x_vec[7],x_vec[7:1]};
+        y_vec_coords[4] = Y+{y_vec[7],y_vec[7],y_vec[7],y_vec[7:1]};
         
-        x_vec_coords[3] = X+{x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:2]};
-        y_vec_coords[3] = Y+{y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:2]};
+        x_vec_coords[2] = X+{x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:2]};
+        y_vec_coords[2] = Y+{y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:2]};
         
-        x_vec_coords[2] = X+{x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:3]};
-        y_vec_coords[2] = Y+{y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:3]};
-        
-        x_vec_coords[1] = X+{x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:4]};
-        y_vec_coords[1] = Y+{y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:4]};
+        x_vec_coords[1] = X+{x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:3]};
+        y_vec_coords[1] = Y+{y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:3]};
         
         x_vec_coords[0] = X+{x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7]};
         y_vec_coords[0] = Y+{y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7]};
         
-        x_vec_coords[7] = X + {x_vec[7],x_vec[7],x_vec[7],x_vec[7:1]} + {x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:2]};
-        y_vec_coords[7] = Y + {y_vec[7],y_vec[7],y_vec[7],y_vec[7:1]} + {y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:2]};
+        x_vec_coords[6] = X + {x_vec[7],x_vec[7],x_vec[7],x_vec[7:1]} + {x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:2]};
+        y_vec_coords[6] = Y + {y_vec[7],y_vec[7],y_vec[7],y_vec[7:1]} + {y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:2]};
         
-        x_vec_coords[8] = X + {x_vec[7],x_vec[7],x_vec[7],x_vec[7:1]} + {x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:2]} + {x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:3]};
-        y_vec_coords[8] = Y + {y_vec[7],y_vec[7],y_vec[7],y_vec[7:1]} + {y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:2]} + {y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:3]};
+        x_vec_coords[7] = X + {x_vec[7],x_vec[7],x_vec[7],x_vec[7:1]} + {x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:2]} + {x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:3]};
+        y_vec_coords[7] = Y + {y_vec[7],y_vec[7],y_vec[7],y_vec[7:1]} + {y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:2]} + {y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:3]};
         
-        x_vec_coords[6] = X + {x_vec[7],x_vec[7],x_vec[7],x_vec[7:1]} + {x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:3]};
-        y_vec_coords[6] = Y + {y_vec[7],y_vec[7],y_vec[7],y_vec[7:1]} + {y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:3]};
+        x_vec_coords[5] = X + {x_vec[7],x_vec[7],x_vec[7],x_vec[7:1]} + {x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:3]};
+        y_vec_coords[5] = Y + {y_vec[7],y_vec[7],y_vec[7],y_vec[7:1]} + {y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:3]};
         
-        x_vec_coords[4] = X + {x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:2]} + {x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:3]};
-        y_vec_coords[4] = Y + {y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:2]} + {y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:3]};
+        x_vec_coords[3] = X + {x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:2]} + {x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7],x_vec[7:3]};
+        y_vec_coords[3] = Y + {y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:2]} + {y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7],y_vec[7:3]};
     end
     
     always_comb
@@ -93,31 +90,31 @@ module  color_mapper ( input  logic [9:0] X, Y, DrawX, DrawY, size,
             Blue = 4'h4;
         end 
            
-        if (DrawY == Y && DrawX>=X && DrawX<=X+{x_vec[7],x_vec[7],x_vec})
-        begin
-            Blue = 4'hf;
-            Red = 4'h0;
-            Green = 4'h0;
-        end      
-        else if (DrawY == Y && DrawX>=X+{x_vec[7],x_vec[7],x_vec} && DrawX<=X)
-        begin
-            Blue = 4'h0;
-            Red = 4'h0;
-            Green = 4'hf;
-        end
+//        if (DrawY == Y && DrawX>=X && DrawX<=X+{x_vec[7],x_vec[7],x_vec})
+//        begin
+//            Blue = 4'hf;
+//            Red = 4'h0;
+//            Green = 4'h0;
+//        end      
+//        else if (DrawY == Y && DrawX>=X+{x_vec[7],x_vec[7],x_vec} && DrawX<=X)
+//        begin
+//            Blue = 4'h0;
+//            Red = 4'h0;
+//            Green = 4'hf;
+//        end
         
-        if (DrawX == X && DrawY>=Y && DrawY<=Y+{y_vec[7],y_vec[7],y_vec})
-        begin
-            Blue = 4'h0;
-            Red = 4'h0;
-            Green = 4'hf;
-        end      
-        else if (DrawX == X && DrawY>=Y+{y_vec[7],y_vec[7],y_vec} && DrawY<=Y)
-        begin
-            Blue = 4'h0;
-            Red = 4'h0;
-            Green = 4'hf;
-        end
+//        if (DrawX == X && DrawY>=Y && DrawY<=Y+{y_vec[7],y_vec[7],y_vec})
+//        begin
+//            Blue = 4'h0;
+//            Red = 4'h0;
+//            Green = 4'hf;
+//        end      
+//        else if (DrawX == X && DrawY>=Y+{y_vec[7],y_vec[7],y_vec} && DrawY<=Y)
+//        begin
+//            Blue = 4'h0;
+//            Red = 4'h0;
+//            Green = 4'hf;
+//        end
         if (DrawY>=y_vec_coords[0]-ray_width  && DrawX>=x_vec_coords[0]-ray_width  && DrawY<=y_vec_coords[0]+ray_width  && DrawX<=x_vec_coords[0]+ray_width ||
             DrawY>=y_vec_coords[1]-ray_width  && DrawX>=x_vec_coords[1]-ray_width  && DrawY<=y_vec_coords[1]+ray_width  && DrawX<=x_vec_coords[1]+ray_width ||
             DrawY>=y_vec_coords[2]-ray_width  && DrawX>=x_vec_coords[2]-ray_width  && DrawY<=y_vec_coords[2]+ray_width  && DrawX<=x_vec_coords[2]+ray_width ||
@@ -126,19 +123,21 @@ module  color_mapper ( input  logic [9:0] X, Y, DrawX, DrawY, size,
             DrawY>=y_vec_coords[5]-ray_width  && DrawX>=x_vec_coords[5]-ray_width  && DrawY<=y_vec_coords[5]+ray_width  && DrawX<=x_vec_coords[5]+ray_width ||
             DrawY>=y_vec_coords[6]-ray_width  && DrawX>=x_vec_coords[6]-ray_width  && DrawY<=y_vec_coords[6]+ray_width  && DrawX<=x_vec_coords[6]+ray_width ||
             DrawY>=y_vec_coords[7]-ray_width  && DrawX>=x_vec_coords[7]-ray_width  && DrawY<=y_vec_coords[7]+ray_width  && DrawX<=x_vec_coords[7]+ray_width ||
-            DrawY>=y_vec_coords[8]-ray_width  && DrawX>=x_vec_coords[8]-ray_width  && DrawY<=y_vec_coords[8]+ray_width  && DrawX<=x_vec_coords[8]+ray_width ||
-            DrawY>=y_vec_coords[9]-ray_width  && DrawX>=x_vec_coords[9]-ray_width  && DrawY<=y_vec_coords[9]+ray_width  && DrawX<=x_vec_coords[9]+ray_width
+            DrawY>=y_vec_coords[8]-ray_width  && DrawX>=x_vec_coords[8]-ray_width  && DrawY<=y_vec_coords[8]+ray_width  && DrawX<=x_vec_coords[8]+ray_width
             )
         begin
                 Blue = 4'hf;
                 Red = 4'hf;
                 Green = 4'hf;
         end
-        if (DrawY >= debugY-ray_width && DrawY <= debugY+ray_width && DrawX >= debugX-ray_width && DrawX <= debugX+ray_width)
+        if (DrawY >= debugY-ray_width-1'b1 && DrawY <= debugY+ray_width+1'b1 && DrawX >= debugX-ray_width-1'b1 && DrawX <= debugX+ray_width+1'b1)
         begin
-            Red = debug_color[11:8];
-            Green = debug_color[7:4];
-            Blue = debug_color[3:0];
+//            Red = debug_color[11:8];
+//            Green = debug_color[7:4];
+//            Blue = debug_color[3:0];
+            Red = 4'hf;
+            Green = 4'h0;
+            Blue = 4'h0;
         end
     end
 endmodule
