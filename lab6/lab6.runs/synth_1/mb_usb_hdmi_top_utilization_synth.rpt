@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Fri Apr 19 07:30:54 2024
-| Host         : MSI running 64-bit major release  (build 9200)
+| Date         : Fri Apr 19 12:40:29 2024
+| Host         : DESKTOP-HL0SD2E running 64-bit major release  (build 9200)
 | Command      : report_utilization -file mb_usb_hdmi_top_utilization_synth.rpt -pb mb_usb_hdmi_top_utilization_synth.pb
 | Design       : mb_usb_hdmi_top
 | Device       : xc7s50csga324-1
@@ -31,8 +31,8 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             | 1083 |     0 |          0 |     32600 |  3.32 |
-|   LUT as Logic          | 1083 |     0 |          0 |     32600 |  3.32 |
+| Slice LUTs*             | 1121 |     0 |          0 |     32600 |  3.44 |
+|   LUT as Logic          | 1121 |     0 |          0 |     32600 |  3.44 |
 |   LUT as Memory         |    0 |     0 |          0 |      9600 |  0.00 |
 | Slice Registers         |  253 |     0 |          0 |     65200 |  0.39 |
 |   Register as Flip Flop |  219 |     0 |          0 |     65200 |  0.34 |
@@ -148,11 +148,11 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT4     |  380 |                 LUT |
+| LUT4     |  382 |                 LUT |
+| LUT6     |  380 |                 LUT |
 | LUT2     |  370 |                 LUT |
-| LUT6     |  346 |                 LUT |
-| CARRY4   |  226 |          CarryLogic |
-| LUT5     |  217 |                 LUT |
+| CARRY4   |  235 |          CarryLogic |
+| LUT5     |  220 |                 LUT |
 | LUT3     |  143 |                 LUT |
 | FDRE     |  122 |        Flop & Latch |
 | FDCE     |   57 |        Flop & Latch |
