@@ -56,7 +56,7 @@ logic [4:0] col;
 always_comb begin
     shifted_x = DrawX >> 5;
     shifted_y = DrawY >> 5;
-    row = shifted_x[4:0]; // replace with right shifts :P
+    row = shifted_x[4:0];
     col = shifted_y[4:0];
     wall_color = wall_0_color;
     
