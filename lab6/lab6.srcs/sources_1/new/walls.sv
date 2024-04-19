@@ -21,6 +21,8 @@
 
 
 module walls(input logic [9:0] DrawX, DrawY,
+             input logic [4:0] RayX, RayY,
+             output logic RayWall,
              output logic wall_on,
              output logic [11:0] wall_color 
     );
@@ -65,6 +67,11 @@ always_comb begin
     else begin
         wall_on = 1'b0;
     end
+    
+    if (RayX >= 15 || RayY >=20) //outside of scene, display wall
+        RayWall = 1'b1;
+    else 
+        RayWall = walls_0[RayY][RayX];
 
 end
     

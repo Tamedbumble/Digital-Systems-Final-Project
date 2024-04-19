@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Wed Apr 17 22:08:38 2024
-| Host         : DESKTOP-HL0SD2E running 64-bit major release  (build 9200)
+| Date         : Thu Apr 18 18:09:52 2024
+| Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_drc -file mb_usb_hdmi_top_drc_routed.rpt -pb mb_usb_hdmi_top_drc_routed.pb -rpx mb_usb_hdmi_top_drc_routed.rpx
 | Design       : mb_usb_hdmi_top
 | Device       : xc7s50csga324-1
@@ -24,12 +24,12 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 25
+             Violations found: 35
 +----------+----------+-----------------------------------------------------+------------+
 | Rule     | Severity | Description                                         | Violations |
 +----------+----------+-----------------------------------------------------+------------+
 | CFGBVS-1 | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
-| DPIP-1   | Warning  | Input pipelining                                    | 24         |
+| DPIP-1   | Warning  | Input pipelining                                    | 34         |
 +----------+----------+-----------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -49,122 +49,172 @@ Related violations: <none>
 
 DPIP-1#1 Warning
 Input pipelining  
-DSP ball_instance/X_next input ball_instance/X_next/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP ball_instance/X_Motion_next1 input ball_instance/X_Motion_next1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#2 Warning
 Input pipelining  
-DSP ball_instance/X_next input ball_instance/X_next/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP ball_instance/X_Motion_next1 input ball_instance/X_Motion_next1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#3 Warning
 Input pipelining  
-DSP ball_instance/X_next input ball_instance/X_next/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP ball_instance/X_Motion_next1 input ball_instance/X_Motion_next1/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#4 Warning
 Input pipelining  
-DSP ball_instance/X_next1 input ball_instance/X_next1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP ball_instance/X_Motion_next2 input ball_instance/X_Motion_next2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#5 Warning
 Input pipelining  
-DSP ball_instance/X_next1 input ball_instance/X_next1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP ball_instance/X_Motion_next2 input ball_instance/X_Motion_next2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#6 Warning
 Input pipelining  
-DSP ball_instance/X_next_dspDelayedAccum input ball_instance/X_next_dspDelayedAccum/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP ball_instance/Y_Motion_next1 input ball_instance/Y_Motion_next1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#7 Warning
 Input pipelining  
-DSP ball_instance/Y_next input ball_instance/Y_next/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP ball_instance/Y_Motion_next1 input ball_instance/Y_Motion_next1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#8 Warning
 Input pipelining  
-DSP ball_instance/Y_next input ball_instance/Y_next/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP ball_instance/Y_Motion_next1 input ball_instance/Y_Motion_next1/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#9 Warning
 Input pipelining  
-DSP ball_instance/Y_next input ball_instance/Y_next/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP ball_instance/Y_Motion_next2 input ball_instance/Y_Motion_next2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#10 Warning
 Input pipelining  
-DSP ball_instance/Y_next1 input ball_instance/Y_next1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP ball_instance/Y_Motion_next2 input ball_instance/Y_Motion_next2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#11 Warning
 Input pipelining  
-DSP ball_instance/Y_next1 input ball_instance/Y_next1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/Red3 input color_instance/Red3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#12 Warning
 Input pipelining  
-DSP ball_instance/Y_next_dspDelayedAccum input ball_instance/Y_next_dspDelayedAccum/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/Red3 input color_instance/Red3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#13 Warning
 Input pipelining  
-DSP color_instance/Red3 input color_instance/Red3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/Red3__0 input color_instance/Red3__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#14 Warning
 Input pipelining  
-DSP color_instance/Red3 input color_instance/Red3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/Red3__0 input color_instance/Red3__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#15 Warning
 Input pipelining  
-DSP color_instance/Red3__0 input color_instance/Red3__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/Red3__1 input color_instance/Red3__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#16 Warning
 Input pipelining  
-DSP color_instance/Red3__0 input color_instance/Red3__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/Red3__1 input color_instance/Red3__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#17 Warning
 Input pipelining  
-DSP color_instance/Red3__1 input color_instance/Red3__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/Red3__2 input color_instance/Red3__2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#18 Warning
 Input pipelining  
-DSP color_instance/Red3__1 input color_instance/Red3__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/Red3__2 input color_instance/Red3__2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#19 Warning
 Input pipelining  
-DSP color_instance/Red3__2 input color_instance/Red3__2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/Red3__3 input color_instance/Red3__3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#20 Warning
 Input pipelining  
-DSP color_instance/Red3__2 input color_instance/Red3__2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/Red3__3 input color_instance/Red3__3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#21 Warning
 Input pipelining  
-DSP color_instance/Red3__3 input color_instance/Red3__3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/Red3__4 input color_instance/Red3__4/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#22 Warning
 Input pipelining  
-DSP color_instance/Red3__3 input color_instance/Red3__3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/Red3__4 input color_instance/Red3__4/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#23 Warning
 Input pipelining  
-DSP color_instance/Red3__4 input color_instance/Red3__4/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP ray_caster/distance1 input ray_caster/distance1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#24 Warning
 Input pipelining  
-DSP color_instance/Red3__4 input color_instance/Red3__4/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP ray_caster/distance1 input ray_caster/distance1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#25 Warning
+Input pipelining  
+DSP ray_caster/distance1__0 input ray_caster/distance1__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#26 Warning
+Input pipelining  
+DSP ray_caster/distance1__0 input ray_caster/distance1__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#27 Warning
+Input pipelining  
+DSP ray_caster/distance1__1 input ray_caster/distance1__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#28 Warning
+Input pipelining  
+DSP ray_caster/distance1__1 input ray_caster/distance1__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#29 Warning
+Input pipelining  
+DSP ray_caster/distance1__2 input ray_caster/distance1__2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#30 Warning
+Input pipelining  
+DSP ray_caster/distance1__2 input ray_caster/distance1__2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#31 Warning
+Input pipelining  
+DSP ray_caster/distance1__3 input ray_caster/distance1__3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#32 Warning
+Input pipelining  
+DSP ray_caster/distance1__3 input ray_caster/distance1__3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#33 Warning
+Input pipelining  
+DSP ray_caster/distance1__4 input ray_caster/distance1__4/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#34 Warning
+Input pipelining  
+DSP ray_caster/distance1__4 input ray_caster/distance1__4/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 

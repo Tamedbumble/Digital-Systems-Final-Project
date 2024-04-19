@@ -85,10 +85,19 @@ module  ball
             (keycode[39:32]==8'h4f)|(keycode[47:40]==8'h4f)|(keycode[55:48]==8'h4f)|(keycode[63:56]==8'h4f);
 
         //modify to control ball motion with the keycode
-        Y_Motion_next = {Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec}*( {16'b0,W} )
-                      - {X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec}*( {16'b0,A} - {16'b0,D} );
-        X_Motion_next = {X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec}*( {16'b0,W} )
-                      + {Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec}*( {16'b0,A} - {16'b0,D} );
+        if (W!=0 && (A-D)!=0) begin // normalization factor (1.5 ~= sqrt(2))
+            Y_Motion_next = 2*({Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec}*( {16'b0,W} )
+                          - {X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec}*( {16'b0,A} - {16'b0,D} ));
+            X_Motion_next = 2*({X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec}*( {16'b0,W} )
+                          + {Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec}*( {16'b0,A} - {16'b0,D} ));
+        end
+        else begin
+            Y_Motion_next = 3*({Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec}*( {16'b0,W} )
+                          - {X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec}*( {16'b0,A} - {16'b0,D} ));
+            X_Motion_next = 3*({X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec}*( {16'b0,W} )
+                          + {Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec}*( {16'b0,A} - {16'b0,D} ));
+        
+        end
         Angle_Motion_next = RA - LA;
 
 
