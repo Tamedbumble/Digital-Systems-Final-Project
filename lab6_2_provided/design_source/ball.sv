@@ -21,9 +21,9 @@ module  ball
     input  logic        frame_clk,
     input  logic [63:0]  keycode,
 
-    output logic [9:0]  X, 
-    output logic [9:0]  Y, 
-    output logic [9:0]  S,
+    output logic [16:0]  X, 
+    output logic [16:0]  Y, 
+    output logic [9:0]  Size,
     output logic [5:0]  Angle,
     output logic [7:0]  X_vec,
     output logic [7:0]  Y_vec
@@ -86,40 +86,40 @@ module  ball
 
         //modify to control ball motion with the keycode
         if (W!=0 && (A-D)!=0) begin // normalization factor (1.5 ~= sqrt(2))
-            Y_Motion_next = 2*({Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec}*( {16'b0,W} )
+            Y_Motion_next = 2*({Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec}*( {16'b0,W} - {16'b0,S} )
                           - {X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec}*( {16'b0,A} - {16'b0,D} ));
-            X_Motion_next = 2*({X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec}*( {16'b0,W} )
+            X_Motion_next = 2*({X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec}*( {16'b0,W} - {16'b0,S} )
                           + {Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec}*( {16'b0,A} - {16'b0,D} ));
         end
         else begin
-            Y_Motion_next = 3*({Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec}*( {16'b0,W} )
+            Y_Motion_next = 3*({Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec}*( {16'b0,W} - {16'b0,S} )
                           - {X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec}*( {16'b0,A} - {16'b0,D} ));
-            X_Motion_next = 3*({X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec}*( {16'b0,W} )
+            X_Motion_next = 3*({X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec}*( {16'b0,W} - {16'b0,S} )
                           + {Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec}*( {16'b0,A} - {16'b0,D} ));
         
         end
         Angle_Motion_next = RA - LA;
 
 
-//        if ( (Y + S) >= Y_Max )  
+//        if ( (Y + Size) >= Y_Max )  
 //        begin
-//            Y_Motion_next = -17'd128;
+//            Y_Motion_next = -17'd384;
 //        end
-//        else if ( (Y - S) <= Y_Min ) 
+//        else if ( (Y - Size) <= Y_Min ) 
 //        begin
-//            Y_Motion_next = 17'd128;
+//            Y_Motion_next = 17'd384;
 //        end
-//        if ( (X + S) >= X_Max )
+//        if ( (X + Size) >= X_Max )
 //        begin
-//            X_Motion_next = -17'd128;
+//            X_Motion_next = -17'd384;
 //        end
-//        else if ( (X - S) <= X_Min )
+//        else if ( (X - Size) <= X_Min )
 //        begin
-//            X_Motion_next = 17'd128;
+//            X_Motion_next = 17'd384;
 //        end  
     end
 
-    assign S = 16;  // default ball size
+    assign Size = 16;  // default ball size
     assign X_next = (X_pos + X_Motion_next);
     assign Y_next = (Y_pos + Y_Motion_next);
     assign Angle_next = (Angle + Angle_Motion_next);
@@ -135,8 +135,8 @@ module  ball
 			X_pos <= {X_Center,7'b0};
 			Angle <= 6'd0;
 			
-			Y <= Y_pos[16:7];
-			X <= X_pos[16:7];
+			Y <= Y_pos;
+			X <= X_pos;
         end
         else 
         begin 
@@ -149,8 +149,8 @@ module  ball
             X_pos <= X_next;
             Angle <= Angle_next;
             
-            Y <= Y_pos[16:7];
-            X <= X_pos[16:7];
+            Y <= Y_pos;
+            X <= X_pos;
 			
 		end  
     end
