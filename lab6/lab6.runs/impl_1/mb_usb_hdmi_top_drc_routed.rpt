@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Fri Apr 19 12:42:49 2024
-| Host         : DESKTOP-HL0SD2E running 64-bit major release  (build 9200)
+| Date         : Wed May  1 04:35:51 2024
+| Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_drc -file mb_usb_hdmi_top_drc_routed.rpt -pb mb_usb_hdmi_top_drc_routed.pb -rpx mb_usb_hdmi_top_drc_routed.rpx
 | Design       : mb_usb_hdmi_top
 | Device       : xc7s50csga324-1
@@ -24,14 +24,15 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 57
-+----------+----------+-----------------------------------------------------+------------+
-| Rule     | Severity | Description                                         | Violations |
-+----------+----------+-----------------------------------------------------+------------+
-| CFGBVS-1 | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
-| DPIP-1   | Warning  | Input pipelining                                    | 22         |
-| PDRC-153 | Warning  | Gated clock check                                   | 34         |
-+----------+----------+-----------------------------------------------------+------------+
+             Violations found: 132
++-----------+----------+-----------------------------------------------------+------------+
+| Rule      | Severity | Description                                         | Violations |
++-----------+----------+-----------------------------------------------------+------------+
+| CFGBVS-1  | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
+| DPIP-1    | Warning  | Input pipelining                                    | 87         |
+| PDRC-153  | Warning  | Gated clock check                                   | 34         |
+| REQP-1840 | Warning  | RAMB18 async control check                          | 10         |
++-----------+----------+-----------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -50,282 +51,657 @@ Related violations: <none>
 
 DPIP-1#1 Warning
 Input pipelining  
-DSP ball_instance/X_Motion_next1 input ball_instance/X_Motion_next1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/Red5 input color_instance/Red5/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#2 Warning
 Input pipelining  
-DSP ball_instance/X_Motion_next1 input ball_instance/X_Motion_next1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/Red5 input color_instance/Red5/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#3 Warning
 Input pipelining  
-DSP ball_instance/X_Motion_next1 input ball_instance/X_Motion_next1/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/Red5__0 input color_instance/Red5__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#4 Warning
 Input pipelining  
-DSP ball_instance/X_Motion_next2 input ball_instance/X_Motion_next2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/Red5__0 input color_instance/Red5__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#5 Warning
 Input pipelining  
-DSP ball_instance/X_Motion_next2 input ball_instance/X_Motion_next2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/Red5__1 input color_instance/Red5__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#6 Warning
 Input pipelining  
-DSP ball_instance/Y_Motion_next1 input ball_instance/Y_Motion_next1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/Red5__1 input color_instance/Red5__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#7 Warning
 Input pipelining  
-DSP ball_instance/Y_Motion_next1 input ball_instance/Y_Motion_next1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/Red5__2 input color_instance/Red5__2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#8 Warning
 Input pipelining  
-DSP ball_instance/Y_Motion_next1 input ball_instance/Y_Motion_next1/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/Red5__2 input color_instance/Red5__2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#9 Warning
 Input pipelining  
-DSP ball_instance/Y_Motion_next2 input ball_instance/Y_Motion_next2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/Red5__3 input color_instance/Red5__3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#10 Warning
 Input pipelining  
-DSP ball_instance/Y_Motion_next2 input ball_instance/Y_Motion_next2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/Red5__3 input color_instance/Red5__3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#11 Warning
 Input pipelining  
-DSP color_instance/Red3 input color_instance/Red3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/Red5__4 input color_instance/Red5__4/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#12 Warning
 Input pipelining  
-DSP color_instance/Red3 input color_instance/Red3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP color_instance/Red5__4 input color_instance/Red5__4/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#13 Warning
 Input pipelining  
-DSP color_instance/Red3__0 input color_instance/Red3__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP ray_caster_inst/d_reg0 input ray_caster_inst/d_reg0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#14 Warning
 Input pipelining  
-DSP color_instance/Red3__0 input color_instance/Red3__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP ray_caster_inst/d_reg0 input ray_caster_inst/d_reg0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#15 Warning
 Input pipelining  
-DSP color_instance/Red3__1 input color_instance/Red3__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP ray_caster_inst/d_reg_reg input ray_caster_inst/d_reg_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#16 Warning
 Input pipelining  
-DSP color_instance/Red3__1 input color_instance/Red3__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP ray_caster_inst/genblk1[0].ray0/dx3 input ray_caster_inst/genblk1[0].ray0/dx3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#17 Warning
 Input pipelining  
-DSP color_instance/Red3__2 input color_instance/Red3__2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP ray_caster_inst/genblk1[0].ray0/dx3__0 input ray_caster_inst/genblk1[0].ray0/dx3__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#18 Warning
 Input pipelining  
-DSP color_instance/Red3__2 input color_instance/Red3__2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP ray_caster_inst/genblk1[0].ray0/dx3__1 input ray_caster_inst/genblk1[0].ray0/dx3__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#19 Warning
 Input pipelining  
-DSP color_instance/Red3__3 input color_instance/Red3__3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP ray_caster_inst/genblk1[0].ray0/dx3__1 input ray_caster_inst/genblk1[0].ray0/dx3__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#20 Warning
 Input pipelining  
-DSP color_instance/Red3__3 input color_instance/Red3__3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP ray_caster_inst/genblk1[0].ray0/dx3__2 input ray_caster_inst/genblk1[0].ray0/dx3__2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#21 Warning
 Input pipelining  
-DSP color_instance/Red3__4 input color_instance/Red3__4/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP ray_caster_inst/genblk1[0].ray0/dx3__3 input ray_caster_inst/genblk1[0].ray0/dx3__3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#22 Warning
 Input pipelining  
-DSP color_instance/Red3__4 input color_instance/Red3__4/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP ray_caster_inst/genblk1[0].ray0/dx3__3 input ray_caster_inst/genblk1[0].ray0/dx3__3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#23 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[0].ray0/dy3 input ray_caster_inst/genblk1[0].ray0/dy3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#24 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[0].ray0/dy3 input ray_caster_inst/genblk1[0].ray0/dy3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#25 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[0].ray0/dy3__0 input ray_caster_inst/genblk1[0].ray0/dy3__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#26 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[0].ray0/dy3__1 input ray_caster_inst/genblk1[0].ray0/dy3__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#27 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[0].ray0/dy3__1 input ray_caster_inst/genblk1[0].ray0/dy3__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#28 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[1].ray0/dx3 input ray_caster_inst/genblk1[1].ray0/dx3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#29 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[1].ray0/dx3__0 input ray_caster_inst/genblk1[1].ray0/dx3__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#30 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[1].ray0/dx3__1 input ray_caster_inst/genblk1[1].ray0/dx3__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#31 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[1].ray0/dx3__1 input ray_caster_inst/genblk1[1].ray0/dx3__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#32 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[1].ray0/dx3__2 input ray_caster_inst/genblk1[1].ray0/dx3__2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#33 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[1].ray0/dx3__3 input ray_caster_inst/genblk1[1].ray0/dx3__3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#34 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[1].ray0/dx3__3 input ray_caster_inst/genblk1[1].ray0/dx3__3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#35 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[1].ray0/dy3 input ray_caster_inst/genblk1[1].ray0/dy3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#36 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[1].ray0/dy3 input ray_caster_inst/genblk1[1].ray0/dy3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#37 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[1].ray0/dy3__0 input ray_caster_inst/genblk1[1].ray0/dy3__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#38 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[1].ray0/dy3__1 input ray_caster_inst/genblk1[1].ray0/dy3__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#39 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[1].ray0/dy3__1 input ray_caster_inst/genblk1[1].ray0/dy3__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#40 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[2].ray0/dx3 input ray_caster_inst/genblk1[2].ray0/dx3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#41 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[2].ray0/dx3__0 input ray_caster_inst/genblk1[2].ray0/dx3__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#42 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[2].ray0/dx3__1 input ray_caster_inst/genblk1[2].ray0/dx3__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#43 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[2].ray0/dx3__1 input ray_caster_inst/genblk1[2].ray0/dx3__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#44 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[2].ray0/dx3__2 input ray_caster_inst/genblk1[2].ray0/dx3__2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#45 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[2].ray0/dx3__3 input ray_caster_inst/genblk1[2].ray0/dx3__3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#46 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[2].ray0/dx3__3 input ray_caster_inst/genblk1[2].ray0/dx3__3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#47 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[2].ray0/dy3 input ray_caster_inst/genblk1[2].ray0/dy3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#48 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[2].ray0/dy3 input ray_caster_inst/genblk1[2].ray0/dy3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#49 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[2].ray0/dy3__0 input ray_caster_inst/genblk1[2].ray0/dy3__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#50 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[2].ray0/dy3__1 input ray_caster_inst/genblk1[2].ray0/dy3__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#51 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[2].ray0/dy3__1 input ray_caster_inst/genblk1[2].ray0/dy3__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#52 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[3].ray0/dx3 input ray_caster_inst/genblk1[3].ray0/dx3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#53 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[3].ray0/dx3__0 input ray_caster_inst/genblk1[3].ray0/dx3__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#54 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[3].ray0/dx3__1 input ray_caster_inst/genblk1[3].ray0/dx3__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#55 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[3].ray0/dx3__1 input ray_caster_inst/genblk1[3].ray0/dx3__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#56 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[3].ray0/dx3__2 input ray_caster_inst/genblk1[3].ray0/dx3__2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#57 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[3].ray0/dx3__3 input ray_caster_inst/genblk1[3].ray0/dx3__3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#58 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[3].ray0/dx3__3 input ray_caster_inst/genblk1[3].ray0/dx3__3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#59 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[3].ray0/dy3 input ray_caster_inst/genblk1[3].ray0/dy3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#60 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[3].ray0/dy3 input ray_caster_inst/genblk1[3].ray0/dy3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#61 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[3].ray0/dy3__0 input ray_caster_inst/genblk1[3].ray0/dy3__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#62 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[3].ray0/dy3__1 input ray_caster_inst/genblk1[3].ray0/dy3__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#63 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[3].ray0/dy3__1 input ray_caster_inst/genblk1[3].ray0/dy3__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#64 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[4].ray0/dx3 input ray_caster_inst/genblk1[4].ray0/dx3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#65 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[4].ray0/dx3__0 input ray_caster_inst/genblk1[4].ray0/dx3__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#66 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[4].ray0/dx3__1 input ray_caster_inst/genblk1[4].ray0/dx3__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#67 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[4].ray0/dx3__1 input ray_caster_inst/genblk1[4].ray0/dx3__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#68 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[4].ray0/dx3__2 input ray_caster_inst/genblk1[4].ray0/dx3__2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#69 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[4].ray0/dx3__3 input ray_caster_inst/genblk1[4].ray0/dx3__3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#70 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[4].ray0/dx3__3 input ray_caster_inst/genblk1[4].ray0/dx3__3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#71 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[4].ray0/dy3 input ray_caster_inst/genblk1[4].ray0/dy3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#72 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[4].ray0/dy3 input ray_caster_inst/genblk1[4].ray0/dy3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#73 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[4].ray0/dy3__0 input ray_caster_inst/genblk1[4].ray0/dy3__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#74 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[4].ray0/dy3__1 input ray_caster_inst/genblk1[4].ray0/dy3__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#75 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[4].ray0/dy3__1 input ray_caster_inst/genblk1[4].ray0/dy3__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#76 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[5].ray0/dx3 input ray_caster_inst/genblk1[5].ray0/dx3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#77 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[5].ray0/dx3__0 input ray_caster_inst/genblk1[5].ray0/dx3__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#78 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[5].ray0/dx3__1 input ray_caster_inst/genblk1[5].ray0/dx3__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#79 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[5].ray0/dx3__1 input ray_caster_inst/genblk1[5].ray0/dx3__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#80 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[5].ray0/dx3__2 input ray_caster_inst/genblk1[5].ray0/dx3__2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#81 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[5].ray0/dx3__3 input ray_caster_inst/genblk1[5].ray0/dx3__3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#82 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[5].ray0/dx3__3 input ray_caster_inst/genblk1[5].ray0/dx3__3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#83 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[5].ray0/dy3 input ray_caster_inst/genblk1[5].ray0/dy3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#84 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[5].ray0/dy3 input ray_caster_inst/genblk1[5].ray0/dy3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#85 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[5].ray0/dy3__0 input ray_caster_inst/genblk1[5].ray0/dy3__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#86 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[5].ray0/dy3__1 input ray_caster_inst/genblk1[5].ray0/dy3__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#87 Warning
+Input pipelining  
+DSP ray_caster_inst/genblk1[5].ray0/dy3__1 input ray_caster_inst/genblk1[5].ray0/dy3__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 PDRC-153#1 Warning
 Gated clock check  
-Net ball_instance/X_reg[0]_1 is a gated clock net sourced by a combinational pin ball_instance/curX_reg[0]_LDC_i_1/O, cell ball_instance/curX_reg[0]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curY_reg[16]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curY_reg[16]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net ball_instance/X_reg[10]_5 is a gated clock net sourced by a combinational pin ball_instance/curX_reg[10]_LDC_i_1/O, cell ball_instance/curX_reg[10]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_1 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curY_reg[15]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curY_reg[15]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#3 Warning
 Gated clock check  
-Net ball_instance/X_reg[11]_1 is a gated clock net sourced by a combinational pin ball_instance/curX_reg[11]_LDC_i_1/O, cell ball_instance/curX_reg[11]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_11 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curY_reg[10]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curY_reg[10]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#4 Warning
 Gated clock check  
-Net ball_instance/X_reg[12]_2 is a gated clock net sourced by a combinational pin ball_instance/curX_reg[12]_LDC_i_1/O, cell ball_instance/curX_reg[12]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_13 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curY_reg[9]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curY_reg[9]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#5 Warning
 Gated clock check  
-Net ball_instance/X_reg[13]_8 is a gated clock net sourced by a combinational pin ball_instance/curX_reg[13]_LDC_i_1/O, cell ball_instance/curX_reg[13]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_15 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curY_reg[8]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curY_reg[8]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#6 Warning
 Gated clock check  
-Net ball_instance/X_reg[14]_8 is a gated clock net sourced by a combinational pin ball_instance/curX_reg[14]_LDC_i_1/O, cell ball_instance/curX_reg[14]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_17 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curY_reg[7]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curY_reg[7]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#7 Warning
 Gated clock check  
-Net ball_instance/X_reg[15]_1 is a gated clock net sourced by a combinational pin ball_instance/curX_reg[15]_LDC_i_1/O, cell ball_instance/curX_reg[15]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_19 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curY_reg[6]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curY_reg[6]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#8 Warning
 Gated clock check  
-Net ball_instance/X_reg[16]_1 is a gated clock net sourced by a combinational pin ball_instance/curX_reg[16]_LDC_i_1/O, cell ball_instance/curX_reg[16]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_21 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curY_reg[5]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curY_reg[5]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#9 Warning
 Gated clock check  
-Net ball_instance/X_reg[1]_1 is a gated clock net sourced by a combinational pin ball_instance/curX_reg[1]_LDC_i_1/O, cell ball_instance/curX_reg[1]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_23 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curY_reg[4]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curY_reg[4]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#10 Warning
 Gated clock check  
-Net ball_instance/X_reg[2]_1 is a gated clock net sourced by a combinational pin ball_instance/curX_reg[2]_LDC_i_1/O, cell ball_instance/curX_reg[2]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_25 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curY_reg[3]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curY_reg[3]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#11 Warning
 Gated clock check  
-Net ball_instance/X_reg[3]_1 is a gated clock net sourced by a combinational pin ball_instance/curX_reg[3]_LDC_i_1/O, cell ball_instance/curX_reg[3]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_27 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curY_reg[2]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curY_reg[2]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#12 Warning
 Gated clock check  
-Net ball_instance/X_reg[4]_1 is a gated clock net sourced by a combinational pin ball_instance/curX_reg[4]_LDC_i_1/O, cell ball_instance/curX_reg[4]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_29 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curY_reg[1]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curY_reg[1]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#13 Warning
 Gated clock check  
-Net ball_instance/X_reg[5]_1 is a gated clock net sourced by a combinational pin ball_instance/curX_reg[5]_LDC_i_1/O, cell ball_instance/curX_reg[5]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_3 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curY_reg[14]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curY_reg[14]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#14 Warning
 Gated clock check  
-Net ball_instance/X_reg[6]_1 is a gated clock net sourced by a combinational pin ball_instance/curX_reg[6]_LDC_i_1/O, cell ball_instance/curX_reg[6]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_31 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curY_reg[0]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curY_reg[0]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#15 Warning
 Gated clock check  
-Net ball_instance/X_reg[7]_5 is a gated clock net sourced by a combinational pin ball_instance/curX_reg[7]_LDC_i_1/O, cell ball_instance/curX_reg[7]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_33 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curX_reg[16]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curX_reg[16]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#16 Warning
 Gated clock check  
-Net ball_instance/X_reg[8]_1 is a gated clock net sourced by a combinational pin ball_instance/curX_reg[8]_LDC_i_1/O, cell ball_instance/curX_reg[8]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_35 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curX_reg[15]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curX_reg[15]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#17 Warning
 Gated clock check  
-Net ball_instance/X_reg[9]_5 is a gated clock net sourced by a combinational pin ball_instance/curX_reg[9]_LDC_i_1/O, cell ball_instance/curX_reg[9]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_37 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curX_reg[14]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curX_reg[14]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#18 Warning
 Gated clock check  
-Net ball_instance/Y_reg[0]_1 is a gated clock net sourced by a combinational pin ball_instance/curY_reg[0]_LDC_i_1/O, cell ball_instance/curY_reg[0]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_39 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curX_reg[13]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curX_reg[13]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#19 Warning
 Gated clock check  
-Net ball_instance/Y_reg[10]_4 is a gated clock net sourced by a combinational pin ball_instance/curY_reg[10]_LDC_i_1/O, cell ball_instance/curY_reg[10]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_41 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curX_reg[12]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curX_reg[12]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#20 Warning
 Gated clock check  
-Net ball_instance/Y_reg[11]_1 is a gated clock net sourced by a combinational pin ball_instance/curY_reg[11]_LDC_i_1/O, cell ball_instance/curY_reg[11]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_43 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curX_reg[11]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curX_reg[11]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#21 Warning
 Gated clock check  
-Net ball_instance/Y_reg[12]_2 is a gated clock net sourced by a combinational pin ball_instance/curY_reg[12]_LDC_i_1/O, cell ball_instance/curY_reg[12]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_45 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curX_reg[10]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curX_reg[10]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#22 Warning
 Gated clock check  
-Net ball_instance/Y_reg[13]_9 is a gated clock net sourced by a combinational pin ball_instance/curY_reg[13]_LDC_i_1/O, cell ball_instance/curY_reg[13]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_47 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curX_reg[9]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curX_reg[9]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#23 Warning
 Gated clock check  
-Net ball_instance/Y_reg[14]_8 is a gated clock net sourced by a combinational pin ball_instance/curY_reg[14]_LDC_i_1/O, cell ball_instance/curY_reg[14]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_49 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curX_reg[8]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curX_reg[8]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#24 Warning
 Gated clock check  
-Net ball_instance/Y_reg[15]_1 is a gated clock net sourced by a combinational pin ball_instance/curY_reg[15]_LDC_i_1/O, cell ball_instance/curY_reg[15]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_5 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curY_reg[13]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curY_reg[13]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#25 Warning
 Gated clock check  
-Net ball_instance/Y_reg[16]_1 is a gated clock net sourced by a combinational pin ball_instance/curY_reg[16]_LDC_i_1/O, cell ball_instance/curY_reg[16]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_51 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curX_reg[7]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curX_reg[7]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#26 Warning
 Gated clock check  
-Net ball_instance/Y_reg[1]_1 is a gated clock net sourced by a combinational pin ball_instance/curY_reg[1]_LDC_i_1/O, cell ball_instance/curY_reg[1]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_53 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curX_reg[6]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curX_reg[6]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#27 Warning
 Gated clock check  
-Net ball_instance/Y_reg[2]_1 is a gated clock net sourced by a combinational pin ball_instance/curY_reg[2]_LDC_i_1/O, cell ball_instance/curY_reg[2]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_55 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curX_reg[5]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curX_reg[5]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#28 Warning
 Gated clock check  
-Net ball_instance/Y_reg[3]_1 is a gated clock net sourced by a combinational pin ball_instance/curY_reg[3]_LDC_i_1/O, cell ball_instance/curY_reg[3]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_57 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curX_reg[4]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curX_reg[4]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#29 Warning
 Gated clock check  
-Net ball_instance/Y_reg[4]_1 is a gated clock net sourced by a combinational pin ball_instance/curY_reg[4]_LDC_i_1/O, cell ball_instance/curY_reg[4]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_59 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curX_reg[3]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curX_reg[3]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#30 Warning
 Gated clock check  
-Net ball_instance/Y_reg[5]_1 is a gated clock net sourced by a combinational pin ball_instance/curY_reg[5]_LDC_i_1/O, cell ball_instance/curY_reg[5]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_61 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curX_reg[2]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curX_reg[2]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#31 Warning
 Gated clock check  
-Net ball_instance/Y_reg[6]_1 is a gated clock net sourced by a combinational pin ball_instance/curY_reg[6]_LDC_i_1/O, cell ball_instance/curY_reg[6]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_63 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curX_reg[1]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curX_reg[1]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#32 Warning
 Gated clock check  
-Net ball_instance/Y_reg[7]_5 is a gated clock net sourced by a combinational pin ball_instance/curY_reg[7]_LDC_i_1/O, cell ball_instance/curY_reg[7]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_65 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curX_reg[0]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curX_reg[0]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#33 Warning
 Gated clock check  
-Net ball_instance/Y_reg[8]_1 is a gated clock net sourced by a combinational pin ball_instance/curY_reg[8]_LDC_i_1/O, cell ball_instance/curY_reg[8]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_7 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curY_reg[12]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curY_reg[12]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#34 Warning
 Gated clock check  
-Net ball_instance/Y_reg[9]_5 is a gated clock net sourced by a combinational pin ball_instance/curY_reg[9]_LDC_i_1/O, cell ball_instance/curY_reg[9]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ray_caster_inst/genblk1[4].ray0/reset_rays_reg_9 is a gated clock net sourced by a combinational pin ray_caster_inst/genblk1[4].ray0/curY_reg[11]_LDC_i_1/O, cell ray_caster_inst/genblk1[4].ray0/curY_reg[11]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+REQP-1840#1 Warning
+RAMB18 async control check  
+The RAMB18E1 vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram has an input control pin vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/ADDRBWRADDR[10] (net: vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/addrb[6]) which is driven by a register (vga/hc_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#2 Warning
+RAMB18 async control check  
+The RAMB18E1 vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram has an input control pin vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/ADDRBWRADDR[11] (net: vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/addrb[7]) which is driven by a register (vga/hc_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#3 Warning
+RAMB18 async control check  
+The RAMB18E1 vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram has an input control pin vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/ADDRBWRADDR[12] (net: vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/addrb[8]) which is driven by a register (vga/hc_reg[8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#4 Warning
+RAMB18 async control check  
+The RAMB18E1 vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram has an input control pin vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/ADDRBWRADDR[13] (net: vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/addrb[9]) which is driven by a register (vga/hc_reg[9]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#5 Warning
+RAMB18 async control check  
+The RAMB18E1 vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram has an input control pin vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/ADDRBWRADDR[4] (net: vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/addrb[0]) which is driven by a register (vga/hc_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#6 Warning
+RAMB18 async control check  
+The RAMB18E1 vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram has an input control pin vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/ADDRBWRADDR[5] (net: vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/addrb[1]) which is driven by a register (vga/hc_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#7 Warning
+RAMB18 async control check  
+The RAMB18E1 vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram has an input control pin vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/ADDRBWRADDR[6] (net: vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/addrb[2]) which is driven by a register (vga/hc_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#8 Warning
+RAMB18 async control check  
+The RAMB18E1 vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram has an input control pin vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/ADDRBWRADDR[7] (net: vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/addrb[3]) which is driven by a register (vga/hc_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#9 Warning
+RAMB18 async control check  
+The RAMB18E1 vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram has an input control pin vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/ADDRBWRADDR[8] (net: vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/addrb[4]) which is driven by a register (vga/hc_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#10 Warning
+RAMB18 async control check  
+The RAMB18E1 vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram has an input control pin vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/ADDRBWRADDR[9] (net: vmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/addrb[5]) which is driven by a register (vga/hc_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 

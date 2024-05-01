@@ -1,4 +1,4 @@
-07:33:55 **** Incremental Build of configuration Debug for project usb_hdmi ****
+04:48:40 **** Incremental Build of configuration Debug for project usb_hdmi ****
 make all 
 'Building file: ../src/lw_usb/MAX3421E.c'
 'Invoking: MicroBlaze gcc compiler'
@@ -74,5 +74,5 @@ mb-size usb_hdmi.elf  |tee "usb_hdmi.elf.size"
 'Finished building: usb_hdmi.elf.size'
 ' '
 
-07:33:57 Build Finished (took 2s.400ms)
+04:48:43 Build Finished (took 2s.949ms)
 
