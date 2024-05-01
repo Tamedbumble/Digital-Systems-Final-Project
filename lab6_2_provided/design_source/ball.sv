@@ -25,7 +25,7 @@ module  ball
     output logic [16:0]  X, 
     output logic [16:0]  Y, 
     output logic [9:0]  Size,
-    output logic [5:0]  Angle,
+    output logic [11:0]  Angle,
     output logic [7:0]  X_vec,
     output logic [7:0]  Y_vec,
     output logic [4:0] X_coll, // variables to check for collision
@@ -47,27 +47,43 @@ module  ball
     logic [16:0] X_Motion_next;
     logic [16:0] Y_Motion;
     logic [16:0] Y_Motion_next;
-    logic [5:0] Angle_Motion;
-    logic [5:0] Angle_Motion_next;
+//    logic [5:0] t, t_next;
+    logic [11:0] Angle_Motion;
+    logic [11:0] Angle_Motion_next;
     
     logic [16:0] X_pos, Y_pos;
 
     logic [16:0] X_next;
     logic [16:0] Y_next;
-    logic [5:0] Angle_next;
+    logic [11:0] Angle_next;
     logic       W, A, S, D, LA, RA;
     
-    cos_rom cos(
-        .addr(Angle), 
-        .value(X_vec));
-    sin_rom sin(
-        .addr(Angle), 
-        .value(Y_vec));
+//    logic [5:0] angles[5];
+//    logic [5:0] ts[5];
+//    logic [7:0] xvecs[5];
+//    logic [7:0] yvecs[5];
+    
+//    assign angles[0] = Angle;
+//    assign X_vec = xvecs[0];
+//    assign Y_vec = yvecs[0];
+//    assign ts[0] = t;
+    
+//    cos_sin_rom cos_sin(
+//        .addr('{Angle}), 
+//        .cosvalue('{X_vec}), 
+//        .sinvalue('{Y_vec})
+//        );
+    angtovecs #(.n(1)) cos_sin(
+        .Angle('{Angle[11:6]}),
+        .t('{Angle[5:0]}),
+        .Xvec('{X_vec}), 
+        .Yvec('{Y_vec})
+    );
 
     always_comb begin
         Y_Motion_next = 17'd0; 
         X_Motion_next = 17'd0;
-        Angle_Motion_next = 6'd0;
+        Angle_Motion_next = 12'd0;
         
         W = (keycode[7:0]==8'h1A)|(keycode[15:8]==8'h1A)|(keycode[23:16]==8'h1A)|(keycode[31:24]==8'h1A)|
             (keycode[39:32]==8'h1A)|(keycode[47:40]==8'h1A)|(keycode[55:48]==8'h1A)|(keycode[63:56]==8'h1A);
@@ -88,20 +104,24 @@ module  ball
             (keycode[39:32]==8'h4f)|(keycode[47:40]==8'h4f)|(keycode[55:48]==8'h4f)|(keycode[63:56]==8'h4f);
 
         //modify to control ball motion with the keycode
-        if (W!=0 && (A-D)!=0) begin // normalization factor (1.5 ~= sqrt(2))
-            Y_Motion_next = 2*({Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec}*( {16'b0,W} - {16'b0,S} )
-                          - {X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec}*( {16'b0,A} - {16'b0,D} ));
-            X_Motion_next = 2*({X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec}*( {16'b0,W} - {16'b0,S} )
-                          + {Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec}*( {16'b0,A} - {16'b0,D} ));
+        if ((W-S)!=0 && (A-D)!=0) begin // normalization factor (1.5 ~= sqrt(2))
+            Y_Motion_next = 2*({ { 9{Y_vec[7]} },Y_vec }*( {16'b0,W} - {16'b0,S} )
+                          - { { 9{X_vec[7]} },X_vec}*( {16'b0,A} - {16'b0,D} ));
+            X_Motion_next = 2*({ { 9{X_vec[7]} },X_vec}*( {16'b0,W} - {16'b0,S} )
+                          + { { 9{Y_vec[7]} },Y_vec }*( {16'b0,A} - {16'b0,D} ));
         end
         else begin
-            Y_Motion_next = 3*({Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec}*( {16'b0,W} - {16'b0,S} )
-                          - {X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec}*( {16'b0,A} - {16'b0,D} ));
-            X_Motion_next = 3*({X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec[7],X_vec}*( {16'b0,W} - {16'b0,S} )
-                          + {Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec[7],Y_vec}*( {16'b0,A} - {16'b0,D} ));
+            Y_Motion_next = 3*({ { 9{Y_vec[7]} },Y_vec }*( {16'b0,W} - {16'b0,S} )
+                          - { { 9{X_vec[7]} },X_vec}*( {16'b0,A} - {16'b0,D} ));
+            X_Motion_next = 3*({ { 9{X_vec[7]} },X_vec}*( {16'b0,W} - {16'b0,S} )
+                          + { { 9{Y_vec[7]} },Y_vec }*( {16'b0,A} - {16'b0,D} ));
         
         end
-        Angle_Motion_next = RA - LA;
+        Angle_Motion_next = (RA - LA) << 3;
+//        Angle_Motion_next = 6'd0;
+//        t_next = RA - LA;
+//        if (t_next == 6'b1 && t+t_next == 6'b0) Angle_Motion_next = 6'b1;
+//        else if (t_next == -6'b1 && t == 6'b0) Angle_Motion_next = -6'b1;
 
 
 //        if ( (Y + Size) >= Y_Max )  
@@ -142,13 +162,15 @@ module  ball
 			
 			Y <= Y_pos;
 			X <= X_pos;
+//			t <= 6'd0;
         end
         else 
         begin 
             if(coll_next == 1'b0) begin
                 Y_Motion <= Y_Motion_next; 
-                X_Motion <= X_Motion_next; 
+                X_Motion <= X_Motion_next;
                 Angle_Motion <= Angle_Motion_next;
+//                t <= t+t_next;
     
                 Y_pos <= Y_next;
                 X_pos <= X_next;

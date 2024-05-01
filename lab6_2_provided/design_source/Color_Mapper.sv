@@ -18,21 +18,28 @@ module  color_mapper ( input  logic [9:0] X, Y, DrawX, DrawY, size,
                        input  logic [7:0] x_vec, y_vec,
                        input logic wall_on,
                        input logic [11:0] wall_color,
+                       input logic [11:0] memdata,
                        
-                       input  logic [9:0] debugX, debugY,
-                       input  logic [11:0] debug_color,
+                       input  logic [9:0] debugX[5], debugY[5],
                        output logic [3:0]  Red, Green, Blue );
+                       
+    parameter [9:0] Y_Center=240;
     
     logic player_on;
     logic [7:0] x_vec, y_vec;
-    logic [9:0] x_vec_coords[12], y_vec_coords[12];
+    logic [9:0] x_vec_coords[9], y_vec_coords[9];
     logic [9:0] ray_width;
+    logic [9:0] DrawXMap, DrawYMap;
 	  
     int DistX, DistY, Size;
-    assign DistX = DrawX - X;
-    assign DistY = DrawY - Y;
+    assign DrawXMap = {DrawX[7:0], 2'b0};
+    assign DrawYMap = {DrawY[7:0], 2'b0};
+    assign DistX = DrawXMap - X;
+    assign DistY = DrawYMap - Y;
     assign Size = size;
-    assign ray_width = 10'd1;
+    assign ray_width = 1'd1;
+    
+    
   
     always_comb
     begin:Ball_on_proc
@@ -74,7 +81,10 @@ module  color_mapper ( input  logic [9:0] X, Y, DrawX, DrawY, size,
     
     always_comb
     begin:RGB_Display
-        if ((player_on == 1'b1)) begin 
+        Red = 4'h0; 
+        Green = 4'h0;
+        Blue = 4'h4;
+        if ((player_on == 1'b1) && DrawX<=160 && DrawY<=120) begin 
             Red = 4'hf;
             Green = 4'h7;
             Blue = 4'h0;
@@ -83,12 +93,7 @@ module  color_mapper ( input  logic [9:0] X, Y, DrawX, DrawY, size,
             Red = wall_color[11:8];
             Green = wall_color[7:4];
             Blue = wall_color[3:0];
-        end     
-        else begin 
-            Red = 4'h0; 
-            Green = 4'h0;
-            Blue = 4'h4;
-        end 
+        end
            
 //        if (DrawY == Y && DrawX>=X && DrawX<=X+{x_vec[7],x_vec[7],x_vec})
 //        begin
@@ -115,29 +120,55 @@ module  color_mapper ( input  logic [9:0] X, Y, DrawX, DrawY, size,
 //            Red = 4'h0;
 //            Green = 4'hf;
 //        end
-        if (DrawY>=y_vec_coords[0]-ray_width  && DrawX>=x_vec_coords[0]-ray_width  && DrawY<=y_vec_coords[0]+ray_width  && DrawX<=x_vec_coords[0]+ray_width ||
-            DrawY>=y_vec_coords[1]-ray_width  && DrawX>=x_vec_coords[1]-ray_width  && DrawY<=y_vec_coords[1]+ray_width  && DrawX<=x_vec_coords[1]+ray_width ||
-            DrawY>=y_vec_coords[2]-ray_width  && DrawX>=x_vec_coords[2]-ray_width  && DrawY<=y_vec_coords[2]+ray_width  && DrawX<=x_vec_coords[2]+ray_width ||
-            DrawY>=y_vec_coords[3]-ray_width  && DrawX>=x_vec_coords[3]-ray_width  && DrawY<=y_vec_coords[3]+ray_width  && DrawX<=x_vec_coords[3]+ray_width ||
-            DrawY>=y_vec_coords[4]-ray_width  && DrawX>=x_vec_coords[4]-ray_width  && DrawY<=y_vec_coords[4]+ray_width  && DrawX<=x_vec_coords[4]+ray_width ||
-            DrawY>=y_vec_coords[5]-ray_width  && DrawX>=x_vec_coords[5]-ray_width  && DrawY<=y_vec_coords[5]+ray_width  && DrawX<=x_vec_coords[5]+ray_width ||
-            DrawY>=y_vec_coords[6]-ray_width  && DrawX>=x_vec_coords[6]-ray_width  && DrawY<=y_vec_coords[6]+ray_width  && DrawX<=x_vec_coords[6]+ray_width ||
-            DrawY>=y_vec_coords[7]-ray_width  && DrawX>=x_vec_coords[7]-ray_width  && DrawY<=y_vec_coords[7]+ray_width  && DrawX<=x_vec_coords[7]+ray_width ||
-            DrawY>=y_vec_coords[8]-ray_width  && DrawX>=x_vec_coords[8]-ray_width  && DrawY<=y_vec_coords[8]+ray_width  && DrawX<=x_vec_coords[8]+ray_width
-            )
+        if (DrawX<=160 && DrawY<=120 && (
+            DrawYMap>=y_vec_coords[0]-ray_width  && DrawXMap>=x_vec_coords[0]-ray_width  && DrawYMap<=y_vec_coords[0]+ray_width  && DrawXMap<=x_vec_coords[0]+ray_width ||
+            DrawYMap>=y_vec_coords[1]-ray_width  && DrawXMap>=x_vec_coords[1]-ray_width  && DrawYMap<=y_vec_coords[1]+ray_width  && DrawXMap<=x_vec_coords[1]+ray_width ||
+            DrawYMap>=y_vec_coords[2]-ray_width  && DrawXMap>=x_vec_coords[2]-ray_width  && DrawYMap<=y_vec_coords[2]+ray_width  && DrawXMap<=x_vec_coords[2]+ray_width ||
+            DrawYMap>=y_vec_coords[3]-ray_width  && DrawXMap>=x_vec_coords[3]-ray_width  && DrawYMap<=y_vec_coords[3]+ray_width  && DrawXMap<=x_vec_coords[3]+ray_width ||
+            DrawYMap>=y_vec_coords[4]-ray_width  && DrawXMap>=x_vec_coords[4]-ray_width  && DrawYMap<=y_vec_coords[4]+ray_width  && DrawXMap<=x_vec_coords[4]+ray_width ||
+            DrawYMap>=y_vec_coords[5]-ray_width  && DrawXMap>=x_vec_coords[5]-ray_width  && DrawYMap<=y_vec_coords[5]+ray_width  && DrawXMap<=x_vec_coords[5]+ray_width ||
+            DrawYMap>=y_vec_coords[6]-ray_width  && DrawXMap>=x_vec_coords[6]-ray_width  && DrawYMap<=y_vec_coords[6]+ray_width  && DrawXMap<=x_vec_coords[6]+ray_width ||
+            DrawYMap>=y_vec_coords[7]-ray_width  && DrawXMap>=x_vec_coords[7]-ray_width  && DrawYMap<=y_vec_coords[7]+ray_width  && DrawXMap<=x_vec_coords[7]+ray_width ||
+            DrawYMap>=y_vec_coords[8]-ray_width  && DrawXMap>=x_vec_coords[8]-ray_width  && DrawYMap<=y_vec_coords[8]+ray_width  && DrawXMap<=x_vec_coords[8]+ray_width
+            ))
         begin
                 Blue = 4'hf;
                 Red = 4'hf;
                 Green = 4'hf;
         end
-        if (DrawY >= debugY-ray_width-1'b1 && DrawY <= debugY+ray_width+1'b1 && DrawX >= debugX-ray_width-1'b1 && DrawX <= debugX+ray_width+1'b1)
-        begin
-//            Red = debug_color[11:8];
-//            Green = debug_color[7:4];
-//            Blue = debug_color[3:0];
-            Red = 4'hf;
-            Green = 4'h0;
-            Blue = 4'h0;
+//        if ((DrawY >= debugY[0]-ray_width-1'b1 && DrawY <= debugY[0]+ray_width+1'b1  && 
+//             DrawX >= debugX[0]-ray_width-1'b1 && DrawX <= debugX[0]+ray_width+1'b1) ||
+//            (DrawY >= debugY[1]-ray_width-1'b1 && DrawY <= debugY[1]+ray_width+1'b1  && 
+//             DrawX >= debugX[1]-ray_width-1'b1 && DrawX <= debugX[1]+ray_width+1'b1) ||
+//            (DrawY >= debugY[2]-ray_width-1'b1 && DrawY <= debugY[2]+ray_width+1'b1  && 
+//             DrawX >= debugX[2]-ray_width-1'b1 && DrawX <= debugX[2]+ray_width+1'b1) ||
+//            (DrawY >= debugY[3]-ray_width-1'b1 && DrawY <= debugY[3]+ray_width+1'b1  && 
+//             DrawX >= debugX[3]-ray_width-1'b1 && DrawX <= debugX[3]+ray_width+1'b1) ||
+//            (DrawY >= debugY[4]-ray_width-1'b1 && DrawY <= debugY[4]+ray_width+1'b1  && 
+//             DrawX >= debugX[4]-ray_width-1'b1 && DrawX <= debugX[4]+ray_width+1'b1)
+//            )
+//        begin
+//            Red = 4'hf;
+//            Green = 4'h0;
+//            Blue = 4'h0;
+//        end
+        
+        if (~(DrawX<=160 && DrawY<=120)) begin 
+            if (DrawY < Y_Center - memdata[7:0]) begin
+                Red = 4'h3;
+                Green = 4'h3;
+                Blue = 4'h7;  
+            end
+            else if (DrawY > Y_Center + memdata[7:0]) begin
+                Red = 4'h7;
+                Green = 4'h3;
+                Blue = 4'h3;                  
+            end
+            else begin
+                Red = memdata[11:8];
+                Green = memdata[11:8];
+                Blue = memdata[11:8];
+            end
         end
     end
 endmodule

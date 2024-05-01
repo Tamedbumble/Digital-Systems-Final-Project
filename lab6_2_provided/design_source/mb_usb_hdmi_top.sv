@@ -9,7 +9,7 @@
 //    For use with ECE 385 USB + HDMI                                    --
 //    University of Illinois ECE Department                              --
 //-------------------------------------------------------------------------
-
+parameter num_rays = 6;
 
 module mb_usb_hdmi_top(
     input logic Clk,
@@ -43,26 +43,30 @@ module mb_usb_hdmi_top(
     logic [31:0] keycode0_gpio, keycode1_gpio;
     logic clk_25MHz, clk_125MHz, clk, clk_100MHz;
     logic locked;
-    logic [9:0] drawX, drawY, sizesig, debugx, debugy;
+    logic [9:0] drawX, drawY, sizesig;
     logic [16:0] xsig, ysig;
-    logic [5:0] anglesig;
+    logic [11:0] anglesig;
     logic [7:0] xvec, yvec;
     logic wall_on;
-    logic [11:0] wall_color, debugcolor;
+    logic [11:0] wall_color;
 
     logic hsync, vsync, vde;
     logic [3:0] red, green, blue;
     logic reset_ah;
     
-    logic [4:0] checkXsig, checkYsig;
+    logic [4:0] checkXsig[num_rays], checkYsig[num_rays];
     logic [4:0] checkX_next, checkY_next;
     logic will_collide;
-    logic [31:0] distancesig;
-    logic RayWallHit;
-    logic [9:0] curRayX, curRayY;
+//    logic [63:0] distancesig [num_rays];
+    logic RayWallHit[num_rays];
+    logic [9:0] curRayX[num_rays], curRayY[num_rays];
+    
+    logic we;
+    logic [9:0] wa, ra;
+    logic [11:0] wdata, adata, rdata, rdata_reg;
     
     assign reset_ah = reset_rtl_0;
-    
+    assign ra = drawX;
     
     //Keycode HEX drivers
     hex_driver HexA (
@@ -163,22 +167,22 @@ module mb_usb_hdmi_top(
     );
     
     //Raycaster Module
-    ray ray_caster (
-        .Xvec({{10{xvec[7]}},xvec}), 
-        .Yvec({{10{yvec[7]}},yvec}),
+    ray_caster #(.num_rays(num_rays)) ray_caster_inst (
         .startX(xsig), 
         .startY(ysig),
+        .startAngle(anglesig),
         .HitWall(RayWallHit), 
-        .reset(keycode0_gpio[7:0]==8'h15),//vsync), 
-        .clk(vsync),//Clk),
+        .reset(~vsync), // keycode0_gpio[7:0]==8'h15),
+        .clk25(clk_25MHz),//vsync),
+        .clk100(Clk),
         .checkX(checkXsig), 
         .checkY(checkYsig),
-        .distance(distancesig),
-        .debug_curX(curRayX),
-        .debug_curY(curRayY)
+        .wdata(wdata),
+        .we(we),
+        .wa(wa)
     );
     
-    walls walls_inst (
+    walls #(.num_rays(num_rays)) walls_inst (
     .DrawX(drawX),
     .DrawY(drawY),
     .RayX(checkXsig),
@@ -204,19 +208,28 @@ module mb_usb_hdmi_top(
         .Green(green),
         .Blue(blue),
         // new
+        .memdata(rdata_reg),
         .wall_color(wall_color),
-        .wall_on(wall_on),
-        
-        .debugX(debugx),
-        .debugY(debugy),
-        .debug_color(debugcolor)
+        .wall_on(wall_on)
+    );
+    
+    blk_mem_gen_0 vmem(
+        .clka(Clk),
+        .wea(we),
+        .addra(wa),
+        .dina(wdata),
+        .douta(adata),
+        .clkb(Clk),
+        .web(1'b0),
+        .addrb(ra),
+        .dinb(12'd0),
+        .doutb(rdata)      
     );
     
     always_ff @ (posedge Clk)
     begin
-        debugx <= curRayX;
-        debugy <= curRayY;
-        debugcolor <= distancesig[27:16];
+        rdata_reg <= rdata;
+        
     end
     
 endmodule
