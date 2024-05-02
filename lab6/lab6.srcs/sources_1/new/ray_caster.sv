@@ -26,7 +26,7 @@ module ray_caster
     input logic [16:0] startX, startY,
     input logic [11:0]  startAngle,
     input logic HitWall[num_rays], 
-    input logic reset, clk25, clk100,
+    input logic reset, clk25,
     output logic [4:0] checkX[num_rays], checkY[num_rays],
     output logic [63:0] distance[num_rays],
     
@@ -77,7 +77,7 @@ module ray_caster
         for (int j=0; j<num_rays; j=j+1) begin
             t[j] = angle[5:0] + j;
 //            if (t[j]>=-6'b100 && t[j]<=6'b100) Angle[j] = angle[11:6] + 6'b1;
-            Angle[j] = angle[11:6];
+            Angle[j] = (angle+j)>>6;
         end
     end
     
@@ -116,7 +116,7 @@ module ray_caster
                 we <= 1'b0;
                 wa <= 10'b0;
                 wdata <= 12'b0;
-                idx <= 3'b0;
+                idx <= 12'b0;
                 angle <= startAngle - 10'd320;
                 
                 for (int i=0; i<num_rays; i++) begin
@@ -143,12 +143,14 @@ module ray_caster
                     we <= 1'b0;
                     wa <= wa+1'b1;
                     idx <= idx_next;
-                    angle <= angle_next;
-                    Xvec <= Xvec_next;
-                    Yvec <= Yvec_next;
-                    Xvec_inv <= Xvec_inv_next;
-                    Yvec_inv <= Yvec_inv_next;
-                    reset_rays <= 1'b1;
+                    if (angle != angle_next) begin // new angle, recast rays
+                        angle <= angle_next;
+                        Xvec <= Xvec_next;
+                        Yvec <= Yvec_next;
+                        Xvec_inv <= Xvec_inv_next;
+                        Yvec_inv <= Yvec_inv_next;
+                        reset_rays <= 1'b1;
+                    end
                     calc_height <= 1'b0;
                 end
             end

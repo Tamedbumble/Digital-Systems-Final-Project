@@ -43,8 +43,8 @@ module inv2_rom(
         4'b0000
     };
     lerp #(.S(5)) lerp1 (
-        .startval(val),
-        .endval(valnext),
+        .startval({1'b0,val}),
+        .endval({1'b0,valnext}),
         .t(addr[5:0]),
         .val(value)
     );

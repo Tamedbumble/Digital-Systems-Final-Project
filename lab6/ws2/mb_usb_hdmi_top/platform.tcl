@@ -387,3 +387,9 @@ platform config -updatehw {C:/Users/neil/385projects/Digital-Systems-Final-Proje
 platform generate -domains 
 platform config -updatehw {C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/mb_usb_hdmi_top.xsa}
 platform generate -domains 
+platform active {mb_usb_hdmi_top}
+platform config -updatehw {C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/mb_usb_hdmi_top.xsa}
+platform generate -domains 
+platform active {mb_usb_hdmi_top}
+platform config -updatehw {C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/mb_usb_hdmi_top.xsa}
+platform generate -domains 

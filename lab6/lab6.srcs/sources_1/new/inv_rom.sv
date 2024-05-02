@@ -21,7 +21,7 @@
 
 
 module inv_rom(
-    input [9:0] addr, output [7:0] value
+    input logic [9:0] addr, output logic [7:0] value
     );
     logic [7:0] val, valnext;
     parameter [7:0] ROM [16] = {
@@ -42,9 +42,9 @@ module inv_rom(
         8'd16,
         8'd15
     };
-    lerp #(.S(12)) lerp1 (
-        .startval(val),
-        .endval(valnext),
+    lerp #(.S(9)) lerp1 (
+        .startval({1'b0,val}),
+        .endval({1'b0,valnext}),
         .t(addr[5:0]),
         .val(value)
     );

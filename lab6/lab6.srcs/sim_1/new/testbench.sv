@@ -22,96 +22,86 @@ module testbench();
     timeunit 10ns;	// This is the amount of time represented by #1 
 	timeprecision 1ns;
 	
-//    logic [16:0] Xvec, Yvec, startX, startY;
-//    logic HitWall, reset;
-    logic clk;
-//    logic [5:0] Angle[5];
-    logic [5:0] t;
+    logic [16:0] startX, startY;
+    logic [11:0]  startAngle;
+    logic HitWall[5];
+    logic reset, clk25;
+    logic [4:0] checkX[5], checkY[5];
+    logic [63:0] distance[5];
+    
+    logic [11:0] wdata;
+    logic we;
+    logic [9:0] wa;
+    
+    logic [9:0] DrawX, DrawY;
+    logic [4:0] RayX[5], RayY[5];
+    logic [4:0] X_next, Y_next;
+    logic RayWall[5];
+    logic wall_on;
+    logic coll_next;
+    logic [11:0] wall_color;
+    
+    logic [7:0] height;
+    logic [3:0] brightness;
+    logic [63:0] d_reg;
     logic [7:0] val;
-    logic [13:0] diff;
-    logic [13:0] m;
-//    logic signed [16:0] x_inv[5], y_inv[5];
-//    logic signed [7:0] x[5], y[5];
-//    logic signed [16:0] xtest, ytest, xdivtest, ydivtest;
-
-      lerp #(.S(8)) lerp0(
-        .startval(-8'd127),
-        .endval(8'd64),
-        .t(t),
-        .val(val)
-      );
-      assign m = lerp0.m;
-      assign diff = lerp0.diff;
-
-//    angtovecs ang(
-//        .Angle(Angle),
-//        .t(t),
-//        .Xvec(x), 
-//        .Yvec(y),
-//        .Xvec_inv(x_inv),
-//        .Yvec_inv(y_inv)
-//    );
-
-//    logic [4:0] checkX, checkY;
-//    logic [31:0] distance;
-//    logic [9:0] debug_curX, debug_curY;
+    logic [7:0] valn;
+    logic [7:0] value;
+    logic signed [17:0] diff;
+    logic [9:0] addr;
+    logic [11:0] angle;
+    logic [7:0]  Xvec[5], Yvec[5];
+    logic [16:0] Xvec_inv[5], Yvec_inv[5];
     
-//    ray ray_caster (.*);
+    ray_caster rc(.*);
+    walls w(.DrawX(DrawX), 
+            .DrawY(DrawY),
+            .RayX(RayX), 
+            .RayY(RayY),
+            .X_next(X_next), 
+            .Y_next(Y_next),
+            .RayWall(RayWall),
+            .wall_on(wall_on),
+            .coll_next(coll_next),
+            .wall_color(wall_color));
     
-//    logic [16:0] curX, curY, Xnext, Ynext;
-//    logic [16:0] dx, dy;
-//    logic [31:0] distx, disty, ddist;
-//    logic [4:0] X_wall_next, Y_wall_next;
-    
-//    assign curX = ray.curX;
-//    assign curY = ray.curY;
-//    assign Xnext = ray.Xnext;
-//    assign Ynext = ray.Ynext;
-//    assign dx = ray.dx;
-//    assign dy = ray.dy;
-//    assign distx = ray.distx;
-//    assign disty = ray.disty;
-//    assign ddist = ray.ddist;
-//    assign X_wall_next = ray.X_wall_next;
-//    assign Y_wall_next = ray.Y_wall_next;
+    assign DrawX = 0;
+    assign DrawY = 0;
+    assign RayX = checkX;
+    assign RayY = checkY;
+    assign X_next = startX[16:12];
+    assign Y_next = startY[16:12];
+    assign HitWall = RayWall;
+    assign height = rc.height;
+    assign brightness = rc.brightness;
+    assign d_reg = rc.d_reg;
+    assign val = rc.inv.val;
+    assign valn = rc.inv.valnext;
+    assign value = rc.inv.value;
+    assign addr = rc.inv.addr;
+    assign diff = rc.inv.lerp1.diff;
+    assign angle = rc.angle;
+    assign Xvec = rc.Xvec;
+    assign Yvec = rc.Yvec;
+    assign Xvec_inv = rc.Xvec_inv;
+    assign Yvec_inv = rc.Yvec_inv;
     
     initial begin: CLOCK_INITIALIZATION
-		clk = 1;
+		clk25 = 1;
 	end 
 	
 	always begin : CLOCK_GENERATION
-		#1 clk = ~clk;
+		#4 clk25 = ~clk25;
 	end
 	
 	initial begin: TEST_VECTORS
-//	   startX = 17'h01400;
-//	   startY = 17'h01500;
-//	   Xvec = 17'h1ffb9;
-//	   Yvec = 17'h0006a;
-//	   HitWall = 1'b0;
-//	   reset = 1'b1;
-//	   repeat (10) @(posedge clk);
-//	   reset = 1'b0;
-//	   repeat (100) @(posedge clk);
-//       for (int i=0; i<5; i++) begin
-//            Angle[i] <= 6'b0;
-//            t[i] <= 6'b0;
-//       end
-//       for (int i=1; i<128*128; i++) begin
-//            t[0] <= i;
-//            if (t[0] == 6'b0) 
-//                Angle[0] <= Angle[0]+1'b1;
-//            repeat (1) @(posedge clk);
-//            xtest <= x_inv[0] * x[0];
-//            ytest <= y_inv[0] * y[0];
-//            xdivtest <= 128*128/{{9{x[0][7]}},x[0]};
-//            ydivtest <= 128*128/{{9{y[0][7]}},y[0]};
-//            repeat (10) @(posedge clk);
-//       end
-        for(int i=0; i<=6'h3f; i++) begin
-             t<=i;
-             repeat (10) @(posedge clk);
-        end
-	   $finish();
+        startX <= {10'd320, 7'b0};
+        startY <= {10'd240, 7'b0};
+        startAngle <= 0;
+        reset <= 1;
+        repeat (10) @(posedge clk25);
+        reset <= 0;
+        repeat (10000) @(posedge clk25);
+	    $finish();
     end
 endmodule

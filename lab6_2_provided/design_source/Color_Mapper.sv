@@ -154,12 +154,12 @@ module  color_mapper ( input  logic [9:0] X, Y, DrawX, DrawY, size,
 //        end
         
         if (~(DrawX<=160 && DrawY<=120)) begin 
-            if (DrawY < Y_Center - memdata[7:0]<<1) begin
+            if (DrawY < Y_Center - {memdata[7:0], 0}) begin
                 Red = 4'h3;
                 Green = 4'h3;
                 Blue = 4'h7;  
             end
-            else if (DrawY > Y_Center + memdata[7:0]<<1) begin
+            else if (DrawY > Y_Center + {memdata[7:0], 0}) begin
                 Red = 4'h7;
                 Green = 4'h3;
                 Blue = 4'h3;                  

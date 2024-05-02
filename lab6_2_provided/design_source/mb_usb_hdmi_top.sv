@@ -174,7 +174,6 @@ module mb_usb_hdmi_top(
         .HitWall(RayWallHit), 
         .reset(~vsync), // keycode0_gpio[7:0]==8'h15),
         .clk25(clk_25MHz),//vsync),
-        .clk100(Clk),
         .checkX(checkXsig), 
         .checkY(checkYsig),
         .wdata(wdata),
