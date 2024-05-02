@@ -1,6 +1,6 @@
-22:09:39 **** Incremental Build of project mb_usb_hdmi_top ****
+12:48:26 **** Incremental Build of project mb_usb_hdmi_top ****
 buildplatform.bat 54668 mb_usb_hdmi_top no_domain_build 
-XSDB Server Channel: tcfchan#2
+xsct% XSDB Server Channel: tcfchan#30
 C:/Xilinx/Vitis/2022.2/gnu/microblaze/nt
 Building the BSP Library for domain  - standalone_microblaze_0 on processor microblaze_0
 make --no-print-directory seq_libs
@@ -144,7 +144,7 @@ xuartlite_stats.o
 mb-ar: creating microblaze_0/lib/libxil.a
 'Finished building libraries'
 
-22:09:48 **** Incremental Build of configuration Debug for project usb_hdmi ****
+12:48:34 **** Incremental Build of configuration Debug for project usb_hdmi ****
 make all 
 'Building file: ../src/lw_usb/MAX3421E.c'
 'Invoking: MicroBlaze gcc compiler'
@@ -219,6 +219,6 @@ mb-size usb_hdmi.elf  |tee "usb_hdmi.elf.size"
   23676	    488	   3676	  27840	   6cc0	usb_hdmi.elf
 'Finished building: usb_hdmi.elf.size'
 ' '
-22:09:51 **** Incremental Build of configuration Debug for project usb_hdmi_system ****
+12:48:36 **** Incremental Build of configuration Debug for project usb_hdmi_system ****
 make all 
 Skipping SD card image generation. Reason: "The system project only has applications for microblaze processors."

@@ -9,7 +9,7 @@
 //    For use with ECE 385 USB + HDMI                                    --
 //    University of Illinois ECE Department                              --
 //-------------------------------------------------------------------------
-parameter num_rays = 6;
+parameter num_rays = 5;
 
 module mb_usb_hdmi_top(
     input logic Clk,
@@ -47,23 +47,30 @@ module mb_usb_hdmi_top(
     logic [16:0] xsig, ysig;
     logic [11:0] anglesig;
     logic [7:0] xvec, yvec;
-    logic wall_on;
-    logic [11:0] wall_color;
+    logic [1:0] wall_on;
+    logic [2:0] wall_color;
 
     logic hsync, vsync, vde;
-    logic [3:0] red, green, blue;
+    logic [7:0] red, green, blue;
     logic reset_ah;
     
     logic [4:0] checkXsig[num_rays], checkYsig[num_rays];
     logic [4:0] checkX_next, checkY_next;
     logic will_collide;
 //    logic [63:0] distancesig [num_rays];
-    logic RayWallHit[num_rays];
+    logic [1:0] RayWallHit[num_rays];
     logic [9:0] curRayX[num_rays], curRayY[num_rays];
     
     logic we;
     logic [9:0] wa, ra;
     logic [11:0] wdata, adata, rdata, rdata_reg;
+    
+    logic [15:0] brightness_reg;
+    
+    logic [1:0] goal_state;
+    logic [4:0] goalx, goaly, startx, starty;
+    logic success;
+    logic reset_player;
     
     assign reset_ah = reset_rtl_0;
     assign ra = drawX;
@@ -152,7 +159,7 @@ module mb_usb_hdmi_top(
     
     //"Ball" Module
     ball ball_instance(
-        .Reset(reset_ah),
+        .Reset(reset_player),
         .frame_clk(vsync),           //Figure out what this should be so that the ball will move
         .keycode({keycode1_gpio, keycode0_gpio}),    
         .X(xsig),
@@ -163,7 +170,12 @@ module mb_usb_hdmi_top(
         .Y_vec(yvec),
         .X_coll(checkX_next),
         .Y_coll(checkY_next),
-        .coll_next(will_collide)
+        .coll_next(will_collide),
+        .goalx(goalx), 
+        .goaly(goaly),
+        .startx(startx),
+        .starty(starty),
+        .success(success)
     );
     
     //Raycaster Module
@@ -191,7 +203,12 @@ module mb_usb_hdmi_top(
     .coll_next(will_collide),
     .RayWall(RayWallHit),
     .wall_on(wall_on),
-    .wall_color(wall_color)
+    .wall_color(wall_color),
+    .goalstate(goal_state),
+    .goalx(goalx), 
+    .goaly(goaly),
+    .startx(startx),
+    .starty(starty)
     );
     
     //Color Mapper Module   
@@ -209,25 +226,38 @@ module mb_usb_hdmi_top(
         // new
         .memdata(rdata_reg),
         .wall_color(wall_color),
-        .wall_on(wall_on)
+        .wall_on(wall_on),
+        .brightness(brightness_reg)
     );
     
     blk_mem_gen_0 vmem(
-        .clka(Clk),
+        .clka(clk_25MHz),
         .wea(we),
         .addra(wa),
         .dina(wdata),
         .douta(adata),
-        .clkb(Clk),
+        .clkb(clk_25MHz),
         .web(1'b0),
         .addrb(ra),
         .dinb(12'd0),
         .doutb(rdata)      
     );
     
-    always_ff @ (posedge Clk)
+    always_ff @ (posedge clk_25MHz)
     begin
-        rdata_reg <= rdata;
+        if (reset_ah) begin
+            goal_state <= 2'b0;
+            reset_player <= 1'b1;
+        end
+        else begin
+            rdata_reg <= rdata;
+            brightness_reg <= {8'b0, rdata[7:0]} * {8'b0, rdata[7:0]};
+            if (success) begin
+                goal_state <= goal_state + 2'b1;
+                reset_player <= 1'b1;
+            end
+            else reset_player <= 1'b0;
+        end
         
     end
     

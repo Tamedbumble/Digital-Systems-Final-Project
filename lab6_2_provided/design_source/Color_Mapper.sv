@@ -16,12 +16,13 @@
 
 module  color_mapper ( input  logic [9:0] X, Y, DrawX, DrawY, size,
                        input  logic [7:0] x_vec, y_vec,
-                       input logic wall_on,
-                       input logic [11:0] wall_color,
+                       input logic [1:0] wall_on,
+                       input logic [2:0] wall_color,
                        input logic [11:0] memdata,
+                       input logic [15:0] brightness,
                        
                        input  logic [9:0] debugX[5], debugY[5],
-                       output logic [3:0]  Red, Green, Blue );
+                       output logic [7:0]  Red, Green, Blue );
                        
     parameter [9:0] Y_Center=240;
     
@@ -38,7 +39,6 @@ module  color_mapper ( input  logic [9:0] X, Y, DrawX, DrawY, size,
     assign DistY = DrawYMap - Y;
     assign Size = size;
     assign ray_width = 1'd1;
-    
     
   
     always_comb
@@ -81,18 +81,23 @@ module  color_mapper ( input  logic [9:0] X, Y, DrawX, DrawY, size,
     
     always_comb
     begin:RGB_Display
-        Red = 4'h0; 
-        Green = 4'h0;
-        Blue = 4'h4;
+        Red = 8'h0; 
+        Green = 8'h0;
+        Blue = 8'h40;
         if ((player_on == 1'b1) && DrawX<=160 && DrawY<=120) begin 
-            Red = 4'hf;
-            Green = 4'h7;
-            Blue = 4'h0;
+            Red = 8'hff;
+            Green = 8'h7f;
+            Blue = 8'h00;
         end
-        else if(wall_on == 1'b1) begin
-            Red = wall_color[11:8];
-            Green = wall_color[7:4];
-            Blue = wall_color[3:0];
+        else if(wall_on == 2'b1) begin
+            Red = (wall_color[0]) ? 8'hff : 8'h00;
+            Green = (wall_color[1]) ? 8'hff : 8'h00;
+            Blue = (wall_color[2]) ? 8'hff : 8'h00;
+        end
+        else if(wall_on == 2'b10) begin
+            Red = 8'h00;
+            Green = 8'hff;
+            Blue = 8'h00;
         end
            
 //        if (DrawY == Y && DrawX>=X && DrawX<=X+{x_vec[7],x_vec[7],x_vec})
@@ -132,9 +137,9 @@ module  color_mapper ( input  logic [9:0] X, Y, DrawX, DrawY, size,
             DrawYMap>=y_vec_coords[8]-ray_width  && DrawXMap>=x_vec_coords[8]-ray_width  && DrawYMap<=y_vec_coords[8]+ray_width  && DrawXMap<=x_vec_coords[8]+ray_width
             ))
         begin
-                Blue = 4'hf;
-                Red = 4'hf;
-                Green = 4'hf;
+                Blue = 8'hff;
+                Red = 8'hff;
+                Green = 8'hff;
         end
 //        if ((DrawY >= debugY[0]-ray_width-1'b1 && DrawY <= debugY[0]+ray_width+1'b1  && 
 //             DrawX >= debugX[0]-ray_width-1'b1 && DrawX <= debugX[0]+ray_width+1'b1) ||
@@ -154,20 +159,32 @@ module  color_mapper ( input  logic [9:0] X, Y, DrawX, DrawY, size,
 //        end
         
         if (~(DrawX<=160 && DrawY<=120)) begin 
-            if (DrawY < Y_Center - {memdata[7:0], 0}) begin
-                Red = 4'h3;
-                Green = 4'h3;
-                Blue = 4'h7;  
+            if (DrawY < Y_Center - memdata[7:0] && memdata[7:0] < Y_Center) begin
+                Red = 8'h3f;
+                Green = 8'h3f;
+                Blue = 8'h7f;  
             end
-            else if (DrawY > Y_Center + {memdata[7:0], 0}) begin
-                Red = 4'h7;
-                Green = 4'h3;
-                Blue = 4'h3;                  
+            else if (DrawY > Y_Center + memdata[7:0] && memdata[7:0] < Y_Center) begin
+                Red = 8'h7f;
+                Green = 8'h3f;
+                Blue = 8'h3f;                  
             end
             else begin
-                Red = memdata[11:8];
-                Green = memdata[11:8];
-                Blue = memdata[11:8];
+                if (memdata[8]) begin // goal wall
+                    Red = 8'h0;
+                    Green = 8'hff;
+                    Blue = 8'h0;
+                end
+                else if (brightness[15] || brightness[14]) begin
+                    Red = (wall_color[0]) ? 8'hff : 8'h00;
+                    Green = (wall_color[1]) ? 8'hff : 8'h00;
+                    Blue = (wall_color[2]) ? 8'hff : 8'h00;
+                end
+                else begin
+                    Red = (wall_color[0]) ? brightness[13:6] : 8'h00;
+                    Green = (wall_color[1]) ? brightness[13:6] : 8'h00;
+                    Blue = (wall_color[2]) ? brightness[13:6] : 8'h00;      
+                end
             end
         end
     end

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Wed May  1 22:07:30 2024
+| Date         : Thu May  2 06:38:33 2024
 | Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_methodology -file mb_usb_hdmi_top_methodology_drc_routed.rpt -pb mb_usb_hdmi_top_methodology_drc_routed.pb -rpx mb_usb_hdmi_top_methodology_drc_routed.rpx
 | Design       : mb_usb_hdmi_top
@@ -23,21 +23,19 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 515
+             Violations found: 468
 +-----------+------------------+----------------------------------------------------+------------+
 | Rule      | Severity         | Description                                        | Violations |
 +-----------+------------------+----------------------------------------------------+------------+
 | TIMING-4  | Critical Warning | Invalid primary clock redefinition on a clock tree | 2          |
-| TIMING-6  | Critical Warning | No common primary clock between related clocks     | 2          |
-| TIMING-7  | Critical Warning | No common node between related clocks              | 2          |
-| TIMING-17 | Critical Warning | Non-clocked sequential cell                        | 80         |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell                        | 81         |
 | TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin          | 2          |
 | LUTAR-1   | Warning          | LUT drives async reset alert                       | 72         |
 | SYNTH-9   | Warning          | Small multiplier                                   | 60         |
-| SYNTH-10  | Warning          | Wide multiplier                                    | 56         |
+| SYNTH-10  | Warning          | Wide multiplier                                    | 46         |
 | TIMING-9  | Warning          | Unknown CDC Logic                                  | 1          |
 | TIMING-18 | Warning          | Missing input or output delay                      | 33         |
-| TIMING-20 | Warning          | Non-clocked latch                                  | 204        |
+| TIMING-20 | Warning          | Non-clocked latch                                  | 170        |
 | LATCH-1   | Advisory         | Existing latches in the design                     | 1          |
 +-----------+------------------+----------------------------------------------------+------------+
 
@@ -51,26 +49,6 @@ Related violations: <none>
 TIMING-4#2 Critical Warning
 Invalid primary clock redefinition on a clock tree  
 Invalid clock redefinition on a clock tree. The primary clock mb_block_i/clk_wiz_1/inst/clk_in1 is defined downstream of clock clk_100 and overrides its insertion delay and/or waveform definition
-Related violations: <none>
-
-TIMING-6#1 Critical Warning
-No common primary clock between related clocks  
-The clocks clk_100 and clk_out1_clk_wiz_0 are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_100] -to [get_clocks clk_out1_clk_wiz_0]
-Related violations: <none>
-
-TIMING-6#2 Critical Warning
-No common primary clock between related clocks  
-The clocks clk_out1_clk_wiz_0 and clk_100 are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_out1_clk_wiz_0] -to [get_clocks clk_100]
-Related violations: <none>
-
-TIMING-7#1 Critical Warning
-No common node between related clocks  
-The clocks clk_100 and clk_out1_clk_wiz_0 are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_100] -to [get_clocks clk_out1_clk_wiz_0]
-Related violations: <none>
-
-TIMING-7#2 Critical Warning
-No common node between related clocks  
-The clocks clk_out1_clk_wiz_0 and clk_100 are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_out1_clk_wiz_0] -to [get_clocks clk_100]
 Related violations: <none>
 
 TIMING-17#1 Critical Warning
@@ -473,6 +451,11 @@ Non-clocked sequential cell
 The clock pin ball_instance/Y_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
+TIMING-17#81 Critical Warning
+Non-clocked sequential cell  
+The clock pin ball_instance/success_reg/C is not reached by a timing clock
+Related violations: <none>
+
 TIMING-27#1 Critical Warning
 Invalid primary clock on hierarchical pin  
 A primary clock clk_wiz/inst/clk_in1 is created on an inappropriate internal pin clk_wiz/inst/clk_in1. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
@@ -500,17 +483,16 @@ Related violations: <none>
 
 LUTAR-1#4 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[0]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[0]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[0]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[0]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curX_reg[0]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curX_reg[0]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curX_reg[0]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curX_reg[0]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curX_reg[0]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curX_reg[0]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curX_reg[0]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#5 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[0]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[0]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[0]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[0]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curX_reg[0]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[0]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[0]_LDC/CLR,
@@ -518,25 +500,22 @@ ray_caster_inst/genblk1[2].ray0/curX_reg[0]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curX_reg[0]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[0]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[0]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[0]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[0]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curX_reg[0]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curX_reg[0]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curX_reg[0]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curX_reg[0]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#6 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[10]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[10]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[10]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[10]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curX_reg[10]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curX_reg[10]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curX_reg[10]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curX_reg[10]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curX_reg[10]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curX_reg[10]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curX_reg[10]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#7 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[10]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[10]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[10]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[10]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curX_reg[10]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[10]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[10]_LDC/CLR,
@@ -544,25 +523,22 @@ ray_caster_inst/genblk1[2].ray0/curX_reg[10]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curX_reg[10]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[10]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[10]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[10]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[10]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curX_reg[10]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curX_reg[10]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curX_reg[10]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curX_reg[10]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#8 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[11]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[11]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[11]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[11]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curX_reg[11]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curX_reg[11]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curX_reg[11]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curX_reg[11]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curX_reg[11]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curX_reg[11]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curX_reg[11]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#9 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[11]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[11]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[11]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[11]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curX_reg[11]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[11]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[11]_LDC/CLR,
@@ -570,25 +546,22 @@ ray_caster_inst/genblk1[2].ray0/curX_reg[11]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curX_reg[11]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[11]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[11]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[11]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[11]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curX_reg[11]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curX_reg[11]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curX_reg[11]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curX_reg[11]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#10 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[12]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[12]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[12]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[12]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curX_reg[12]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curX_reg[12]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curX_reg[12]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curX_reg[12]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curX_reg[12]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curX_reg[12]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curX_reg[12]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#11 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[12]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[12]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[12]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[12]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curX_reg[12]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[12]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[12]_LDC/CLR,
@@ -596,25 +569,22 @@ ray_caster_inst/genblk1[2].ray0/curX_reg[12]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curX_reg[12]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[12]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[12]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[12]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[12]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curX_reg[12]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curX_reg[12]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curX_reg[12]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curX_reg[12]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#12 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[13]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[13]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[13]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[13]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curX_reg[13]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curX_reg[13]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curX_reg[13]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curX_reg[13]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curX_reg[13]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curX_reg[13]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curX_reg[13]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#13 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[13]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[13]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[13]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[13]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curX_reg[13]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[13]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[13]_LDC/CLR,
@@ -622,25 +592,22 @@ ray_caster_inst/genblk1[2].ray0/curX_reg[13]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curX_reg[13]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[13]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[13]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[13]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[13]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curX_reg[13]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curX_reg[13]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curX_reg[13]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curX_reg[13]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#14 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[14]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[14]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[14]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[14]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curX_reg[14]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curX_reg[14]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curX_reg[14]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curX_reg[14]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curX_reg[14]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curX_reg[14]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curX_reg[14]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#15 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[14]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[14]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[14]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[14]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curX_reg[14]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[14]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[14]_LDC/CLR,
@@ -648,25 +615,22 @@ ray_caster_inst/genblk1[2].ray0/curX_reg[14]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curX_reg[14]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[14]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[14]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[14]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[14]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curX_reg[14]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curX_reg[14]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curX_reg[14]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curX_reg[14]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#16 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[15]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[15]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[15]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[15]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curX_reg[15]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curX_reg[15]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curX_reg[15]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curX_reg[15]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curX_reg[15]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curX_reg[15]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curX_reg[15]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#17 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[15]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[15]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[15]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[15]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curX_reg[15]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[15]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[15]_LDC/CLR,
@@ -674,25 +638,22 @@ ray_caster_inst/genblk1[2].ray0/curX_reg[15]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curX_reg[15]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[15]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[15]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[15]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[15]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curX_reg[15]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curX_reg[15]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curX_reg[15]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curX_reg[15]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#18 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[16]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[16]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[16]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[16]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curX_reg[16]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curX_reg[16]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curX_reg[16]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curX_reg[16]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curX_reg[16]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curX_reg[16]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curX_reg[16]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#19 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[16]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[16]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[16]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[16]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curX_reg[16]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[16]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[16]_LDC/CLR,
@@ -700,25 +661,22 @@ ray_caster_inst/genblk1[2].ray0/curX_reg[16]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curX_reg[16]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[16]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[16]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[16]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[16]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curX_reg[16]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curX_reg[16]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curX_reg[16]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curX_reg[16]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#20 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[1]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[1]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[1]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[1]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curX_reg[1]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curX_reg[1]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curX_reg[1]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curX_reg[1]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curX_reg[1]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curX_reg[1]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curX_reg[1]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#21 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[1]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[1]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[1]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[1]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curX_reg[1]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[1]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[1]_LDC/CLR,
@@ -726,25 +684,22 @@ ray_caster_inst/genblk1[2].ray0/curX_reg[1]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curX_reg[1]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[1]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[1]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[1]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[1]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curX_reg[1]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curX_reg[1]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curX_reg[1]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curX_reg[1]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#22 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[2]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[2]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[2]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[2]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curX_reg[2]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curX_reg[2]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curX_reg[2]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curX_reg[2]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curX_reg[2]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curX_reg[2]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curX_reg[2]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#23 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[2]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[2]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[2]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[2]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curX_reg[2]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[2]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[2]_LDC/CLR,
@@ -752,25 +707,22 @@ ray_caster_inst/genblk1[2].ray0/curX_reg[2]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curX_reg[2]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[2]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[2]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[2]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[2]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curX_reg[2]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curX_reg[2]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curX_reg[2]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curX_reg[2]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#24 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[3]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[3]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[3]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[3]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curX_reg[3]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curX_reg[3]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curX_reg[3]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curX_reg[3]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curX_reg[3]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curX_reg[3]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curX_reg[3]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#25 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[3]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[3]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[3]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[3]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curX_reg[3]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[3]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[3]_LDC/CLR,
@@ -778,25 +730,22 @@ ray_caster_inst/genblk1[2].ray0/curX_reg[3]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curX_reg[3]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[3]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[3]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[3]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[3]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curX_reg[3]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curX_reg[3]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curX_reg[3]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curX_reg[3]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#26 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[4]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[4]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[4]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[4]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curX_reg[4]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curX_reg[4]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curX_reg[4]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curX_reg[4]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curX_reg[4]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curX_reg[4]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curX_reg[4]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#27 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[4]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[4]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[4]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[4]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curX_reg[4]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[4]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[4]_LDC/CLR,
@@ -804,25 +753,22 @@ ray_caster_inst/genblk1[2].ray0/curX_reg[4]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curX_reg[4]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[4]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[4]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[4]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[4]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curX_reg[4]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curX_reg[4]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curX_reg[4]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curX_reg[4]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#28 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[5]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[5]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[5]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[5]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curX_reg[5]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curX_reg[5]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curX_reg[5]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curX_reg[5]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curX_reg[5]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curX_reg[5]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curX_reg[5]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#29 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[5]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[5]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[5]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[5]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curX_reg[5]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[5]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[5]_LDC/CLR,
@@ -830,25 +776,22 @@ ray_caster_inst/genblk1[2].ray0/curX_reg[5]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curX_reg[5]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[5]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[5]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[5]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[5]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curX_reg[5]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curX_reg[5]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curX_reg[5]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curX_reg[5]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#30 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[6]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[6]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[6]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[6]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curX_reg[6]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curX_reg[6]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curX_reg[6]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curX_reg[6]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curX_reg[6]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curX_reg[6]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curX_reg[6]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#31 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[6]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[6]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[6]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[6]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curX_reg[6]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[6]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[6]_LDC/CLR,
@@ -856,25 +799,22 @@ ray_caster_inst/genblk1[2].ray0/curX_reg[6]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curX_reg[6]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[6]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[6]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[6]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[6]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curX_reg[6]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curX_reg[6]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curX_reg[6]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curX_reg[6]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#32 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[7]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[7]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[7]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[7]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curX_reg[7]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curX_reg[7]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curX_reg[7]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curX_reg[7]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curX_reg[7]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curX_reg[7]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curX_reg[7]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#33 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[7]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[7]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[7]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[7]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curX_reg[7]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[7]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[7]_LDC/CLR,
@@ -882,25 +822,22 @@ ray_caster_inst/genblk1[2].ray0/curX_reg[7]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curX_reg[7]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[7]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[7]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[7]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[7]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curX_reg[7]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curX_reg[7]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curX_reg[7]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curX_reg[7]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#34 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[8]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[8]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[8]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[8]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curX_reg[8]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curX_reg[8]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curX_reg[8]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curX_reg[8]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curX_reg[8]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curX_reg[8]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curX_reg[8]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#35 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[8]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[8]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[8]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[8]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curX_reg[8]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[8]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[8]_LDC/CLR,
@@ -908,25 +845,22 @@ ray_caster_inst/genblk1[2].ray0/curX_reg[8]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curX_reg[8]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[8]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[8]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[8]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[8]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curX_reg[8]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curX_reg[8]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curX_reg[8]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curX_reg[8]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#36 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[9]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[9]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[9]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[9]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curX_reg[9]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curX_reg[9]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curX_reg[9]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curX_reg[9]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curX_reg[9]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curX_reg[9]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curX_reg[9]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#37 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curX_reg[9]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[9]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curX_reg[9]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curX_reg[9]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curX_reg[9]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[9]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curX_reg[9]_LDC/CLR,
@@ -934,25 +868,22 @@ ray_caster_inst/genblk1[2].ray0/curX_reg[9]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curX_reg[9]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[9]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curX_reg[9]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[9]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curX_reg[9]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curX_reg[9]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curX_reg[9]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curX_reg[9]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curX_reg[9]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#38 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[0]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[0]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[0]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[0]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curY_reg[0]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curY_reg[0]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curY_reg[0]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curY_reg[0]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curY_reg[0]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curY_reg[0]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curY_reg[0]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#39 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[0]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[0]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[0]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[0]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curY_reg[0]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[0]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[0]_LDC/CLR,
@@ -960,25 +891,22 @@ ray_caster_inst/genblk1[2].ray0/curY_reg[0]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curY_reg[0]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[0]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[0]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[0]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[0]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curY_reg[0]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curY_reg[0]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curY_reg[0]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curY_reg[0]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#40 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[10]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[10]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[10]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[10]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curY_reg[10]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curY_reg[10]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curY_reg[10]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curY_reg[10]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curY_reg[10]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curY_reg[10]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curY_reg[10]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#41 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[10]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[10]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[10]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[10]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curY_reg[10]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[10]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[10]_LDC/CLR,
@@ -986,25 +914,22 @@ ray_caster_inst/genblk1[2].ray0/curY_reg[10]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curY_reg[10]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[10]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[10]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[10]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[10]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curY_reg[10]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curY_reg[10]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curY_reg[10]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curY_reg[10]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#42 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[11]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[11]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[11]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[11]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curY_reg[11]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curY_reg[11]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curY_reg[11]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curY_reg[11]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curY_reg[11]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curY_reg[11]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curY_reg[11]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#43 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[11]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[11]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[11]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[11]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curY_reg[11]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[11]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[11]_LDC/CLR,
@@ -1012,25 +937,22 @@ ray_caster_inst/genblk1[2].ray0/curY_reg[11]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curY_reg[11]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[11]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[11]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[11]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[11]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curY_reg[11]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curY_reg[11]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curY_reg[11]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curY_reg[11]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#44 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[12]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[12]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[12]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[12]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curY_reg[12]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curY_reg[12]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curY_reg[12]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curY_reg[12]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curY_reg[12]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curY_reg[12]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curY_reg[12]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#45 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[12]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[12]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[12]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[12]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curY_reg[12]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[12]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[12]_LDC/CLR,
@@ -1038,25 +960,22 @@ ray_caster_inst/genblk1[2].ray0/curY_reg[12]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curY_reg[12]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[12]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[12]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[12]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[12]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curY_reg[12]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curY_reg[12]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curY_reg[12]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curY_reg[12]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#46 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[13]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[13]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[13]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[13]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curY_reg[13]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curY_reg[13]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curY_reg[13]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curY_reg[13]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curY_reg[13]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curY_reg[13]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curY_reg[13]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#47 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[13]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[13]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[13]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[13]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curY_reg[13]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[13]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[13]_LDC/CLR,
@@ -1064,25 +983,22 @@ ray_caster_inst/genblk1[2].ray0/curY_reg[13]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curY_reg[13]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[13]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[13]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[13]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[13]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curY_reg[13]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curY_reg[13]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curY_reg[13]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curY_reg[13]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#48 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[14]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[14]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[14]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[14]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curY_reg[14]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curY_reg[14]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curY_reg[14]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curY_reg[14]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curY_reg[14]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curY_reg[14]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curY_reg[14]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#49 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[14]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[14]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[14]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[14]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curY_reg[14]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[14]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[14]_LDC/CLR,
@@ -1090,25 +1006,22 @@ ray_caster_inst/genblk1[2].ray0/curY_reg[14]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curY_reg[14]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[14]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[14]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[14]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[14]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curY_reg[14]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curY_reg[14]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curY_reg[14]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curY_reg[14]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#50 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[15]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[15]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[15]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[15]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curY_reg[15]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curY_reg[15]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curY_reg[15]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curY_reg[15]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curY_reg[15]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curY_reg[15]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curY_reg[15]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#51 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[15]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[15]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[15]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[15]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curY_reg[15]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[15]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[15]_LDC/CLR,
@@ -1116,25 +1029,22 @@ ray_caster_inst/genblk1[2].ray0/curY_reg[15]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curY_reg[15]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[15]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[15]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[15]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[15]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curY_reg[15]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curY_reg[15]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curY_reg[15]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curY_reg[15]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#52 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[16]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[16]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[16]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[16]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curY_reg[16]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curY_reg[16]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curY_reg[16]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curY_reg[16]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curY_reg[16]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curY_reg[16]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curY_reg[16]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#53 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[16]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[16]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[16]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[16]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curY_reg[16]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[16]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[16]_LDC/CLR,
@@ -1142,25 +1052,22 @@ ray_caster_inst/genblk1[2].ray0/curY_reg[16]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curY_reg[16]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[16]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[16]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[16]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[16]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curY_reg[16]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curY_reg[16]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curY_reg[16]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curY_reg[16]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#54 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[1]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[1]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[1]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[1]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curY_reg[1]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curY_reg[1]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curY_reg[1]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curY_reg[1]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curY_reg[1]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curY_reg[1]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curY_reg[1]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#55 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[1]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[1]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[1]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[1]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curY_reg[1]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[1]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[1]_LDC/CLR,
@@ -1168,25 +1075,22 @@ ray_caster_inst/genblk1[2].ray0/curY_reg[1]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curY_reg[1]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[1]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[1]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[1]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[1]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curY_reg[1]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curY_reg[1]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curY_reg[1]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curY_reg[1]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#56 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[2]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[2]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[2]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[2]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curY_reg[2]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curY_reg[2]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curY_reg[2]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curY_reg[2]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curY_reg[2]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curY_reg[2]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curY_reg[2]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#57 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[2]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[2]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[2]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[2]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curY_reg[2]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[2]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[2]_LDC/CLR,
@@ -1194,25 +1098,22 @@ ray_caster_inst/genblk1[2].ray0/curY_reg[2]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curY_reg[2]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[2]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[2]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[2]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[2]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curY_reg[2]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curY_reg[2]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curY_reg[2]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curY_reg[2]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#58 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[3]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[3]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[3]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[3]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curY_reg[3]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curY_reg[3]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curY_reg[3]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curY_reg[3]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curY_reg[3]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curY_reg[3]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curY_reg[3]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#59 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[3]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[3]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[3]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[3]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curY_reg[3]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[3]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[3]_LDC/CLR,
@@ -1220,25 +1121,22 @@ ray_caster_inst/genblk1[2].ray0/curY_reg[3]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curY_reg[3]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[3]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[3]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[3]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[3]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curY_reg[3]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curY_reg[3]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curY_reg[3]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curY_reg[3]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#60 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[4]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[4]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[4]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[4]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curY_reg[4]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curY_reg[4]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curY_reg[4]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curY_reg[4]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curY_reg[4]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curY_reg[4]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curY_reg[4]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#61 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[4]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[4]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[4]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[4]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curY_reg[4]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[4]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[4]_LDC/CLR,
@@ -1246,25 +1144,22 @@ ray_caster_inst/genblk1[2].ray0/curY_reg[4]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curY_reg[4]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[4]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[4]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[4]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[4]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curY_reg[4]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curY_reg[4]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curY_reg[4]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curY_reg[4]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#62 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[5]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[5]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[5]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[5]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curY_reg[5]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curY_reg[5]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curY_reg[5]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curY_reg[5]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curY_reg[5]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curY_reg[5]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curY_reg[5]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#63 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[5]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[5]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[5]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[5]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curY_reg[5]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[5]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[5]_LDC/CLR,
@@ -1272,25 +1167,22 @@ ray_caster_inst/genblk1[2].ray0/curY_reg[5]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curY_reg[5]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[5]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[5]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[5]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[5]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curY_reg[5]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curY_reg[5]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curY_reg[5]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curY_reg[5]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#64 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[6]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[6]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[6]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[6]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curY_reg[6]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curY_reg[6]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curY_reg[6]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curY_reg[6]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curY_reg[6]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curY_reg[6]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curY_reg[6]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#65 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[6]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[6]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[6]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[6]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curY_reg[6]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[6]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[6]_LDC/CLR,
@@ -1298,25 +1190,22 @@ ray_caster_inst/genblk1[2].ray0/curY_reg[6]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curY_reg[6]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[6]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[6]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[6]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[6]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curY_reg[6]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curY_reg[6]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curY_reg[6]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curY_reg[6]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#66 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[7]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[7]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[7]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[7]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curY_reg[7]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curY_reg[7]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curY_reg[7]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curY_reg[7]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curY_reg[7]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curY_reg[7]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curY_reg[7]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#67 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[7]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[7]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[7]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[7]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curY_reg[7]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[7]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[7]_LDC/CLR,
@@ -1324,25 +1213,22 @@ ray_caster_inst/genblk1[2].ray0/curY_reg[7]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curY_reg[7]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[7]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[7]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[7]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[7]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curY_reg[7]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curY_reg[7]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curY_reg[7]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curY_reg[7]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#68 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[8]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[8]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[8]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[8]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curY_reg[8]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curY_reg[8]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curY_reg[8]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curY_reg[8]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curY_reg[8]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curY_reg[8]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curY_reg[8]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#69 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[8]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[8]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[8]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[8]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curY_reg[8]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[8]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[8]_LDC/CLR,
@@ -1350,25 +1236,22 @@ ray_caster_inst/genblk1[2].ray0/curY_reg[8]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curY_reg[8]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[8]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[8]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[8]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[8]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curY_reg[8]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curY_reg[8]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curY_reg[8]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curY_reg[8]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#70 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[9]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[9]_P/PRE,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[9]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[9]_P/PRE,
 ray_caster_inst/genblk1[1].ray0/curY_reg[9]_P/PRE,
 ray_caster_inst/genblk1[2].ray0/curY_reg[9]_P/PRE,
-ray_caster_inst/genblk1[3].ray0/curY_reg[9]_P/PRE,
-ray_caster_inst/genblk1[4].ray0/curY_reg[9]_P/PRE
-ray_caster_inst/genblk1[5].ray0/curY_reg[9]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[3].ray0/curY_reg[9]_P/PRE
+ray_caster_inst/genblk1[4].ray0/curY_reg[9]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#71 Warning
 LUT drives async reset alert  
-LUT cell ray_caster_inst/genblk1[4].ray0/curY_reg[9]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[9]_C/CLR,
+LUT cell ray_caster_inst/genblk1[3].ray0/curY_reg[9]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ray_caster_inst/genblk1[0].ray0/curY_reg[9]_C/CLR,
 ray_caster_inst/genblk1[0].ray0/curY_reg[9]_LDC/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[9]_C/CLR,
 ray_caster_inst/genblk1[1].ray0/curY_reg[9]_LDC/CLR,
@@ -1376,10 +1259,8 @@ ray_caster_inst/genblk1[2].ray0/curY_reg[9]_C/CLR,
 ray_caster_inst/genblk1[2].ray0/curY_reg[9]_LDC/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[9]_C/CLR,
 ray_caster_inst/genblk1[3].ray0/curY_reg[9]_LDC/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[9]_C/CLR,
-ray_caster_inst/genblk1[4].ray0/curY_reg[9]_LDC/CLR,
-ray_caster_inst/genblk1[5].ray0/curY_reg[9]_C/CLR
-ray_caster_inst/genblk1[5].ray0/curY_reg[9]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ray_caster_inst/genblk1[4].ray0/curY_reg[9]_C/CLR
+ray_caster_inst/genblk1[4].ray0/curY_reg[9]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#72 Warning
@@ -1401,302 +1282,302 @@ Related violations: <none>
 
 SYNTH-9#1 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/distance_reg[32]_i_34 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at brightness_reg_reg[10]_i_1 of size 8x8, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#2 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/distance_reg[32]_i_34__0 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at brightness_reg_reg[10]_i_12 of size 8x8, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#3 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/distance_reg[32]_i_34__1 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at brightness_reg_reg[14]_i_1 of size 8x8, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#4 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/distance_reg[32]_i_34__2 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at brightness_reg_reg[14]_i_10 of size 8x8, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#5 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/distance_reg[32]_i_34__3 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at brightness_reg_reg[14]_i_12 of size 8x8, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#6 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/distance_reg[32]_i_34__4 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at brightness_reg_reg[14]_i_14 of size 8x8, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#7 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/distance_reg[32]_i_41 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at brightness_reg_reg[15]_i_1 of size 8x8, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#8 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/distance_reg[32]_i_41__0 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at brightness_reg_reg[6]_i_1 of size 8x8, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#9 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/distance_reg[32]_i_41__1 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at brightness_reg_reg[6]_i_3 of size 8x8, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#10 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/distance_reg[32]_i_41__2 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at brightness_reg_reg[6]_i_4 of size 8x8, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#11 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/distance_reg[32]_i_41__3 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/distance_reg[32]_i_34 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#12 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/distance_reg[32]_i_41__4 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/distance_reg[32]_i_34__0 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#13 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dx3__3_i_62 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/distance_reg[32]_i_34__1 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#14 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dx3__3_i_62__0 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/distance_reg[32]_i_34__2 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#15 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dx3__3_i_62__1 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/distance_reg[32]_i_34__3 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#16 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dx3__3_i_62__2 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/distance_reg[32]_i_41 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#17 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dx3__3_i_62__3 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/distance_reg[32]_i_41__0 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#18 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dx3__3_i_62__4 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/distance_reg[32]_i_41__1 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#19 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dx3__3_i_69 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/distance_reg[32]_i_41__2 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#20 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dx3__3_i_69__0 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/distance_reg[32]_i_41__3 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#21 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dx3__3_i_69__1 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dx3__3_i_62 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#22 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dx3__3_i_69__2 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dx3__3_i_62__0 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#23 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dx3__3_i_69__3 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dx3__3_i_62__1 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#24 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dx3__3_i_69__4 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dx3__3_i_62__2 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#25 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dx3__3_i_73 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dx3__3_i_62__3 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#26 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dx3__3_i_73__0 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dx3__3_i_69 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#27 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dx3__3_i_73__1 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dx3__3_i_69__0 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#28 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dx3__3_i_73__2 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dx3__3_i_69__1 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#29 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dx3__3_i_73__3 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dx3__3_i_69__2 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#30 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dx3__3_i_73__4 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dx3__3_i_69__3 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#31 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dx3__3_i_74 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dx3__3_i_73 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#32 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dx3__3_i_74__0 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dx3__3_i_73__0 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#33 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dx3__3_i_74__1 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dx3__3_i_73__1 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#34 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dx3__3_i_74__2 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dx3__3_i_73__2 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#35 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dx3__3_i_74__3 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dx3__3_i_73__3 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#36 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dx3__3_i_74__4 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dx3__3_i_74 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#37 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dy3__1_i_62 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dx3__3_i_74__0 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#38 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dy3__1_i_62__0 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dx3__3_i_74__1 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#39 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dy3__1_i_62__1 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dx3__3_i_74__2 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#40 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dy3__1_i_62__2 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dx3__3_i_74__3 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#41 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dy3__1_i_62__3 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dy3__1_i_62 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#42 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dy3__1_i_62__4 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dy3__1_i_62__0 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#43 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dy3__1_i_69 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dy3__1_i_62__1 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#44 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dy3__1_i_69__0 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dy3__1_i_62__2 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#45 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dy3__1_i_69__1 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dy3__1_i_62__3 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#46 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dy3__1_i_69__2 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dy3__1_i_69 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#47 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dy3__1_i_69__3 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dy3__1_i_69__0 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#48 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dy3__1_i_69__4 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dy3__1_i_69__1 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#49 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dy3__1_i_73 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dy3__1_i_69__2 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#50 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dy3__1_i_73__0 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dy3__1_i_69__3 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#51 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dy3__1_i_73__1 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dy3__1_i_73 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#52 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dy3__1_i_73__2 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dy3__1_i_73__0 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#53 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dy3__1_i_73__3 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dy3__1_i_73__1 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#54 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dy3__1_i_73__4 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dy3__1_i_73__2 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#55 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dy3__1_i_74 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dy3__1_i_73__3 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#56 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dy3__1_i_74__0 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dy3__1_i_74 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#57 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dy3__1_i_74__1 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dy3__1_i_74__0 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#58 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dy3__1_i_74__2 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dy3__1_i_74__1 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#59 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dy3__1_i_74__3 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dy3__1_i_74__2 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-9#60 Warning
 Small multiplier  
-Detected multiplier at ray_caster_inst/dy3__1_i_74__4 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Detected multiplier at ray_caster_inst/dy3__1_i_74__3 of size 18x2, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
 SYNTH-10#1 Warning
@@ -1731,252 +1612,202 @@ Related violations: <none>
 
 SYNTH-10#7 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/d_reg0 of size 18x9, it is decomposed from a wide multipler into 4 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[0].ray0/dx3 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#8 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/d_reg_reg of size 18x9, it is decomposed from a wide multipler into 4 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[0].ray0/dx3__0 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#9 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[0].ray0/dx3 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[0].ray0/dx3__1 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#10 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[0].ray0/dx3__0 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[0].ray0/dx3__2 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#11 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[0].ray0/dx3__1 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[0].ray0/dx3__3 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#12 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[0].ray0/dx3__2 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[0].ray0/dy3 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#13 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[0].ray0/dx3__3 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[0].ray0/dy3__0 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#14 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[0].ray0/dy3 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[0].ray0/dy3__1 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#15 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[0].ray0/dy3__0 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[1].ray0/dx3 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#16 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[0].ray0/dy3__1 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[1].ray0/dx3__0 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#17 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[1].ray0/dx3 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[1].ray0/dx3__1 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#18 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[1].ray0/dx3__0 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[1].ray0/dx3__2 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#19 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[1].ray0/dx3__1 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[1].ray0/dx3__3 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#20 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[1].ray0/dx3__2 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[1].ray0/dy3 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#21 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[1].ray0/dx3__3 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[1].ray0/dy3__0 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#22 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[1].ray0/dy3 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[1].ray0/dy3__1 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#23 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[1].ray0/dy3__0 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[2].ray0/dx3 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#24 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[1].ray0/dy3__1 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[2].ray0/dx3__0 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#25 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[2].ray0/dx3 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[2].ray0/dx3__1 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#26 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[2].ray0/dx3__0 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[2].ray0/dx3__2 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#27 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[2].ray0/dx3__1 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[2].ray0/dx3__3 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#28 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[2].ray0/dx3__2 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[2].ray0/dy3 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#29 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[2].ray0/dx3__3 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[2].ray0/dy3__0 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#30 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[2].ray0/dy3 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[2].ray0/dy3__1 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#31 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[2].ray0/dy3__0 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[3].ray0/dx3 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#32 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[2].ray0/dy3__1 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[3].ray0/dx3__0 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#33 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[3].ray0/dx3 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[3].ray0/dx3__1 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#34 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[3].ray0/dx3__0 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[3].ray0/dx3__2 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#35 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[3].ray0/dx3__1 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[3].ray0/dx3__3 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#36 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[3].ray0/dx3__2 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[3].ray0/dy3 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#37 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[3].ray0/dx3__3 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[3].ray0/dy3__0 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#38 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[3].ray0/dy3 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[3].ray0/dy3__1 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#39 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[3].ray0/dy3__0 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[4].ray0/dx3 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#40 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[3].ray0/dy3__1 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[4].ray0/dx3__0 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#41 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[4].ray0/dx3 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[4].ray0/dx3__1 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#42 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[4].ray0/dx3__0 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[4].ray0/dx3__2 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#43 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[4].ray0/dx3__1 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[4].ray0/dx3__3 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#44 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[4].ray0/dx3__2 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[4].ray0/dy3 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#45 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[4].ray0/dx3__3 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
+Detected multiplier at ray_caster_inst/genblk1[4].ray0/dy3__0 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#46 Warning
 Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[4].ray0/dy3 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
-Related violations: <none>
-
-SYNTH-10#47 Warning
-Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[4].ray0/dy3__0 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
-Related violations: <none>
-
-SYNTH-10#48 Warning
-Wide multiplier  
 Detected multiplier at ray_caster_inst/genblk1[4].ray0/dy3__1 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
-Related violations: <none>
-
-SYNTH-10#49 Warning
-Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[5].ray0/dx3 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
-Related violations: <none>
-
-SYNTH-10#50 Warning
-Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[5].ray0/dx3__0 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
-Related violations: <none>
-
-SYNTH-10#51 Warning
-Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[5].ray0/dx3__1 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
-Related violations: <none>
-
-SYNTH-10#52 Warning
-Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[5].ray0/dx3__2 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
-Related violations: <none>
-
-SYNTH-10#53 Warning
-Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[5].ray0/dx3__3 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
-Related violations: <none>
-
-SYNTH-10#54 Warning
-Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[5].ray0/dy3 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
-Related violations: <none>
-
-SYNTH-10#55 Warning
-Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[5].ray0/dy3__0 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
-Related violations: <none>
-
-SYNTH-10#56 Warning
-Wide multiplier  
-Detected multiplier at ray_caster_inst/genblk1[5].ray0/dy3__1 of size 18x18, it is decomposed from a wide multipler into 16 DSP blocks.
 Related violations: <none>
 
 TIMING-9#1 Warning
@@ -2999,179 +2830,9 @@ Non-clocked latch
 The latch ray_caster_inst/genblk1[4].ray0/curY_reg[9]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[4].ray0/curY_reg[9]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#171 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curX_reg[0]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curX_reg[0]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#172 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curX_reg[10]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curX_reg[10]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#173 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curX_reg[11]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curX_reg[11]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#174 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curX_reg[12]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curX_reg[12]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#175 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curX_reg[13]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curX_reg[13]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#176 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curX_reg[14]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curX_reg[14]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#177 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curX_reg[15]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curX_reg[15]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#178 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curX_reg[16]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curX_reg[16]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#179 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curX_reg[1]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curX_reg[1]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#180 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curX_reg[2]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curX_reg[2]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#181 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curX_reg[3]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curX_reg[3]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#182 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curX_reg[4]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curX_reg[4]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#183 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curX_reg[5]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curX_reg[5]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#184 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curX_reg[6]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curX_reg[6]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#185 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curX_reg[7]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curX_reg[7]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#186 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curX_reg[8]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curX_reg[8]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#187 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curX_reg[9]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curX_reg[9]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#188 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curY_reg[0]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curY_reg[0]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#189 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curY_reg[10]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curY_reg[10]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#190 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curY_reg[11]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curY_reg[11]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#191 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curY_reg[12]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curY_reg[12]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#192 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curY_reg[13]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curY_reg[13]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#193 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curY_reg[14]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curY_reg[14]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#194 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curY_reg[15]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curY_reg[15]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#195 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curY_reg[16]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curY_reg[16]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#196 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curY_reg[1]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curY_reg[1]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#197 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curY_reg[2]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curY_reg[2]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#198 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curY_reg[3]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curY_reg[3]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#199 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curY_reg[4]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curY_reg[4]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#200 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curY_reg[5]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curY_reg[5]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#201 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curY_reg[6]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curY_reg[6]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#202 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curY_reg[7]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curY_reg[7]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#203 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curY_reg[8]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curY_reg[8]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#204 Warning
-Non-clocked latch  
-The latch ray_caster_inst/genblk1[5].ray0/curY_reg[9]_LDC cannot be properly analyzed as its control pin ray_caster_inst/genblk1[5].ray0/curY_reg[9]_LDC/G is not reached by a timing clock
-Related violations: <none>
-
 LATCH-1#1 Advisory
 Existing latches in the design  
-There are 204 latches found in the design. Inferred latches are often the result of HDL coding mistakes, such as incomplete if or case statements.
+There are 170 latches found in the design. Inferred latches are often the result of HDL coding mistakes, such as incomplete if or case statements.
 Related violations: <none>
 
 

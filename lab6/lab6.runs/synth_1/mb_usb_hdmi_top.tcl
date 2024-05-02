@@ -99,7 +99,6 @@ read_verilog -library xil_defaultlib -sv {
   C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_sin_inv_rom.sv
   C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_sin_rom.sv
   C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/hex_driver.sv
-  C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/inv2_rom.sv
   C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/inv_rom.sv
   C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/lerp.sv
   C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray.sv

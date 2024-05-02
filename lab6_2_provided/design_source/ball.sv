@@ -21,15 +21,18 @@ module  ball
     input  logic        frame_clk,
     input  logic [63:0]  keycode,
     input logic coll_next,
+    input logic [4:0] goalx, goaly,
+    input logic [4:0] startx, starty,
     
-    output logic [16:0]  X, 
-    output logic [16:0]  Y, 
+    output logic [16:0] X, 
+    output logic [16:0] Y, 
     output logic [9:0]  Size,
-    output logic [11:0]  Angle,
+    output logic [11:0] Angle,
     output logic [7:0]  X_vec,
     output logic [7:0]  Y_vec,
-    output logic [4:0] X_coll, // variables to check for collision
-    output logic [4:0] Y_coll
+    output logic [4:0]  X_coll, // variables to check for collision
+    output logic [4:0]  Y_coll,
+    output logic        success
 );
     
 
@@ -153,11 +156,12 @@ module  ball
     begin: Move_Ball
         if (Reset)
         begin 
+            success <= 1'b0;
             Y_Motion <= 17'd0; 
 			X_Motion <= 17'd0; 
             
-			Y_pos <= {Y_Center,7'b0};
-			X_pos <= {X_Center,7'b0};
+			Y_pos <= {5'd5,12'b0};//{startx,12'b0};
+			X_pos <= {5'd5,12'b0};//{starty,12'b0};
 			Angle <= 6'd0;
 			
 			Y <= Y_pos;
@@ -179,6 +183,7 @@ module  ball
                 Y <= Y_pos;
                 X <= X_pos;
 			end
+			else if (goalx == X_coll && goaly == Y_coll) success <= 1'b1;
 		end  
     end
 

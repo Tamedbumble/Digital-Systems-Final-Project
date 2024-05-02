@@ -21,7 +21,7 @@
 
 
 module inv2_rom(
-    input [9:0] addr, output [3:0] value
+    input [7:0] addr, output [3:0] value
     );
     logic [3:0] val, valnext;
     parameter [3:0] ROM [16] = {

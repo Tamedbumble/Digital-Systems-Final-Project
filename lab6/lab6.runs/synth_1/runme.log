@@ -25,14 +25,14 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 41796
+INFO: [Synth 8-7075] Helper process launched with PID 9500
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
-WARNING: [Synth 8-11121] redeclaration of ANSI port 'x_vec' is not allowed [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/Color_Mapper.sv:29]
-WARNING: [Synth 8-11121] redeclaration of ANSI port 'y_vec' is not allowed [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/Color_Mapper.sv:29]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'x_vec' is not allowed [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/Color_Mapper.sv:30]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'y_vec' is not allowed [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/Color_Mapper.sv:30]
 WARNING: [Synth 8-11065] parameter 'ROM' becomes localparam in 'cos_rom' with formal parameter declaration list [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom.sv:26]
 WARNING: [Synth 8-11065] parameter 'ROM' becomes localparam in 'cos_rom_inv' with formal parameter declaration list [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom_inv.sv:28]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1218.906 ; gain = 409.543
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1217.695 ; gain = 408.797
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'mb_usb_hdmi_top' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/mb_usb_hdmi_top.sv:14]
 INFO: [Synth 8-6157] synthesizing module 'hex_driver' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/hex_driver.sv:1]
@@ -46,22 +46,22 @@ INFO: [Synth 8-6157] synthesizing module 'nibble_to_hex' [C:/Users/neil/385proje
 INFO: [Synth 8-6155] done synthesizing module 'nibble_to_hex' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/hex_driver.sv:11]
 INFO: [Synth 8-6155] done synthesizing module 'hex_driver' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/hex_driver.sv:1]
 INFO: [Synth 8-6157] synthesizing module 'mb_block' [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:936]
-INFO: [Synth 8-6157] synthesizing module 'mb_block_axi_uartlite_0_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_axi_uartlite_0_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mb_block_axi_uartlite_0_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_axi_uartlite_0_0_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'mb_block_clk_wiz_1_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_clk_wiz_1_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mb_block_clk_wiz_1_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_clk_wiz_1_0_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'mb_block_axi_gpio_0_5' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_axi_gpio_0_5_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mb_block_axi_gpio_0_5' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_axi_gpio_0_5_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'mb_block_axi_gpio_0_6' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_axi_gpio_0_6_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mb_block_axi_gpio_0_6' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_axi_gpio_0_6_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'mb_block_axi_gpio_0_4' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_axi_gpio_0_4_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mb_block_axi_gpio_0_4' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_axi_gpio_0_4_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'mb_block_mdm_1_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_mdm_1_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mb_block_mdm_1_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_mdm_1_0_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'mb_block_microblaze_0_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_microblaze_0_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mb_block_microblaze_0_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_microblaze_0_0_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'mb_block_microblaze_0_axi_intc_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_microblaze_0_axi_intc_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mb_block_microblaze_0_axi_intc_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_microblaze_0_axi_intc_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mb_block_axi_uartlite_0_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_axi_uartlite_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mb_block_axi_uartlite_0_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_axi_uartlite_0_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mb_block_clk_wiz_1_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_clk_wiz_1_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mb_block_clk_wiz_1_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_clk_wiz_1_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mb_block_axi_gpio_0_5' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_axi_gpio_0_5_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mb_block_axi_gpio_0_5' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_axi_gpio_0_5_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mb_block_axi_gpio_0_6' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_axi_gpio_0_6_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mb_block_axi_gpio_0_6' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_axi_gpio_0_6_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mb_block_axi_gpio_0_4' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_axi_gpio_0_4_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mb_block_axi_gpio_0_4' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_axi_gpio_0_4_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mb_block_mdm_1_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_mdm_1_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mb_block_mdm_1_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_mdm_1_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mb_block_microblaze_0_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_microblaze_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mb_block_microblaze_0_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_microblaze_0_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mb_block_microblaze_0_axi_intc_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_microblaze_0_axi_intc_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mb_block_microblaze_0_axi_intc_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_microblaze_0_axi_intc_0_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'mb_block_microblaze_0_axi_periph_0' [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:1602]
 INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_1TK4492' [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:12]
 INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_1TK4492' (0#1) [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:12]
@@ -79,27 +79,27 @@ INFO: [Synth 8-6157] synthesizing module 'm06_couplers_imp_1QRRYF7' [c:/Users/ne
 INFO: [Synth 8-6155] done synthesizing module 'm06_couplers_imp_1QRRYF7' (0#1) [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:804]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_5YIJ0K' [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:2926]
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_5YIJ0K' (0#1) [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:2926]
-INFO: [Synth 8-6157] synthesizing module 'mb_block_xbar_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_xbar_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mb_block_xbar_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_xbar_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mb_block_xbar_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_xbar_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mb_block_xbar_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_xbar_0_stub.v:5]
 WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'mb_block_xbar_0' is unconnected for instance 'xbar' [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:2651]
 WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'mb_block_xbar_0' is unconnected for instance 'xbar' [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:2651]
 WARNING: [Synth 8-7023] instance 'xbar' of module 'mb_block_xbar_0' has 40 connections declared, but only 38 given [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:2651]
 INFO: [Synth 8-6155] done synthesizing module 'mb_block_microblaze_0_axi_periph_0' (0#1) [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:1602]
 INFO: [Synth 8-6157] synthesizing module 'microblaze_0_local_memory_imp_G5BFEQ' [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:2692]
-INFO: [Synth 8-6157] synthesizing module 'mb_block_dlmb_bram_if_cntlr_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_dlmb_bram_if_cntlr_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mb_block_dlmb_bram_if_cntlr_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_dlmb_bram_if_cntlr_0_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'mb_block_dlmb_v10_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_dlmb_v10_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mb_block_dlmb_v10_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_dlmb_v10_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mb_block_dlmb_bram_if_cntlr_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_dlmb_bram_if_cntlr_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mb_block_dlmb_bram_if_cntlr_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_dlmb_bram_if_cntlr_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mb_block_dlmb_v10_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_dlmb_v10_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mb_block_dlmb_v10_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_dlmb_v10_0_stub.v:5]
 WARNING: [Synth 8-7071] port 'LMB_Rst' of module 'mb_block_dlmb_v10_0' is unconnected for instance 'dlmb_v10' [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:2838]
 WARNING: [Synth 8-7023] instance 'dlmb_v10' of module 'mb_block_dlmb_v10_0' has 25 connections declared, but only 24 given [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:2838]
-INFO: [Synth 8-6157] synthesizing module 'mb_block_ilmb_bram_if_cntlr_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_ilmb_bram_if_cntlr_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mb_block_ilmb_bram_if_cntlr_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_ilmb_bram_if_cntlr_0_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'mb_block_ilmb_v10_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_ilmb_v10_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mb_block_ilmb_v10_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_ilmb_v10_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mb_block_ilmb_bram_if_cntlr_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_ilmb_bram_if_cntlr_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mb_block_ilmb_bram_if_cntlr_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_ilmb_bram_if_cntlr_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mb_block_ilmb_v10_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_ilmb_v10_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mb_block_ilmb_v10_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_ilmb_v10_0_stub.v:5]
 WARNING: [Synth 8-7071] port 'LMB_Rst' of module 'mb_block_ilmb_v10_0' is unconnected for instance 'ilmb_v10' [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:2884]
 WARNING: [Synth 8-7023] instance 'ilmb_v10' of module 'mb_block_ilmb_v10_0' has 25 connections declared, but only 24 given [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:2884]
-INFO: [Synth 8-6157] synthesizing module 'mb_block_lmb_bram_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_lmb_bram_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mb_block_lmb_bram_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_lmb_bram_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mb_block_lmb_bram_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_lmb_bram_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mb_block_lmb_bram_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_lmb_bram_0_stub.v:5]
 WARNING: [Synth 8-7071] port 'rsta_busy' of module 'mb_block_lmb_bram_0' is unconnected for instance 'lmb_bram' [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:2909]
 WARNING: [Synth 8-7071] port 'rstb_busy' of module 'mb_block_lmb_bram_0' is unconnected for instance 'lmb_bram' [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:2909]
 WARNING: [Synth 8-7023] instance 'lmb_bram' of module 'mb_block_lmb_bram_0' has 16 connections declared, but only 14 given [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:2909]
@@ -108,34 +108,34 @@ INFO: [Synth 8-6157] synthesizing module 'mb_block_xlconcat_0_1' [c:/Users/neil/
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_4_xlconcat' [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
 INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_4_xlconcat' (0#1) [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
 INFO: [Synth 8-6155] done synthesizing module 'mb_block_xlconcat_0_1' (0#1) [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/ip/mb_block_xlconcat_0_1/synth/mb_block_xlconcat_0_1.v:53]
-INFO: [Synth 8-6157] synthesizing module 'mb_block_rst_clk_wiz_1_100M_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_rst_clk_wiz_1_100M_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mb_block_rst_clk_wiz_1_100M_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_rst_clk_wiz_1_100M_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mb_block_rst_clk_wiz_1_100M_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_rst_clk_wiz_1_100M_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mb_block_rst_clk_wiz_1_100M_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_rst_clk_wiz_1_100M_0_stub.v:5]
 WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'mb_block_rst_clk_wiz_1_100M_0' is unconnected for instance 'rst_clk_wiz_1_100M' [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:1538]
 WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'mb_block_rst_clk_wiz_1_100M_0' is unconnected for instance 'rst_clk_wiz_1_100M' [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:1538]
 WARNING: [Synth 8-7023] instance 'rst_clk_wiz_1_100M' of module 'mb_block_rst_clk_wiz_1_100M_0' has 10 connections declared, but only 8 given [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:1538]
-INFO: [Synth 8-6157] synthesizing module 'mb_block_axi_quad_spi_0_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_axi_quad_spi_0_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mb_block_axi_quad_spi_0_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_axi_quad_spi_0_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mb_block_axi_quad_spi_0_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_axi_quad_spi_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mb_block_axi_quad_spi_0_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_axi_quad_spi_0_0_stub.v:5]
 WARNING: [Synth 8-7071] port 'io0_t' of module 'mb_block_axi_quad_spi_0_0' is unconnected for instance 'spi_usb' [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:1547]
 WARNING: [Synth 8-7071] port 'io1_o' of module 'mb_block_axi_quad_spi_0_0' is unconnected for instance 'spi_usb' [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:1547]
 WARNING: [Synth 8-7071] port 'io1_t' of module 'mb_block_axi_quad_spi_0_0' is unconnected for instance 'spi_usb' [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:1547]
 WARNING: [Synth 8-7071] port 'sck_t' of module 'mb_block_axi_quad_spi_0_0' is unconnected for instance 'spi_usb' [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:1547]
 WARNING: [Synth 8-7071] port 'ss_t' of module 'mb_block_axi_quad_spi_0_0' is unconnected for instance 'spi_usb' [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:1547]
 WARNING: [Synth 8-7023] instance 'spi_usb' of module 'mb_block_axi_quad_spi_0_0' has 33 connections declared, but only 28 given [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:1547]
-INFO: [Synth 8-6157] synthesizing module 'mb_block_axi_timer_0_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_axi_timer_0_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mb_block_axi_timer_0_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/mb_block_axi_timer_0_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mb_block_axi_timer_0_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_axi_timer_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mb_block_axi_timer_0_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/mb_block_axi_timer_0_0_stub.v:5]
 WARNING: [Synth 8-7071] port 'generateout0' of module 'mb_block_axi_timer_0_0' is unconnected for instance 'timer_usb_axi' [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:1576]
 WARNING: [Synth 8-7071] port 'generateout1' of module 'mb_block_axi_timer_0_0' is unconnected for instance 'timer_usb_axi' [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:1576]
 WARNING: [Synth 8-7071] port 'pwm0' of module 'mb_block_axi_timer_0_0' is unconnected for instance 'timer_usb_axi' [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:1576]
 WARNING: [Synth 8-7023] instance 'timer_usb_axi' of module 'mb_block_axi_timer_0_0' has 26 connections declared, but only 23 given [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:1576]
 INFO: [Synth 8-6155] done synthesizing module 'mb_block' (0#1) [c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/synth/mb_block.v:936]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/clk_wiz_0_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'vga_controller' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/VGA_controller.sv:26]
 INFO: [Synth 8-6155] done synthesizing module 'vga_controller' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/VGA_controller.sv:26]
-WARNING: [Synth 8-7071] port 'sync' of module 'vga_controller' is unconnected for instance 'vga' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/mb_usb_hdmi_top.sv:113]
-WARNING: [Synth 8-7023] instance 'vga' of module 'vga_controller' has 8 connections declared, but only 7 given [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/mb_usb_hdmi_top.sv:113]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_tx_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/hdmi_tx_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_tx_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/hdmi_tx_0_stub.v:5]
+WARNING: [Synth 8-7071] port 'sync' of module 'vga_controller' is unconnected for instance 'vga' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/mb_usb_hdmi_top.sv:120]
+WARNING: [Synth 8-7023] instance 'vga' of module 'vga_controller' has 8 connections declared, but only 7 given [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/mb_usb_hdmi_top.sv:120]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_tx_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/hdmi_tx_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_tx_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/hdmi_tx_0_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'ball' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/ball.sv:18]
 INFO: [Synth 8-6157] synthesizing module 'angtovecs' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/angtovecs.sv:23]
 	Parameter n bound to: 1 - type: integer 
@@ -160,39 +160,36 @@ INFO: [Synth 8-6155] done synthesizing module 'cos_sin_inv_rom' (0#1) [C:/Users/
 INFO: [Synth 8-6155] done synthesizing module 'angtovecs' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/angtovecs.sv:23]
 INFO: [Synth 8-6155] done synthesizing module 'ball' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/ball.sv:18]
 INFO: [Synth 8-6157] synthesizing module 'ray_caster' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:23]
-	Parameter num_rays bound to: 6 - type: integer 
+	Parameter num_rays bound to: 5 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'ray' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray.sv:23]
 INFO: [Synth 8-6155] done synthesizing module 'ray' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray.sv:23]
-WARNING: [Synth 8-7071] port 'debug_curX' of module 'ray' is unconnected for instance 'ray0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:87]
-WARNING: [Synth 8-7071] port 'debug_curY' of module 'ray' is unconnected for instance 'ray0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:87]
-WARNING: [Synth 8-7023] instance 'ray0' of module 'ray' has 15 connections declared, but only 13 given [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:87]
-WARNING: [Synth 8-7071] port 'debug_curX' of module 'ray' is unconnected for instance 'ray0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:87]
-WARNING: [Synth 8-7071] port 'debug_curY' of module 'ray' is unconnected for instance 'ray0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:87]
-WARNING: [Synth 8-7023] instance 'ray0' of module 'ray' has 15 connections declared, but only 13 given [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:87]
-WARNING: [Synth 8-7071] port 'debug_curX' of module 'ray' is unconnected for instance 'ray0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:87]
-WARNING: [Synth 8-7071] port 'debug_curY' of module 'ray' is unconnected for instance 'ray0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:87]
-WARNING: [Synth 8-7023] instance 'ray0' of module 'ray' has 15 connections declared, but only 13 given [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:87]
-WARNING: [Synth 8-7071] port 'debug_curX' of module 'ray' is unconnected for instance 'ray0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:87]
-WARNING: [Synth 8-7071] port 'debug_curY' of module 'ray' is unconnected for instance 'ray0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:87]
-WARNING: [Synth 8-7023] instance 'ray0' of module 'ray' has 15 connections declared, but only 13 given [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:87]
-WARNING: [Synth 8-7071] port 'debug_curX' of module 'ray' is unconnected for instance 'ray0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:87]
-WARNING: [Synth 8-7071] port 'debug_curY' of module 'ray' is unconnected for instance 'ray0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:87]
-WARNING: [Synth 8-7023] instance 'ray0' of module 'ray' has 15 connections declared, but only 13 given [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:87]
-WARNING: [Synth 8-7071] port 'debug_curX' of module 'ray' is unconnected for instance 'ray0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:87]
-WARNING: [Synth 8-7071] port 'debug_curY' of module 'ray' is unconnected for instance 'ray0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:87]
-WARNING: [Synth 8-7023] instance 'ray0' of module 'ray' has 15 connections declared, but only 13 given [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:87]
+WARNING: [Synth 8-7071] port 'debug_curX' of module 'ray' is unconnected for instance 'ray0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:88]
+WARNING: [Synth 8-7071] port 'debug_curY' of module 'ray' is unconnected for instance 'ray0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:88]
+WARNING: [Synth 8-7023] instance 'ray0' of module 'ray' has 15 connections declared, but only 13 given [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:88]
+WARNING: [Synth 8-7071] port 'debug_curX' of module 'ray' is unconnected for instance 'ray0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:88]
+WARNING: [Synth 8-7071] port 'debug_curY' of module 'ray' is unconnected for instance 'ray0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:88]
+WARNING: [Synth 8-7023] instance 'ray0' of module 'ray' has 15 connections declared, but only 13 given [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:88]
+WARNING: [Synth 8-7071] port 'debug_curX' of module 'ray' is unconnected for instance 'ray0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:88]
+WARNING: [Synth 8-7071] port 'debug_curY' of module 'ray' is unconnected for instance 'ray0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:88]
+WARNING: [Synth 8-7023] instance 'ray0' of module 'ray' has 15 connections declared, but only 13 given [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:88]
+WARNING: [Synth 8-7071] port 'debug_curX' of module 'ray' is unconnected for instance 'ray0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:88]
+WARNING: [Synth 8-7071] port 'debug_curY' of module 'ray' is unconnected for instance 'ray0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:88]
+WARNING: [Synth 8-7023] instance 'ray0' of module 'ray' has 15 connections declared, but only 13 given [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:88]
+WARNING: [Synth 8-7071] port 'debug_curX' of module 'ray' is unconnected for instance 'ray0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:88]
+WARNING: [Synth 8-7071] port 'debug_curY' of module 'ray' is unconnected for instance 'ray0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:88]
+WARNING: [Synth 8-7023] instance 'ray0' of module 'ray' has 15 connections declared, but only 13 given [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:88]
 INFO: [Synth 8-6157] synthesizing module 'angtovecs__parameterized0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/angtovecs.sv:23]
-	Parameter n bound to: 6 - type: integer 
+	Parameter n bound to: 5 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'cos_sin_rom__parameterized0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_sin_rom.sv:23]
-	Parameter n bound to: 12 - type: integer 
+	Parameter n bound to: 10 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'cos_rom__parameterized0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom.sv:21]
-	Parameter n bound to: 24 - type: integer 
+	Parameter n bound to: 20 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'cos_rom__parameterized0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom.sv:21]
 INFO: [Synth 8-6155] done synthesizing module 'cos_sin_rom__parameterized0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_sin_rom.sv:23]
 INFO: [Synth 8-6157] synthesizing module 'cos_sin_inv_rom__parameterized0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_sin_inv_rom.sv:23]
-	Parameter n bound to: 12 - type: integer 
+	Parameter n bound to: 10 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'cos_rom_inv__parameterized0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom_inv.sv:23]
-	Parameter n bound to: 24 - type: integer 
+	Parameter n bound to: 20 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'cos_rom_inv__parameterized0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom_inv.sv:23]
 INFO: [Synth 8-6155] done synthesizing module 'cos_sin_inv_rom__parameterized0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_sin_inv_rom.sv:23]
 INFO: [Synth 8-6155] done synthesizing module 'angtovecs__parameterized0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/angtovecs.sv:23]
@@ -200,22 +197,17 @@ INFO: [Synth 8-6157] synthesizing module 'inv_rom' [C:/Users/neil/385projects/Di
 INFO: [Synth 8-6157] synthesizing module 'lerp__parameterized1' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/lerp.sv:23]
 	Parameter S bound to: 9 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'lerp__parameterized1' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/lerp.sv:23]
-WARNING: [Synth 8-689] width (8) of port connection 'val' does not match port width (9) of module 'lerp__parameterized1' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/inv_rom.sv:49]
+WARNING: [Synth 8-689] width (8) of port connection 'val' does not match port width (9) of module 'lerp__parameterized1' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/inv_rom.sv:65]
 INFO: [Synth 8-6155] done synthesizing module 'inv_rom' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/inv_rom.sv:23]
-INFO: [Synth 8-6157] synthesizing module 'inv2_rom' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/inv2_rom.sv:23]
-INFO: [Synth 8-6157] synthesizing module 'lerp__parameterized2' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/lerp.sv:23]
-	Parameter S bound to: 5 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'lerp__parameterized2' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/lerp.sv:23]
-WARNING: [Synth 8-689] width (4) of port connection 'val' does not match port width (5) of module 'lerp__parameterized2' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/inv2_rom.sv:49]
-INFO: [Synth 8-6155] done synthesizing module 'inv2_rom' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/inv2_rom.sv:23]
 INFO: [Synth 8-6155] done synthesizing module 'ray_caster' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv:23]
 INFO: [Synth 8-6157] synthesizing module 'walls' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/walls.sv:21]
-	Parameter num_rays bound to: 6 - type: integer 
+	Parameter num_rays bound to: 5 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/walls.sv:123]
 INFO: [Synth 8-6155] done synthesizing module 'walls' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/walls.sv:21]
 INFO: [Synth 8-6157] synthesizing module 'color_mapper' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/Color_Mapper.sv:17]
 INFO: [Synth 8-6155] done synthesizing module 'color_mapper' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/Color_Mapper.sv:17]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/blk_mem_gen_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-14464-MSI/realtime/blk_mem_gen_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/blk_mem_gen_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/.Xil/Vivado-2204-MSI/realtime/blk_mem_gen_0_stub.v:5]
 INFO: [Synth 8-6155] done synthesizing module 'mb_usb_hdmi_top' (0#1) [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/mb_usb_hdmi_top.sv:14]
 WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[0]' and it is trimmed from '6' to '4' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom.sv:47]
 WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[1]' and it is trimmed from '6' to '4' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom.sv:47]
@@ -225,9 +217,9 @@ WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[0]' and i
 WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[1]' and it is trimmed from '6' to '4' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom_inv.sv:49]
 WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[2]' and it is trimmed from '6' to '4' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom_inv.sv:49]
 WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[3]' and it is trimmed from '6' to '4' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom_inv.sv:49]
-WARNING: [Synth 8-6014] Unused sequential element Y_Motion_reg was removed.  [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/ball.sv:156]
-WARNING: [Synth 8-6014] Unused sequential element X_Motion_reg was removed.  [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/ball.sv:157]
-WARNING: [Synth 8-6014] Unused sequential element Angle_Motion_reg was removed.  [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/ball.sv:172]
+WARNING: [Synth 8-6014] Unused sequential element Y_Motion_reg was removed.  [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/ball.sv:160]
+WARNING: [Synth 8-6014] Unused sequential element X_Motion_reg was removed.  [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/ball.sv:161]
+WARNING: [Synth 8-6014] Unused sequential element Angle_Motion_reg was removed.  [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/ball.sv:176]
 WARNING: [Synth 8-7137] Register curX_reg in module ray has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray.sv:87]
 WARNING: [Synth 8-7137] Register curY_reg in module ray has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray.sv:88]
 WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[0]' and it is trimmed from '6' to '4' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom.sv:47]
@@ -250,10 +242,6 @@ WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[16]' and 
 WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[17]' and it is trimmed from '6' to '4' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom.sv:47]
 WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[18]' and it is trimmed from '6' to '4' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom.sv:47]
 WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[19]' and it is trimmed from '6' to '4' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom.sv:47]
-WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[20]' and it is trimmed from '6' to '4' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom.sv:47]
-WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[21]' and it is trimmed from '6' to '4' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom.sv:47]
-WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[22]' and it is trimmed from '6' to '4' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom.sv:47]
-WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[23]' and it is trimmed from '6' to '4' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom.sv:47]
 WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[0]' and it is trimmed from '6' to '4' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom_inv.sv:49]
 WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[1]' and it is trimmed from '6' to '4' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom_inv.sv:49]
 WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[2]' and it is trimmed from '6' to '4' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom_inv.sv:49]
@@ -274,12 +262,17 @@ WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[16]' and 
 WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[17]' and it is trimmed from '6' to '4' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom_inv.sv:49]
 WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[18]' and it is trimmed from '6' to '4' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom_inv.sv:49]
 WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[19]' and it is trimmed from '6' to '4' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom_inv.sv:49]
-WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[20]' and it is trimmed from '6' to '4' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom_inv.sv:49]
-WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[21]' and it is trimmed from '6' to '4' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom_inv.sv:49]
-WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[22]' and it is trimmed from '6' to '4' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom_inv.sv:49]
-WARNING: [Synth 8-3936] Found unconnected internal register 'index_reg[23]' and it is trimmed from '6' to '4' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_rom_inv.sv:49]
-WARNING: [Synth 8-3936] Found unconnected internal register 'shifted_x_reg' and it is trimmed from '10' to '5' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/walls.sv:60]
-WARNING: [Synth 8-3936] Found unconnected internal register 'shifted_y_reg' and it is trimmed from '10' to '5' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/walls.sv:61]
+WARNING: [Synth 8-3936] Found unconnected internal register 'shifted_x_reg' and it is trimmed from '10' to '5' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/walls.sv:133]
+WARNING: [Synth 8-3936] Found unconnected internal register 'shifted_y_reg' and it is trimmed from '10' to '5' bits. [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/walls.sv:134]
+WARNING: [Synth 8-7129] Port memdata[11] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port memdata[10] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port memdata[9] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brightness[5] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brightness[4] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brightness[3] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brightness[2] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brightness[1] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brightness[0] in module color_mapper is either unconnected or has no load
 WARNING: [Synth 8-7129] Port debugX[0][9] in module color_mapper is either unconnected or has no load
 WARNING: [Synth 8-7129] Port debugX[0][8] in module color_mapper is either unconnected or has no load
 WARNING: [Synth 8-7129] Port debugX[0][7] in module color_mapper is either unconnected or has no load
@@ -371,29 +364,20 @@ WARNING: [Synth 8-7129] Port debugY[3][2] in module color_mapper is either uncon
 WARNING: [Synth 8-7129] Port debugY[3][1] in module color_mapper is either unconnected or has no load
 WARNING: [Synth 8-7129] Port debugY[3][0] in module color_mapper is either unconnected or has no load
 WARNING: [Synth 8-7129] Port debugY[4][9] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debugY[4][8] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debugY[4][7] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debugY[4][6] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debugY[4][5] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debugY[4][4] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debugY[4][3] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debugY[4][2] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debugY[4][1] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debugY[4][0] in module color_mapper is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1347.168 ; gain = 537.805
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1346.531 ; gain = 537.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1347.168 ; gain = 537.805
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1346.531 ; gain = 537.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1347.168 ; gain = 537.805
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1346.531 ; gain = 537.633
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.111 . Memory (MB): peak = 1347.168 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.106 . Memory (MB): peak = 1346.531 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -451,26 +435,25 @@ Parsing XDC File [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/l
 Finished Parsing XDC File [C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1451.848 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1393.730 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1451.848 ; gain = 0.000
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'vmem' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1393.730 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'mb_block_i/spi_usb' at clock pin 'ext_spi_clk' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'mb_block_i/microblaze_0_local_memory/lmb_bram' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 1452.656 ; gain = 643.293
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 1394.793 ; gain = 585.895
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7s50csga324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 1452.656 ; gain = 643.293
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 1394.793 ; gain = 585.895
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -517,65 +500,69 @@ Applied set_property KEEP_HIERARCHY = SOFT for vga_to_hdmi. (constraint file  au
 Applied set_property KEEP_HIERARCHY = SOFT for clk_wiz. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for vmem. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 1452.656 ; gain = 643.293
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 1394.793 ; gain = 585.895
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 1452.656 ; gain = 643.293
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:13 . Memory (MB): peak = 1394.793 ; gain = 585.895
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   64 Bit       Adders := 12    
+	   2 Input   64 Bit       Adders := 10    
 	   3 Input   32 Bit       Adders := 2     
 	   2 Input   32 Bit       Adders := 1     
-	   3 Input   23 Bit       Adders := 16    
-	   3 Input   17 Bit       Adders := 14    
-	   2 Input   17 Bit       Adders := 26    
+	   3 Input   23 Bit       Adders := 14    
+	   3 Input   17 Bit       Adders := 12    
+	   2 Input   17 Bit       Adders := 22    
 	   3 Input   15 Bit       Adders := 1     
-	   3 Input   14 Bit       Adders := 16    
-	   2 Input   13 Bit       Adders := 5     
+	   3 Input   14 Bit       Adders := 14    
+	   2 Input   13 Bit       Adders := 4     
 	   3 Input   12 Bit       Adders := 1     
 	   2 Input   12 Bit       Adders := 3     
 	   4 Input   12 Bit       Adders := 1     
 	   2 Input   11 Bit       Adders := 2     
-	   3 Input   11 Bit       Adders := 2     
+	   3 Input   11 Bit       Adders := 1     
 	   2 Input   10 Bit       Adders := 16    
 	   3 Input   10 Bit       Adders := 30    
-	   2 Input    8 Bit       Adders := 32    
-	   2 Input    6 Bit       Adders := 45    
-	   2 Input    5 Bit       Adders := 12    
-	   2 Input    4 Bit       Adders := 64    
+	   2 Input    8 Bit       Adders := 28    
+	   2 Input    6 Bit       Adders := 39    
+	   2 Input    5 Bit       Adders := 10    
+	   2 Input    4 Bit       Adders := 56    
+	   2 Input    2 Bit       Adders := 1     
 +---XORs : 
-	   2 Input      1 Bit         XORs := 32    
+	   2 Input      1 Bit         XORs := 28    
 +---Registers : 
 	               64 Bit    Registers := 1     
-	               17 Bit    Registers := 26    
+	               17 Bit    Registers := 22    
 	               12 Bit    Registers := 3     
 	               10 Bit    Registers := 3     
-	                8 Bit    Registers := 12    
-	                1 Bit    Registers := 11    
+	                8 Bit    Registers := 10    
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 12    
 +---Multipliers : 
-	              17x64  Multipliers := 12    
-	               8x64  Multipliers := 13    
-	              64x64  Multipliers := 12    
+	              17x64  Multipliers := 10    
+	               8x64  Multipliers := 11    
+	              64x64  Multipliers := 10    
 	              32x32  Multipliers := 2     
 +---Muxes : 
-	   2 Input   64 Bit        Muxes := 42    
-	  16 Input   20 Bit        Muxes := 8     
-	   2 Input   17 Bit        Muxes := 50    
-	   2 Input   16 Bit        Muxes := 32    
+	   2 Input   64 Bit        Muxes := 35    
+	   4 Input   20 Bit        Muxes := 14    
+	   2 Input   17 Bit        Muxes := 42    
+	   2 Input   16 Bit        Muxes := 28    
 	   2 Input   12 Bit        Muxes := 1     
 	   4 Input    8 Bit        Muxes := 2     
-	   2 Input    8 Bit        Muxes := 98    
-	  17 Input    8 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 94    
+	  33 Input    8 Bit        Muxes := 1     
+	   3 Input    8 Bit        Muxes := 1     
+	   5 Input    8 Bit        Muxes := 1     
+	   5 Input    5 Bit        Muxes := 3     
 	   5 Input    4 Bit        Muxes := 2     
-	   2 Input    4 Bit        Muxes := 72    
-	  16 Input    4 Bit        Muxes := 1     
-	  17 Input    4 Bit        Muxes := 1     
-	   4 Input    4 Bit        Muxes := 3     
-	   2 Input    1 Bit        Muxes := 12    
+	   2 Input    4 Bit        Muxes := 56    
+	   2 Input    3 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 11    
+	   2 Input    1 Bit        Muxes := 7     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -746,100 +733,12 @@ DSP Report: operator dx2 is absorbed into DSP dx2.
 DSP Report: Generating DSP dx2, operation Mode is: (PCIN>>17)+A*B.
 DSP Report: operator dx2 is absorbed into DSP dx2.
 DSP Report: operator dx2 is absorbed into DSP dx2.
-DSP Debug: swapped A/B pins for adder 000001A9C4D00290
-DSP Debug: swapped A/B pins for adder 000001A9BD079360
-DSP Debug: swapped A/B pins for adder 000001A9C4D04850
-DSP Debug: swapped A/B pins for adder 000001A9C20F9980
-DSP Debug: swapped A/B pins for adder 000001A9C61B7720
-DSP Debug: swapped A/B pins for adder 000001A9C1E6EEB0
-DSP Report: Generating DSP dx3, operation Mode is: A*B.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: Generating DSP dx3, operation Mode is: A*B.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: Generating DSP dx3, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: Generating DSP dx3, operation Mode is: A*B.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: Generating DSP dx3, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: Generating DSP dy2, operation Mode is: A*B.
-DSP Report: operator dy2 is absorbed into DSP dy2.
-DSP Report: operator dy2 is absorbed into DSP dy2.
-DSP Report: Generating DSP dy2, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator dy2 is absorbed into DSP dy2.
-DSP Report: operator dy2 is absorbed into DSP dy2.
-DSP Report: Generating DSP dy3, operation Mode is: A*(B:0x0).
-DSP Report: operator dy3 is absorbed into DSP dy3.
-DSP Report: operator dy3 is absorbed into DSP dy3.
-DSP Report: Generating DSP dy3, operation Mode is: PCIN+A*B.
-DSP Report: operator dy3 is absorbed into DSP dy3.
-DSP Report: operator dy3 is absorbed into DSP dy3.
-DSP Report: Generating DSP dy3, operation Mode is: A*(B:0x0).
-DSP Report: operator dy3 is absorbed into DSP dy3.
-DSP Report: operator dy3 is absorbed into DSP dy3.
-DSP Report: Generating DSP dy3, operation Mode is: PCIN+A*B.
-DSP Report: operator dy3 is absorbed into DSP dy3.
-DSP Report: operator dy3 is absorbed into DSP dy3.
-DSP Report: Generating DSP dy3, operation Mode is: (PCIN>>17)+A*(B:0x1ff0).
-DSP Report: operator dy3 is absorbed into DSP dy3.
-DSP Report: operator dy3 is absorbed into DSP dy3.
-DSP Report: Generating DSP dy3, operation Mode is: A*B.
-DSP Report: operator dy3 is absorbed into DSP dy3.
-DSP Report: operator dy3 is absorbed into DSP dy3.
-DSP Report: Generating DSP dy3, operation Mode is: (PCIN>>17)+A*(B:0x0).
-DSP Report: operator dy3 is absorbed into DSP dy3.
-DSP Report: operator dy3 is absorbed into DSP dy3.
-DSP Report: Generating DSP dy3, operation Mode is: PCIN+A*B.
-DSP Report: operator dy3 is absorbed into DSP dy3.
-DSP Report: operator dy3 is absorbed into DSP dy3.
-DSP Report: Generating DSP dx3, operation Mode is: A*B.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: Generating DSP dx3, operation Mode is: A*B.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: Generating DSP dx3, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: Generating DSP dx3, operation Mode is: A*B.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: Generating DSP dx3, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: Generating DSP dx3, operation Mode is: A*(B:0x0).
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: Generating DSP dx3, operation Mode is: PCIN+A*B.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: Generating DSP dx3, operation Mode is: A*(B:0x0).
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: Generating DSP dx3, operation Mode is: PCIN+A*B.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: Generating DSP dx3, operation Mode is: (PCIN>>17)+A*(B:0x1ff0).
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: Generating DSP dx3, operation Mode is: A*B.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: Generating DSP dx3, operation Mode is: (PCIN>>17)+A*(B:0x0).
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: Generating DSP dx3, operation Mode is: PCIN+A*B.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: Generating DSP dx2, operation Mode is: A*B.
-DSP Report: operator dx2 is absorbed into DSP dx2.
-DSP Report: operator dx2 is absorbed into DSP dx2.
-DSP Report: Generating DSP dx2, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator dx2 is absorbed into DSP dx2.
-DSP Report: operator dx2 is absorbed into DSP dx2.
+DSP Debug: swapped A/B pins for adder 0000028FF0870B50
+DSP Debug: swapped A/B pins for adder 0000028FE5A27CA0
+DSP Debug: swapped A/B pins for adder 0000028FF0874DB0
+DSP Debug: swapped A/B pins for adder 0000028FE8FEC610
+DSP Debug: swapped A/B pins for adder 0000028FF1FE37E0
+DSP Debug: swapped A/B pins for adder 0000028FE8FFF690
 DSP Report: Generating DSP dx3, operation Mode is: A*B.
 DSP Report: operator dx3 is absorbed into DSP dx3.
 DSP Report: Generating DSP dx3, operation Mode is: A*B.
@@ -1252,18 +1151,6 @@ DSP Report: operator genblk1[4].lerp2/val2 is absorbed into DSP genblk1[4].lerp2
 DSP Report: Generating DSP genblk1[4].lerp3/val1, operation Mode is: C+A*B.
 DSP Report: operator genblk1[4].lerp3/val1 is absorbed into DSP genblk1[4].lerp3/val1.
 DSP Report: operator genblk1[4].lerp3/val2 is absorbed into DSP genblk1[4].lerp3/val1.
-DSP Report: Generating DSP genblk1[5].lerp0/val1, operation Mode is: C+A*B.
-DSP Report: operator genblk1[5].lerp0/val1 is absorbed into DSP genblk1[5].lerp0/val1.
-DSP Report: operator genblk1[5].lerp0/val2 is absorbed into DSP genblk1[5].lerp0/val1.
-DSP Report: Generating DSP genblk1[5].lerp1/val1, operation Mode is: C+A*B.
-DSP Report: operator genblk1[5].lerp1/val1 is absorbed into DSP genblk1[5].lerp1/val1.
-DSP Report: operator genblk1[5].lerp1/val2 is absorbed into DSP genblk1[5].lerp1/val1.
-DSP Report: Generating DSP genblk1[5].lerp2/val1, operation Mode is: C+A*B.
-DSP Report: operator genblk1[5].lerp2/val1 is absorbed into DSP genblk1[5].lerp2/val1.
-DSP Report: operator genblk1[5].lerp2/val2 is absorbed into DSP genblk1[5].lerp2/val1.
-DSP Report: Generating DSP genblk1[5].lerp3/val1, operation Mode is: C+A*B.
-DSP Report: operator genblk1[5].lerp3/val1 is absorbed into DSP genblk1[5].lerp3/val1.
-DSP Report: operator genblk1[5].lerp3/val2 is absorbed into DSP genblk1[5].lerp3/val1.
 DSP Report: Generating DSP genblk1[0].lerp0/val1, operation Mode is: C+A*B.
 DSP Report: operator genblk1[0].lerp0/val1 is absorbed into DSP genblk1[0].lerp0/val1.
 DSP Report: operator genblk1[0].lerp0/val2 is absorbed into DSP genblk1[0].lerp0/val1.
@@ -1276,12 +1163,6 @@ DSP Report: operator genblk1[0].lerp2/val2 is absorbed into DSP genblk1[0].lerp2
 DSP Report: Generating DSP genblk1[0].lerp3/val1, operation Mode is: C+A*B.
 DSP Report: operator genblk1[0].lerp3/val1 is absorbed into DSP genblk1[0].lerp3/val1.
 DSP Report: operator genblk1[0].lerp3/val2 is absorbed into DSP genblk1[0].lerp3/val1.
-DSP Report: Generating DSP lerp1/val1, operation Mode is: C+A*B.
-DSP Report: operator lerp1/val1 is absorbed into DSP lerp1/val1.
-DSP Report: operator lerp1/val2 is absorbed into DSP lerp1/val1.
-DSP Report: Generating DSP lerp1/val1, operation Mode is: C+A*B.
-DSP Report: operator lerp1/val1 is absorbed into DSP lerp1/val1.
-DSP Report: operator lerp1/val2 is absorbed into DSP lerp1/val1.
 DSP Report: Generating DSP d_reg0, operation Mode is: A*B.
 DSP Report: operator d_reg0 is absorbed into DSP d_reg0.
 DSP Report: operator d_reg0 is absorbed into DSP d_reg0.
@@ -1296,6 +1177,9 @@ DSP Report: Generating DSP d_reg_reg, operation Mode is: (PCIN>>17)+A*B.
 DSP Report: register d_reg_reg is absorbed into DSP d_reg_reg.
 DSP Report: operator d_reg0 is absorbed into DSP d_reg_reg.
 DSP Report: operator d_reg0 is absorbed into DSP d_reg_reg.
+DSP Report: Generating DSP inv/lerp1/val1, operation Mode is: C+A*B.
+DSP Report: operator inv/lerp1/val1 is absorbed into DSP inv/lerp1/val1.
+DSP Report: operator inv/lerp1/val2 is absorbed into DSP inv/lerp1/val1.
 DSP Report: Generating DSP Red4, operation Mode is: A*B.
 DSP Report: operator Red4 is absorbed into DSP Red4.
 DSP Report: Generating DSP Red5, operation Mode is: A*B.
@@ -1419,9 +1303,9 @@ WARNING: [Synth 8-3332] Sequential element (d_reg_reg[2]__0) is unused and will 
 WARNING: [Synth 8-3332] Sequential element (d_reg_reg[1]__0) is unused and will be removed from module ray_caster.
 WARNING: [Synth 8-3332] Sequential element (d_reg_reg[0]__0) is unused and will be removed from module ray_caster.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:32 . Memory (MB): peak = 1452.656 ; gain = 643.293
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:34 . Memory (MB): peak = 1394.793 ; gain = 585.895
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3323] Resources of type DSP have been overutilized. Used = 245, Available = 120. Use report_utilization command for details.
+WARNING: [Synth 8-3323] Resources of type DSP have been overutilized. Used = 210, Available = 120. Use report_utilization command for details.
 DSP Report: Generating DSP dx3, operation Mode is (post resource management): A*B.
 DSP Report: operator dx3 is absorbed into DSP dx3.
 DSP Report: operator dx3 is absorbed into DSP dx3.
@@ -1542,37 +1426,6 @@ DSP Report: operator dx3 is absorbed into DSP dx3.
 DSP Report: Generating DSP dx3, operation Mode is (post resource management): PCIN+A*B.
 DSP Report: operator dx3 is absorbed into DSP dx3.
 DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: Generating DSP dx3, operation Mode is (post resource management): A*B.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: Generating DSP dy3, operation Mode is (post resource management): A*B.
-DSP Report: operator dy3 is absorbed into DSP dy3.
-DSP Report: operator dy3 is absorbed into DSP dy3.
-DSP Report: Generating DSP dy3, operation Mode is (post resource management): (PCIN>>17)+A*(B:0x0).
-DSP Report: operator dy3 is absorbed into DSP dy3.
-DSP Report: operator dy3 is absorbed into DSP dy3.
-DSP Report: Generating DSP dy3, operation Mode is (post resource management): PCIN+A*B.
-DSP Report: operator dy3 is absorbed into DSP dy3.
-DSP Report: operator dy3 is absorbed into DSP dy3.
-DSP Report: Generating DSP dx3, operation Mode is (post resource management): A*B.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: Generating DSP dx3, operation Mode is (post resource management): A*B.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: Generating DSP dx3, operation Mode is (post resource management): (PCIN>>17)+A*(B:0x0).
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: Generating DSP dx3, operation Mode is (post resource management): PCIN+A*B.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: operator dx3 is absorbed into DSP dx3.
-DSP Report: Generating DSP d_reg0, operation Mode is (post resource management): A*B.
-DSP Report: operator d_reg0 is absorbed into DSP d_reg0.
-DSP Report: operator d_reg0 is absorbed into DSP d_reg0.
-DSP Report: Generating DSP d_reg_reg, operation Mode is (post resource management): (PCIN>>17)+A*B.
-DSP Report: register d_reg_reg is absorbed into DSP d_reg_reg.
-DSP Report: operator d_reg0 is absorbed into DSP d_reg_reg.
-DSP Report: operator d_reg0 is absorbed into DSP d_reg_reg.
 DSP Report: Generating DSP Red5, operation Mode is (post resource management): A*B.
 DSP Report: operator Red5 is absorbed into DSP Red5.
 DSP Report: operator Red5 is absorbed into DSP Red5.
@@ -1594,6 +1447,15 @@ DSP Report: operator Red5 is absorbed into DSP Red5.
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|inv_rom     | ROM        | 32x8          | LUT            | 
+|ray_caster  | inv/ROM    | 32x8          | LUT            | 
++------------+------------+---------------+----------------+
+
 
 DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
 +-------------+-------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
@@ -1771,36 +1633,6 @@ DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding R
 |ray          | PCIN+A*B                | 18     | 10     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |ray          | A*B                     | 18     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |ray          | (PCIN>>17)+A*B          | 14     | 9      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B                     | 17     | 17     | -      | -      | 34     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B                     | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | (PCIN>>17)+A*B          | 13     | 13     | -      | -      | 13     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B                     | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | (PCIN>>17)+A*B          | 18     | 18     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B                     | 18     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | (PCIN>>17)+A*B          | 14     | 9      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | A*(B:0x0)               | 13     | 2      | -      | -      | 13     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN+A*B                | 13     | 10     | -      | -      | 13     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | A*(B:0x0)               | 18     | 2      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN+A*B                | 18     | 10     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | (PCIN>>17)+A*(B:0x1ff0) | 13     | 13     | -      | -      | 13     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B                     | 18     | 10     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | (PCIN>>17)+A*(B:0x0)    | 18     | 2      | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN+A*B                | 18     | 10     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B                     | 17     | 17     | -      | -      | 34     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B                     | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | (PCIN>>17)+A*B          | 13     | 13     | -      | -      | 13     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B                     | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | (PCIN>>17)+A*B          | 18     | 18     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | A*(B:0x0)               | 13     | 2      | -      | -      | 13     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN+A*B                | 13     | 10     | -      | -      | 13     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | A*(B:0x0)               | 18     | 2      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN+A*B                | 18     | 10     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | (PCIN>>17)+A*(B:0x1ff0) | 13     | 13     | -      | -      | 13     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B                     | 18     | 10     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | (PCIN>>17)+A*(B:0x0)    | 18     | 2      | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN+A*B                | 18     | 10     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B                     | 18     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | (PCIN>>17)+A*B          | 14     | 9      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |lerp         | C+A*B                   | 14     | 6      | 14     | -      | 14     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
 |lerp         | C+A*B                   | 23     | 6      | 23     | -      | 23     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
 |lerp         | C+A*B                   | 14     | 6      | 14     | -      | 14     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
@@ -1825,16 +1657,11 @@ DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding R
 |lerp         | C+A*B                   | 23     | 6      | 23     | -      | 23     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
 |lerp         | C+A*B                   | 14     | 6      | 14     | -      | 14     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
 |lerp         | C+A*B                   | 23     | 6      | 23     | -      | 23     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|lerp         | C+A*B                   | 14     | 6      | 14     | -      | 14     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|lerp         | C+A*B                   | 23     | 6      | 23     | -      | 23     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|lerp         | C+A*B                   | 14     | 6      | 14     | -      | 14     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|lerp         | C+A*B                   | 23     | 6      | 23     | -      | 23     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|lerp         | C+A*B                   | 14     | 6      | 14     | -      | 14     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|lerp         | C+A*B                   | 10     | 6      | 10     | -      | 10     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
 |ray_caster   | A*B                     | 18     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |ray_caster   | (PCIN>>17)+A*B          | 14     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
 |ray_caster   | A*B                     | 18     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |ray_caster   | (PCIN>>17)+A*B          | 18     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|lerp         | C+A*B                   | 14     | 6      | 14     | -      | 14     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
 |color_mapper | A*B                     | 11     | 11     | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |color_mapper | A*B                     | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |color_mapper | (PCIN>>17)+A*B          | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
@@ -1855,19 +1682,19 @@ Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-565] redefining clock 'Clk'
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:41 . Memory (MB): peak = 1452.656 ; gain = 643.293
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:43 . Memory (MB): peak = 1397.535 ; gain = 588.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:45 . Memory (MB): peak = 1464.410 ; gain = 655.047
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:47 . Memory (MB): peak = 1450.984 ; gain = 642.086
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:55 . Memory (MB): peak = 1563.152 ; gain = 753.789
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:56 . Memory (MB): peak = 1525.375 ; gain = 716.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -1885,103 +1712,93 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:58 . Memory (MB): peak = 1570.594 ; gain = 761.230
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:59 . Memory (MB): peak = 1535.191 ; gain = 726.293
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:59 . Memory (MB): peak = 1570.594 ; gain = 761.230
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:59 . Memory (MB): peak = 1535.191 ; gain = 726.293
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:01:01 . Memory (MB): peak = 1570.594 ; gain = 761.230
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:01:01 . Memory (MB): peak = 1535.191 ; gain = 726.293
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:01:01 . Memory (MB): peak = 1570.594 ; gain = 761.230
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:01:01 . Memory (MB): peak = 1535.191 ; gain = 726.293
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:01:01 . Memory (MB): peak = 1570.594 ; gain = 761.230
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:01:01 . Memory (MB): peak = 1535.191 ; gain = 726.293
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:01:01 . Memory (MB): peak = 1570.594 ; gain = 761.230
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:01:01 . Memory (MB): peak = 1535.191 ; gain = 726.293
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 DSP Final Report (the ' indicates corresponding REG is set)
-+-------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name  | DSP Mapping     | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+-------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|color_mapper | A*B             | 30     | 18     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|color_mapper | A*B             | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|color_mapper | PCIN>>17+A*B    | 30     | 18     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|color_mapper | A*B             | 30     | 18     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|color_mapper | A*B             | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|color_mapper | PCIN>>17+A*B    | 30     | 18     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray_caster   | A*B             | 17     | 8      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray_caster   | (PCIN>>17+A*B)' | 17     | 0      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|ray          | A*B'            | 17     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B             | 17     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN>>17+A*B    | 30     | 0      | -      | -      | 0      | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN+A*B        | 14     | 9      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B'            | 17     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B             | 17     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN>>17+A*B    | 30     | 0      | -      | -      | 0      | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN+A*B        | 14     | 9      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B'            | 17     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B             | 17     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN>>17+A*B    | 30     | 0      | -      | -      | 0      | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN+A*B        | 14     | 9      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B'            | 17     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B             | 17     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN>>17+A*B    | 30     | 0      | -      | -      | 0      | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN+A*B        | 14     | 9      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B'            | 17     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B             | 17     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN>>17+A*B    | 30     | 0      | -      | -      | 0      | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN+A*B        | 14     | 9      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B'            | 17     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B             | 17     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN>>17+A*B    | 30     | 0      | -      | -      | 0      | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN+A*B        | 14     | 9      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B'            | 17     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B             | 17     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN>>17+A*B    | 30     | 0      | -      | -      | 0      | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN+A*B        | 14     | 9      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B'            | 17     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B             | 17     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN>>17+A*B    | 30     | 0      | -      | -      | 0      | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN+A*B        | 14     | 9      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B'            | 17     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B             | 17     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN>>17+A*B    | 30     | 0      | -      | -      | 0      | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN+A*B        | 14     | 9      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B'            | 17     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B             | 17     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN>>17+A*B    | 30     | 0      | -      | -      | 0      | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN+A*B        | 14     | 9      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B'            | 17     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B             | 17     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN>>17+A*B    | 30     | 0      | -      | -      | 0      | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN+A*B        | 14     | 9      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B'            | 17     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|ray          | A*B             | 17     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN>>17+A*B    | 30     | 0      | -      | -      | 0      | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ray          | PCIN+A*B        | 14     | 9      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-+-------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++-------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name  | DSP Mapping  | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|color_mapper | A*B          | 30     | 18     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|color_mapper | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|color_mapper | PCIN>>17+A*B | 30     | 18     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|color_mapper | A*B          | 30     | 18     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|color_mapper | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|color_mapper | PCIN>>17+A*B | 30     | 18     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | A*B'         | 17     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|ray          | A*B          | 17     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | PCIN>>17+A*B | 30     | 0      | -      | -      | 0      | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | PCIN+A*B     | 14     | 9      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | A*B'         | 17     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|ray          | A*B          | 17     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | PCIN>>17+A*B | 30     | 0      | -      | -      | 0      | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | PCIN+A*B     | 14     | 9      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | A*B'         | 17     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|ray          | A*B          | 17     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | PCIN>>17+A*B | 30     | 0      | -      | -      | 0      | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | PCIN+A*B     | 14     | 9      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | A*B'         | 17     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|ray          | A*B          | 17     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | PCIN>>17+A*B | 30     | 0      | -      | -      | 0      | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | PCIN+A*B     | 14     | 9      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | A*B'         | 17     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|ray          | A*B          | 17     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | PCIN>>17+A*B | 30     | 0      | -      | -      | 0      | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | PCIN+A*B     | 14     | 9      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | A*B'         | 17     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|ray          | A*B          | 17     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | PCIN>>17+A*B | 30     | 0      | -      | -      | 0      | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | PCIN+A*B     | 14     | 9      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | A*B'         | 17     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|ray          | A*B          | 17     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | PCIN>>17+A*B | 30     | 0      | -      | -      | 0      | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | PCIN+A*B     | 14     | 9      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | A*B'         | 17     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|ray          | A*B          | 17     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | PCIN>>17+A*B | 30     | 0      | -      | -      | 0      | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | PCIN+A*B     | 14     | 9      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | A*B'         | 17     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|ray          | A*B          | 17     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | PCIN>>17+A*B | 30     | 0      | -      | -      | 0      | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | PCIN+A*B     | 14     | 9      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | A*B'         | 17     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|ray          | A*B          | 17     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | PCIN>>17+A*B | 30     | 0      | -      | -      | 0      | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ray          | PCIN+A*B     | 14     | 9      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++-------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 
 Report BlackBoxes: 
@@ -2033,48 +1850,48 @@ Report Cell Usage:
 |19    |mb_block_rst_clk_wiz_1_100M    |     1|
 |20    |mb_block_xbar                  |     1|
 |21    |BUFG                           |     1|
-|22    |CARRY4                         |  3222|
-|23    |DSP48E1                        |    56|
-|26    |LUT1                           |   711|
-|27    |LUT2                           |  2808|
-|28    |LUT3                           |  2794|
-|29    |LUT4                           |  4312|
-|30    |LUT5                           |  2719|
-|31    |LUT6                           |  6700|
-|32    |MUXF7                          |    12|
-|33    |MUXF8                          |     6|
-|34    |FDCE                           |   436|
-|35    |FDPE                           |   204|
-|36    |FDRE                           |   480|
-|37    |FDSE                           |     6|
-|38    |LDC                            |   204|
-|39    |IBUF                           |     4|
-|40    |OBUF                           |    29|
+|22    |CARRY4                         |  2825|
+|23    |DSP48E1                        |    46|
+|25    |LUT1                           |   581|
+|26    |LUT2                           |  2798|
+|27    |LUT3                           |  2491|
+|28    |LUT4                           |  3636|
+|29    |LUT5                           |  2028|
+|30    |LUT6                           |  6428|
+|31    |MUXF7                          |    57|
+|32    |MUXF8                          |    24|
+|33    |FDCE                           |   367|
+|34    |FDPE                           |   170|
+|35    |FDRE                           |   448|
+|36    |FDSE                           |     4|
+|37    |LDC                            |   170|
+|38    |IBUF                           |     4|
+|39    |OBUF                           |    29|
 +------+-------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:01:01 . Memory (MB): peak = 1570.594 ; gain = 761.230
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:01:01 . Memory (MB): peak = 1535.191 ; gain = 726.293
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 216 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:59 . Memory (MB): peak = 1570.594 ; gain = 655.742
-Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:01:01 . Memory (MB): peak = 1570.594 ; gain = 761.230
+Synthesis finished with 0 errors, 0 critical warnings and 228 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:59 . Memory (MB): peak = 1535.191 ; gain = 678.031
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:01:01 . Memory (MB): peak = 1535.191 ; gain = 726.293
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.272 . Memory (MB): peak = 1582.652 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 3500 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.259 . Memory (MB): peak = 1547.207 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 3122 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1587.328 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1551.891 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 204 instances were transformed.
-  LDC => LDCE: 204 instances
+  A total of 170 instances were transformed.
+  LDC => LDCE: 170 instances
 
-Synth Design complete, checksum: f5914fec
+Synth Design complete, checksum: c3e4f887
 INFO: [Common 17-83] Releasing license: Synthesis
-150 Infos, 315 Warnings, 1 Critical Warnings and 0 Errors encountered.
+147 Infos, 302 Warnings, 1 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:01:08 . Memory (MB): peak = 1587.328 ; gain = 1155.492
+synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:01:08 . Memory (MB): peak = 1551.891 ; gain = 1119.785
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Common 17-1381] The checkpoint 'C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/mb_usb_hdmi_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file mb_usb_hdmi_top_utilization_synth.rpt -pb mb_usb_hdmi_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed May  1 22:04:52 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu May  2 06:36:10 2024...

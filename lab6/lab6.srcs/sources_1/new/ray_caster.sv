@@ -25,7 +25,7 @@ module ray_caster
 (
     input logic [16:0] startX, startY,
     input logic [11:0]  startAngle,
-    input logic HitWall[num_rays], 
+    input logic [1:0] HitWall[num_rays], 
     input logic reset, clk25,
     output logic [4:0] checkX[num_rays], checkY[num_rays],
     output logic [63:0] distance[num_rays],
@@ -63,13 +63,14 @@ module ray_caster
     );
     
     inv_rom inv(
-        .addr(d_reg[30:21]),
+        .addr(d_reg[30:20]),
         .value(height)
     );
-    inv2_rom inv2(
-        .addr(d_reg[30:21]),
-        .value(brightness)
-    );
+//    inv2_rom inv2(
+//        .addr(d_reg[30:21]),
+//        .value(brightness)
+//    );
+    assign brightness = height[7:4];
     
     assign scaled_height = (height*scalar);
     
@@ -91,7 +92,7 @@ module ray_caster
             .Yvec_inv(Yvec_inv[i]),
             .Xvec(Xvec[i]), 
             .Yvec(Yvec[i]),
-            .HitWall(HitWall[i]), 
+            .HitWall(HitWall[i][0] | HitWall[i][1]), 
             .reset(reset_rays),
             .clk(clk25),
             .checkX(checkX[i]), 
@@ -137,7 +138,7 @@ module ray_caster
                 end
                 else if (~we) begin
                     we <= 1'b1;
-                    wdata <= {brightness, height};
+                    wdata <= {HitWall[idx][1], height};
                 end
                 else begin
                     we <= 1'b0;
