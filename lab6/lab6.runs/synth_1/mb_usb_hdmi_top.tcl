@@ -70,9 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param tcl.statsThreshold 360
-set_param chipscope.maxJobs 1
-set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7s50csga324-1
 
@@ -163,7 +160,7 @@ set_property used_in_implementation false [get_files -all {{c:/Users/tamed/OneDr
 read_ip -quiet {{C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci}}
 set_property used_in_implementation false [get_files -all {{c:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0_ooc.xdc}}]
 
-read_ip -quiet {{c:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci}}
+read_ip -quiet {{C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci}}
 set_property used_in_implementation false [get_files -all {{c:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1_ooc.xdc}}]
 
 OPTRACE "Adding files" END { }

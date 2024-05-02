@@ -2,10 +2,10 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Thu May  2 13:03:38 2024
-# Process ID: 10720
+# Start of session at: Thu May  2 15:41:20 2024
+# Process ID: 20940
 # Current directory: C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11124 C:\Users\tamed\OneDrive\Desktop\UIUC Spring 2024\ECE385\Digital-Systems-Final-Project\lab6\lab6.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15296 C:\Users\tamed\OneDrive\Desktop\UIUC Spring 2024\ECE385\Digital-Systems-Final-Project\lab6\lab6.xpr
 # Log file: C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/vivado.log
 # Journal file: C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6\vivado.jou
 # Running On: DESKTOP-HL0SD2E, OS: Windows, CPU Frequency: 2808 MHz, CPU Physical cores: 6, Host memory: 17089 MB
@@ -13,58 +13,10 @@
 start_gui
 open_project {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.xpr}
 update_compile_order -fileset sources_1
-add_files -norecurse {{C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/instantiate_ram.sv} {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/sprites.sv} {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/types.sv}}
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-set_property -dict [list \
-  CONFIG.Memory_Type {Single_Port_RAM} \
-  CONFIG.Write_Depth_A {4780} \
-  CONFIG.Write_Width_A {24} \
-] [get_ips blk_mem_gen_0]
-create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name blk_mem_gen_1
-set_property -dict [list \
-  CONFIG.Operating_Mode_A {NO_CHANGE} \
-  CONFIG.Register_PortA_Output_of_Memory_Primitives {false} \
-  CONFIG.Write_Depth_A {51180} \
-  CONFIG.Write_Width_A {24} \
-] [get_ips blk_mem_gen_1]
-generate_target {instantiation_template} [get_files {{c:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci}}]
-update_compile_order -fileset sources_1
-generate_target all [get_files  {{c:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci}}]
-catch { config_ip_cache -export [get_ips -all blk_mem_gen_1] }
-export_ip_user_files -of_objects [get_files {{c:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci}}] -no_script -sync -force -quiet
-create_ip_run [get_files -of_objects [get_fileset sources_1] {{c:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci}}]
-launch_runs blk_mem_gen_1_synth_1 -jobs 3
-wait_on_run blk_mem_gen_1_synth_1
-export_simulation -of_objects [get_files {{c:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci}}] -directory {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.ip_user_files/sim_scripts} -ip_user_files_dir {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.ip_user_files} -ipstatic_source_dir {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.ip_user_files/ipstatic} -lib_map_path [list {modelsim=C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.cache/compile_simlib/modelsim} {questa=C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.cache/compile_simlib/questa} {riviera=C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.cache/compile_simlib/riviera} {activehdl=C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
-set_property -dict [list \
-  CONFIG.Assume_Synchronous_Clk {true} \
-  CONFIG.Memory_Type {True_Dual_Port_RAM} \
-  CONFIG.Register_PortA_Output_of_Memory_Primitives {false} \
-  CONFIG.Write_Depth_A {640} \
-  CONFIG.Write_Width_A {12} \
-] [get_ips blk_mem_gen_0]
-generate_target all [get_files  {{C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci}}]
-catch { config_ip_cache -export [get_ips -all blk_mem_gen_0] }
-export_ip_user_files -of_objects [get_files {{C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci}}] -no_script -sync -force -quiet
-reset_run blk_mem_gen_0_synth_1
-launch_runs blk_mem_gen_0_synth_1 -jobs 3
-wait_on_run blk_mem_gen_0_synth_1
-export_simulation -of_objects [get_files {{C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci}}] -directory {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.ip_user_files/sim_scripts} -ip_user_files_dir {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.ip_user_files} -ipstatic_source_dir {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.ip_user_files/ipstatic} -lib_map_path [list {modelsim=C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.cache/compile_simlib/modelsim} {questa=C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.cache/compile_simlib/questa} {riviera=C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.cache/compile_simlib/riviera} {activehdl=C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
-update_compile_order -fileset sources_1
-add_files -norecurse {{C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/sprites.sv}}
-update_compile_order -fileset sources_1
 reset_run synth_1
-launch_runs synth_1 -jobs 3
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1 -jobs 3
-wait_on_run synth_1
-launch_runs impl_1 -jobs 3
-wait_on_run impl_1
-open_bd_design {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/bd/mb_block/mb_block.bd}
 launch_runs impl_1 -to_step write_bitstream -jobs 3
 wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file W:/Xilinx/ws2/mb_usb_hdmi_top.xsa
 open_hw_manager
 connect_hw_server -allow_non_jtag
 open_hw_target
@@ -77,17 +29,3 @@ set_property PROGRAM.FILE {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE3
 program_hw_devices [get_hw_devices xc7s50_0]
 refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
 close_hw_manager
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 3
-wait_on_run impl_1
-open_hw_manager
-connect_hw_server -allow_non_jtag
-open_hw_target
-set_property PROGRAM.FILE {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
-current_hw_device [get_hw_devices xc7s50_0]
-refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7s50_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
-set_property PROGRAM.FILE {C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/lab6.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
-program_hw_devices [get_hw_devices xc7s50_0]
-refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
