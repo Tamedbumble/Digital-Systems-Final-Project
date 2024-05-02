@@ -59,6 +59,7 @@ COMPONENT blk_mem_gen_0
     dina : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
     douta : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
     clkb : IN STD_LOGIC;
+    enb : IN STD_LOGIC;
     web : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     addrb : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
     dinb : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
@@ -79,6 +80,7 @@ your_instance_name : blk_mem_gen_0
     dina => dina,
     douta => douta,
     clkb => clkb,
+    enb => enb,
     web => web,
     addrb => addrb,
     dinb => dinb,

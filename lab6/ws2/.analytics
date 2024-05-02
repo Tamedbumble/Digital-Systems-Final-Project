@@ -713,3 +713,6 @@ timestamp=[2024-05-02 06:30:06], mode=BUILD, duration=0:00:00.201, duration_ms=2
 timestamp=[2024-05-02 12:48:34], mode=PLATFORM_GENERATION, duration=0:00:07.941, duration_ms=7941, data={name=mb_usb_hdmi_top}
 timestamp=[2024-05-02 12:48:36], mode=BUILD, duration=0:00:02.068, duration_ms=2068, data={name=usb_hdmi, configuration=Debug, clean_build=false}
 timestamp=[2024-05-02 12:48:37], mode=BUILD, duration=0:00:00.202, duration_ms=202, data={name=usb_hdmi_system, configuration=Debug, clean_build=false}
+timestamp=[2024-05-02 15:22:51], mode=WORKBENCH_START, duration=0:00:09.357, duration_ms=9357, data={}
+timestamp=[2024-05-02 15:22:52], mode=WORKBENCH_UI_INIT, duration=0:00:00.841, duration_ms=841, data={editors_count=9, platform_editors_count=3, projects_count=4, platform_projects_count=1, active_platform_editor=true, projects=RemoteSystemsTempFiles,mb_usb_hdmi_top,usb_hdmi,usb_hdmi_system}
+timestamp=[2024-05-02 15:22:54], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:01.386, duration_ms=1386, data={}

@@ -10519,3 +10519,10 @@ con
 ----------------End of Script----------------
 
 12:48:49 INFO  : Disconnected from the channel tcfchan#31.
+15:22:47 DEBUG : Logs will be stored at 'C:/Users/tamed/OneDrive/Desktop/UIUC Spring 2024/ECE385/Digital-Systems-Final-Project/lab6/ws2/IDE.log'.
+15:22:48 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\tamed\OneDrive\Desktop\UIUC Spring 2024\ECE385\Digital-Systems-Final-Project\lab6\ws2\temp_xsdb_launch_script.tcl
+15:22:51 ERROR : Workspace location C:\Users\tamed\OneDrive\Desktop\UIUC Spring 2024\ECE385\Digital-Systems-Final-Project\lab6\ws2 contains spaces. Please switch to a workspace without spaces in its path.
+15:22:51 ERROR : (XSDB Server)couldn't read file "C:\Users\tamed\OneDrive\Desktop\UIUC": permission denied
+
+15:22:52 INFO  : Registering command handlers for Vitis TCF services
+15:22:54 INFO  : Platform repository initialization has completed.
