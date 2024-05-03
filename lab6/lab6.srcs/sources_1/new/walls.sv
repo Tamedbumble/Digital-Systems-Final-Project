@@ -44,7 +44,7 @@ logic [19:0] walls0[15] = {
     20'b10000000000000000001,
     20'b10000000000000000001,
     20'b10000000000000000001,
-    20'b10011111100000000001,
+    20'b10011111100001111001,
     20'b10010000000000000001,
     20'b10010000000000000001,
     20'b10010000000000000001,
@@ -58,7 +58,7 @@ logic [19:0] walls0[15] = {
 };
 logic [19:0] walls1[15] = {
     20'b00010001000000000000,
-    20'b00010001000000000010,
+    20'b01010001000000000010,
     20'b00010001000111111000,
     20'b00000000000100000000,
     20'b00000000000100000000,
@@ -115,7 +115,7 @@ logic [9:0] shifted_x, shifted_y;
 logic [4:0] col;
 
 assign goalx = goalxs[goalstate];
-assign goaly = goalxs[goalstate];
+assign goaly = goalys[goalstate];
 assign startx = startxs[goalstate];
 assign starty = startys[goalstate];
 

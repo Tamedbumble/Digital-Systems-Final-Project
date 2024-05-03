@@ -10533,3 +10533,162 @@ con
 
 16:13:31 INFO  : Registering command handlers for Vitis TCF services
 16:13:33 INFO  : Platform repository initialization has completed.
+08:10:27 DEBUG : Logs will be stored at 'C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/IDE.log'.
+08:20:53 DEBUG : Logs will be stored at 'C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/IDE.log'.
+08:20:54 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\neil\385projects\Digital-Systems-Final-Project\lab6\ws2\temp_xsdb_launch_script.tcl
+08:20:58 INFO  : XSCT server has started successfully.
+08:20:58 INFO  : plnx-install-location is set to ''
+08:20:58 INFO  : Successfully done setting XSCT server connection channel  
+08:20:58 INFO  : Platform repository initialization has completed.
+08:20:58 INFO  : Registering command handlers for Vitis TCF services
+08:21:05 INFO  : Successfully done setting workspace for the tool. 
+08:21:05 INFO  : Successfully done query RDI_DATADIR 
+08:21:26 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+08:21:39 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+08:21:39 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm
+08:21:39 INFO  : Checking for BSP changes to sync application flags for project 'usb_hdmi'...
+08:21:42 INFO  : The hardware specification used by project 'usb_hdmi' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+08:21:42 INFO  : The file 'C:\Users\neil\385projects\Digital-Systems-Final-Project\lab6\ws2\usb_hdmi\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+08:21:42 INFO  : The file 'C:\Users\neil\385projects\Digital-Systems-Final-Project\lab6\ws2\usb_hdmi\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+08:21:42 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\neil\385projects\Digital-Systems-Final-Project\lab6\ws2\usb_hdmi\_ide\bitstream' in project 'usb_hdmi'.
+08:21:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+08:21:55 INFO  : Jtag cable 'RealDigital Boo 887429230101A' is selected.
+08:21:55 INFO  : 'jtag frequency' command is executed.
+08:21:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887429230101A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+08:21:56 INFO  : Device configured successfully with "C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/usb_hdmi/_ide/bitstream/mb_usb_hdmi_top.bit"
+08:21:56 INFO  : Context for processor 'microblaze_0' is selected.
+08:21:56 INFO  : Hardware design and registers information is loaded from 'C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+08:21:56 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+08:21:56 INFO  : Context for processor 'microblaze_0' is selected.
+08:21:56 INFO  : System reset is completed.
+08:21:59 INFO  : 'after 3000' command is executed.
+08:21:59 INFO  : Context for processor 'microblaze_0' is selected.
+08:22:00 INFO  : The application 'C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/usb_hdmi/Debug/usb_hdmi.elf' is downloaded to processor 'microblaze_0'.
+08:22:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887429230101A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/usb_hdmi/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/usb_hdmi/Debug/usb_hdmi.elf
+----------------End of Script----------------
+
+08:22:00 INFO  : Context for processor 'microblaze_0' is selected.
+08:22:00 INFO  : 'con' command is executed.
+08:22:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+08:22:00 INFO  : Disconnected from the channel tcfchan#2.
+08:22:31 ERROR : Failed to connect to hardware server on host '127.0.0.1' and port '3121'.
+Reason: 'connect -url tcp:127.0.0.1:3121' is cancelled.
+08:22:31 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+08:22:46 DEBUG : Logs will be stored at 'C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/IDE.log'.
+08:22:47 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\neil\385projects\Digital-Systems-Final-Project\lab6\ws2\temp_xsdb_launch_script.tcl
+08:22:50 INFO  : XSCT server has started successfully.
+08:22:50 INFO  : plnx-install-location is set to ''
+08:22:50 INFO  : Successfully done setting XSCT server connection channel  
+08:22:50 INFO  : Successfully done setting workspace for the tool. 
+08:22:50 INFO  : Platform repository initialization has completed.
+08:22:50 INFO  : Successfully done query RDI_DATADIR 
+08:22:51 INFO  : Registering command handlers for Vitis TCF services
+08:23:26 DEBUG : Logs will be stored at 'C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/IDE.log'.
+08:23:26 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\neil\385projects\Digital-Systems-Final-Project\lab6\ws2\temp_xsdb_launch_script.tcl
+08:23:29 INFO  : XSCT server has started successfully.
+08:23:29 INFO  : Successfully done setting XSCT server connection channel  
+08:23:29 INFO  : plnx-install-location is set to ''
+08:23:29 INFO  : Successfully done setting workspace for the tool. 
+08:23:30 INFO  : Platform repository initialization has completed.
+08:23:30 INFO  : Successfully done query RDI_DATADIR 
+08:23:30 INFO  : Registering command handlers for Vitis TCF services
+08:23:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+08:23:43 INFO  : Jtag cable 'RealDigital Boo 887429230101A' is selected.
+08:23:43 INFO  : 'jtag frequency' command is executed.
+08:23:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887429230101A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+08:23:45 INFO  : Device configured successfully with "C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/usb_hdmi/_ide/bitstream/mb_usb_hdmi_top.bit"
+08:23:45 INFO  : Context for processor 'microblaze_0' is selected.
+08:23:45 INFO  : Hardware design and registers information is loaded from 'C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+08:23:45 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+08:23:45 INFO  : Context for processor 'microblaze_0' is selected.
+08:23:45 INFO  : System reset is completed.
+08:23:48 INFO  : 'after 3000' command is executed.
+08:23:48 INFO  : Context for processor 'microblaze_0' is selected.
+08:23:48 INFO  : The application 'C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/usb_hdmi/Debug/usb_hdmi.elf' is downloaded to processor 'microblaze_0'.
+08:23:48 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887429230101A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/usb_hdmi/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/usb_hdmi/Debug/usb_hdmi.elf
+----------------End of Script----------------
+
+08:23:48 INFO  : Context for processor 'microblaze_0' is selected.
+08:23:48 INFO  : 'con' command is executed.
+08:23:48 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+08:23:48 INFO  : Disconnected from the channel tcfchan#1.
+08:32:43 INFO  : Hardware specification for platform project 'mb_usb_hdmi_top' is updated.
+08:32:56 INFO  : Result from executing command 'getProjects': mb_usb_hdmi_top
+08:32:56 INFO  : Result from executing command 'getPlatforms': mb_usb_hdmi_top|C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/mb_usb_hdmi_top/export/mb_usb_hdmi_top/mb_usb_hdmi_top.xpfm
+08:32:57 INFO  : Checking for BSP changes to sync application flags for project 'usb_hdmi'...
+08:32:57 WARN  : Failed to closehw "C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa"
+Reason: Cannot close hw design 'C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+Design is not opened in the current session.
+
+08:32:59 INFO  : The hardware specification used by project 'usb_hdmi' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+08:32:59 INFO  : The file 'C:\Users\neil\385projects\Digital-Systems-Final-Project\lab6\ws2\usb_hdmi\_ide\bitstream\mb_usb_hdmi_top.bit' stored in project is removed.
+08:32:59 INFO  : The file 'C:\Users\neil\385projects\Digital-Systems-Final-Project\lab6\ws2\usb_hdmi\_ide\bitstream\mb_usb_hdmi_top.mmi' stored in project is removed.
+08:32:59 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\neil\385projects\Digital-Systems-Final-Project\lab6\ws2\usb_hdmi\_ide\bitstream' in project 'usb_hdmi'.
+08:33:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+08:33:18 INFO  : Jtag cable 'RealDigital Boo 887429230101A' is selected.
+08:33:18 INFO  : 'jtag frequency' command is executed.
+08:33:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887429230101A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+08:33:19 INFO  : Device configured successfully with "C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/usb_hdmi/_ide/bitstream/mb_usb_hdmi_top.bit"
+08:33:19 INFO  : Context for processor 'microblaze_0' is selected.
+08:33:19 INFO  : Hardware design and registers information is loaded from 'C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa'.
+08:33:19 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+08:33:19 INFO  : Context for processor 'microblaze_0' is selected.
+08:33:19 INFO  : System reset is completed.
+08:33:23 INFO  : 'after 3000' command is executed.
+08:33:23 INFO  : Context for processor 'microblaze_0' is selected.
+08:33:23 INFO  : The application 'C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/usb_hdmi/Debug/usb_hdmi.elf' is downloaded to processor 'microblaze_0'.
+08:33:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887429230101A" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/usb_hdmi/_ide/bitstream/mb_usb_hdmi_top.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/ws2/usb_hdmi/Debug/usb_hdmi.elf
+----------------End of Script----------------
+
+08:33:23 INFO  : Context for processor 'microblaze_0' is selected.
+08:33:23 INFO  : 'con' command is executed.
+08:33:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+08:33:23 INFO  : Disconnected from the channel tcfchan#3.

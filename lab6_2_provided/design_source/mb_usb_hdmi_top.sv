@@ -267,6 +267,10 @@ module mb_usb_hdmi_top(
             reset_player <= 1'b1;
         end
         else begin
+            if (keycode0_gpio[7:0]==8'h15) begin 
+                goal_state <= 2'b10;
+                reset_player <= 1'b1;
+            end
             rdata_reg <= rdata;
             brightness_reg <= {8'b0, rdata[7:0]} * {8'b0, rdata[7:0]};
             if (success) begin
