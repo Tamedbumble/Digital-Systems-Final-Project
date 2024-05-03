@@ -17,7 +17,9 @@
 module  color_mapper ( input  logic [9:0] X, Y, DrawX, DrawY, size,
                        input  logic [7:0] x_vec, y_vec,
                        input logic [1:0] wall_on,
+                       input logic sprite_on,
                        input logic [2:0] wall_color,
+                       input logic [23:0] sprite_color,
                        input logic [11:0] memdata,
                        input logic [15:0] brightness,
                        
@@ -159,7 +161,12 @@ module  color_mapper ( input  logic [9:0] X, Y, DrawX, DrawY, size,
 //        end
         
         if (~(DrawX<=160 && DrawY<=120)) begin 
-            if (DrawY < Y_Center - memdata[7:0] && memdata[7:0] < Y_Center) begin
+            if(sprite_on == 1'b1 && sprite_color[23:16] == 8'b00000000 && sprite_color[7:0] != 8'b11111111 && sprite_color[15:8] != 8'b11111111) begin
+                Red = sprite_color[23:16];
+                Green = sprite_color[15:8];
+                Blue = sprite_color[7:0];
+            end
+            else if (DrawY < Y_Center - memdata[7:0] && memdata[7:0] < Y_Center) begin
                 Red = 8'h3f;
                 Green = 8'h3f;
                 Blue = 8'h7f;  

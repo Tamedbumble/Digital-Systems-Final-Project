@@ -99,13 +99,19 @@ read_verilog -library xil_defaultlib -sv {
   C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_sin_inv_rom.sv
   C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/cos_sin_rom.sv
   C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/hex_driver.sv
+  C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/types.sv
+  C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/instantiate_ram.sv
   C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/inv_rom.sv
   C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/lerp.sv
   C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray.sv
   C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/ray_caster.sv
+  C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/sprites.sv
   C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/new/walls.sv
   C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/design_source/mb_usb_hdmi_top.sv
 }
+read_ip -quiet C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
+set_property used_in_implementation false [get_files -all c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0_ooc.xdc]
+
 add_files C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/bd/mb_block/mb_block.bd
 set_property used_in_implementation false [get_files -all c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_0/mb_block_microblaze_0_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_0/mb_block_microblaze_0_0_ooc_debug.xdc]
@@ -155,8 +161,8 @@ set_property used_in_implementation false [get_files -all c:/Users/neil/385proje
 set_property used_in_implementation false [get_files -all c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
 
-read_ip -quiet C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
-set_property used_in_implementation false [get_files -all c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0_ooc.xdc]
+read_ip -quiet C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci
+set_property used_in_implementation false [get_files -all c:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.gen/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

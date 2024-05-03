@@ -3,6 +3,9 @@
 
 # XDC: C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/pin_assignment/mb_usb_hdmi_top.xdc
 
+# IP: ip/blk_mem_gen_0/blk_mem_gen_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_gen_0 || ORIG_REF_NAME==blk_mem_gen_0} -quiet] -quiet
+
 # Block Designs: bd/mb_block/mb_block.bd
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_block || ORIG_REF_NAME==mb_block} -quiet] -quiet
 

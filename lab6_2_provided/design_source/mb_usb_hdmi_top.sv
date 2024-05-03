@@ -72,6 +72,10 @@ module mb_usb_hdmi_top(
     logic success;
     logic reset_player;
     
+    // sprite loading
+    logic sprite_on;
+    logic [23:0] sprite_rgb;
+    
     assign reset_ah = reset_rtl_0;
     assign ra = drawX;
     
@@ -227,6 +231,8 @@ module mb_usb_hdmi_top(
         .memdata(rdata_reg),
         .wall_color(wall_color),
         .wall_on(wall_on),
+        .sprite_on(sprite_on),
+        .sprite_color(sprite_rgb),
         .brightness(brightness_reg)
     );
     
@@ -243,6 +249,17 @@ module mb_usb_hdmi_top(
         .doutb(rdata)      
     );
     
+    sprites sprite_init (
+        .clk(Clk),
+        .keycode({keycode1_gpio, keycode0_gpio}),    
+        .reset(reset_ah),
+        .vs(vsync),
+        .DrawX(drawX), 
+        .DrawY(drawY),
+        .draw_sprite(sprite_on),
+        .sprite_rgb(sprite_rgb)
+);
+    
     always_ff @ (posedge clk_25MHz)
     begin
         if (reset_ah) begin
@@ -250,6 +267,10 @@ module mb_usb_hdmi_top(
             reset_player <= 1'b1;
         end
         else begin
+            if (keycode0_gpio[7:0]==8'h15) begin 
+                goal_state <= 2'b10;
+                reset_player <= 1'b1;
+            end
             rdata_reg <= rdata;
             brightness_reg <= {8'b0, rdata[7:0]} * {8'b0, rdata[7:0]};
             if (success) begin

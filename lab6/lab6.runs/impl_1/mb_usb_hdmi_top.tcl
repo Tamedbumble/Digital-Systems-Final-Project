@@ -141,10 +141,11 @@ OPTRACE "add files" START { }
   add_files -quiet C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.runs/synth_1/mb_usb_hdmi_top.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
+  read_ip -quiet C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
   add_files C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/bd/mb_block/mb_block.bd
   read_ip -quiet C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/ip/hdmi_tx_0/hdmi_tx_0.xci
   read_ip -quiet C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
-  read_ip -quiet C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
+  read_ip -quiet C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6/lab6.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
   read_xdc C:/Users/neil/385projects/Digital-Systems-Final-Project/lab6_2_provided/pin_assignment/mb_usb_hdmi_top.xdc
