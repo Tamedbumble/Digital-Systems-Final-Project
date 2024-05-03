@@ -1,6 +1,6 @@
-2024-05-03T09:29:53.566090200255-09:29:53 **** Incremental Build of project mb_usb_hdmi_top ****
-000-buildplatform.bat 60353 mb_usb_hdmi_top no_domain_build 
-000-xsct% XSDB Server Channel: tcfchan#12
+2024-05-03T13:13:08.474959700255-13:13:08 **** Incremental Build of project mb_usb_hdmi_top ****
+000-buildplatform.bat 51760 mb_usb_hdmi_top no_domain_build 
+000-xsct% XSDB Server Channel: tcfchan#17
 000-C:/Xilinx/Vitis/2022.2/gnu/microblaze/nt
 000-Building the BSP Library for domain  - standalone_microblaze_0 on processor microblaze_0
 000-make --no-print-directory seq_libs
@@ -23,17 +23,17 @@
 000-
 000-"Running Make include in microblaze_0/libsrc/gpio_v4_9/src"
 000-
+000-"Running Make include in microblaze_0/libsrc/intc_v3_15/src"
+000-
 000-make -C microblaze_0/libsrc/gpio_v4_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
 000-R_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-reorder -mno-xl-soft-mul -mxl-barrel-shift -mxl-pattern-compare" "EXTRA_CO
 000-MPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
 000-
-000-"Running Make include in microblaze_0/libsrc/intc_v3_15/src"
+000-"Running Make include in microblaze_0/libsrc/spi_v4_9/src"
 000-
 000-make -C microblaze_0/libsrc/intc_v3_15/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPIL
 000-ER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-reorder -mno-xl-soft-mul -mxl-barrel-shift -mxl-pattern-compare" "EXTRA_C
 000-OMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
-000-
-000-"Running Make include in microblaze_0/libsrc/spi_v4_9/src"
 000-
 000-make -C microblaze_0/libsrc/spi_v4_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER
 000-_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-reorder -mno-xl-soft-mul -mxl-barrel-shift -mxl-pattern-compare" "EXTRA_COM
@@ -95,11 +95,6 @@
 000-
 000-"Running Make libs in microblaze_0/libsrc/tmrctr_v4_9/src"
 000-
-000/mb_usb_hdmi_top81-1-1'#pragma message: For the sleep routines, assembly instructions are used'0-microblaze_sleep.c:81:9: note: '#pragma message: For the sleep routines, assembly instructions are used'
-000-   81 | #pragma message ("For the sleep routines, assembly instructions are used")
-000-      |         ^~~~~~~
-000-"DEBUG NON_LTO_OBJECTS is ../../../lib/microblaze_interrupt_handler.o"
-000-
 000-make -C microblaze_0/libsrc/tmrctr_v4_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER
 000-_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-reorder -mno-xl-soft-mul -mxl-barrel-shift -mxl-pattern-compare" "EXTRA_COM
 000-PILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
@@ -109,6 +104,11 @@
 000-make -C microblaze_0/libsrc/uartlite_v3_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPIL
 000-ER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-reorder -mno-xl-soft-mul -mxl-barrel-shift -mxl-pattern-compare" "EXTRA_C
 000-OMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+000-
+000/mb_usb_hdmi_top81-1-1'#pragma message: For the sleep routines, assembly instructions are used'0-microblaze_sleep.c:81:9: note: '#pragma message: For the sleep routines, assembly instructions are used'
+000-   81 | #pragma message ("For the sleep routines, assembly instructions are used")
+000-      |         ^~~~~~~
+000-"DEBUG NON_LTO_OBJECTS is ../../../lib/microblaze_interrupt_handler.o"
 000-
 000-'Finished building libraries parallelly.'
 000-
@@ -145,5 +145,5 @@
 000-'Finished building libraries'
 000-
 00255-
-09:30:01 Build Finished (took 7s.980ms)
+13:13:25 Build Finished (took 17s.53ms)
 

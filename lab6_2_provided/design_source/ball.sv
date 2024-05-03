@@ -120,7 +120,7 @@ module  ball
                           + { { 9{Y_vec[7]} },Y_vec }*( {16'b0,A} - {16'b0,D} ));
         
         end
-        Angle_Motion_next = (RA - LA) << 3;
+        Angle_Motion_next = (RA - LA) << 4;
 //        Angle_Motion_next = 6'd0;
 //        t_next = RA - LA;
 //        if (t_next == 6'b1 && t+t_next == 6'b0) Angle_Motion_next = 6'b1;
@@ -160,8 +160,8 @@ module  ball
             Y_Motion <= 17'd0; 
 			X_Motion <= 17'd0; 
             
-			Y_pos <= {5'd5,12'b0};//{startx,12'b0};
-			X_pos <= {5'd5,12'b0};//{starty,12'b0};
+			Y_pos <= {5'd6,12'b0};
+			X_pos <= {5'd6,12'b0};
 			Angle <= 6'd0;
 			
 			Y <= Y_pos;

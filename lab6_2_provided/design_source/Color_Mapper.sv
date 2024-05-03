@@ -161,7 +161,7 @@ module  color_mapper ( input  logic [9:0] X, Y, DrawX, DrawY, size,
 //        end
         
         if (~(DrawX<=160 && DrawY<=120)) begin 
-            if(sprite_on == 1'b1 && sprite_color[23:16] == 8'b00000000 && sprite_color[7:0] != 8'b11111111 && sprite_color[15:8] != 8'b11111111) begin
+            if(sprite_on == 1'b1 && sprite_color != 24'b000000001111111111111111) begin
                 Red = sprite_color[23:16];
                 Green = sprite_color[15:8];
                 Blue = sprite_color[7:0];

@@ -1,5 +1,5 @@
 module sprites (
-    input  logic        clk,
+    input  logic        clk, clk25,
     input  logic [63:0]  keycode,
     input  logic        reset,
     input logic         vs,
@@ -19,6 +19,8 @@ module sprites (
     logic        sram_ena;
     logic        sram_wea;
     logic SPACEBAR;
+    logic [23:0] sprite_rgb_data;
+    
     
     // start of sprite
     logic [15:0] sprite_address;
@@ -43,8 +45,12 @@ module sprites (
         .dina	(sram_dina),
         .ena	(sram_ena),
         .wea	(sram_wea),
-        .douta	(sprite_rgb)
+        .douta	(sprite_rgb_data)
     );
+    
+    always_ff @ (posedge clk) begin: data_reg
+        sprite_rgb <= sprite_rgb_data;
+    end
     
     always_comb begin: bram_signals
         if(we_select) begin
@@ -90,66 +96,66 @@ module sprites (
 	end
 	
 	// determine which sprite we are on, and address in bram
-	always_comb begin: state_signals
-	   draw_sprite = 0;
-	   sprite_y = 0;
-	   sprite_x = 0;
-	   sprite_address = 0;
+	always_ff @ (posedge clk25) begin: state_signals
+	   draw_sprite <= 0;
+	   sprite_y <= 0;
+	   sprite_x <= 0;
+	   sprite_address <= 0;
 	   
 	   case(state)
 	       halted: ;
 	       shotgun_1 :
 	           begin // sprite is from 280 to 358 X, 479 to 419 Y
 	               if(DrawX >= 280 && DrawX <= 358 && DrawY >= 419 && DrawY <= 479) begin
-	                   draw_sprite = 1'b1;
-	                   sprite_y = DrawY - 419;
-	                   sprite_x = DrawX - 280;
-	                   sprite_address = sprite_y * width_1 + sprite_x;
+	                   draw_sprite <= 1'b1;
+	                   sprite_y <= DrawY - 419;
+	                   sprite_x <= DrawX - 280;
+	                   sprite_address <= sprite_y * width_1 + sprite_x;
 	               end
 	           end
 	        shotgun_2 :
 	           begin 
 	               if(DrawX >= 260 && DrawX <= 379 && DrawY >= 359 && DrawY <= 479) begin
-	                   draw_sprite = 1'b1;
-	                   sprite_y = DrawY - 359;
-	                   sprite_x = DrawX - 260;
-	                   sprite_address = sprite_y * width_1 + sprite_x + 16'd4780;
+	                   draw_sprite <= 1'b1;
+	                   sprite_y <= DrawY - 359;
+	                   sprite_x <= DrawX - 260;
+	                   sprite_address <= sprite_y * (16'd118) + sprite_x + 16'd4680;
 	               end
 	           end
 	        shotgun_3 :
 	           begin 
 	               if(DrawX >= 276 && DrawX <= 362 && DrawY >= 329 && DrawY <= 479) begin
-	                   draw_sprite = 1'b1;
-	                   sprite_y = DrawY - 329;
-	                   sprite_x = DrawX - 276;
-	                   sprite_address = sprite_y * width_1 + sprite_x + 16'd18840;
+	                   draw_sprite <= 1'b1;
+	                   sprite_y <= DrawY - 329;
+	                   sprite_x <= DrawX - 276;
+	                   sprite_address <= sprite_y * (16'd86) + sprite_x + 16'd18840;
 	               end
 	           end
 	        shotgun_4 :
 	           begin 
-	               if(DrawX >= 280 && DrawX <= 358 && DrawY >= 419 && DrawY <= 479) begin
-	                   draw_sprite = 1'b1;
-	                   sprite_y = DrawY - 419;
-	                   sprite_x = DrawX - 280;
-	                   sprite_address = sprite_y * width_1 + sprite_x + 16'd31740;
+	               if(DrawX >= 263 && DrawX <= 375 && DrawY >= 349 && DrawY <= 479) begin
+	                   draw_sprite <= 1'b1;
+	                   sprite_y <= DrawY - 349;
+	                   sprite_x <= DrawX - 263;
+	                   sprite_address <= sprite_y * (16'd112) + sprite_x + 16'd31740;
 	               end
 	           end
 	        shotgun_3_r :
 	           begin 
 	               if(DrawX >= 276 && DrawX <= 362 && DrawY >= 329 && DrawY <= 479) begin
-	                   draw_sprite = 1'b1;
-	                   sprite_y = DrawY - 329;
-	                   sprite_x = DrawX - 276;
-	                   sprite_address = sprite_y * width_1 + sprite_x + 16'd18840;
+	                   draw_sprite <= 1'b1;
+	                   sprite_y <= DrawY - 329;
+	                   sprite_x <= DrawX - 276;
+	                   sprite_address <= sprite_y * (16'd86) + sprite_x + 16'd18840;
 	               end
 	           end
 	        shotgun_2_r :
 	           begin 
 	               if(DrawX >= 260 && DrawX <= 379 && DrawY >= 359 && DrawY <= 479) begin
-	                   draw_sprite = 1'b1;
-	                   sprite_y = DrawY - 359;
-	                   sprite_x = DrawX - 260;
-	                   sprite_address = sprite_y * width_1 + sprite_x + 16'd4780;
+	                   draw_sprite <= 1'b1;
+	                   sprite_y <= DrawY - 359;
+	                   sprite_x <= DrawX - 260;
+	                   sprite_address <= sprite_y * (16'd118) + sprite_x + 16'd4680;
 	               end
 	           end
 	        default : ;

@@ -67,7 +67,7 @@ module mb_usb_hdmi_top(
     
     logic [15:0] brightness_reg;
     
-    logic [1:0] goal_state;
+    logic [1:0] goal_state, goal_state_prev;
     logic [4:0] goalx, goaly, startx, starty;
     logic success;
     logic reset_player;
@@ -251,6 +251,7 @@ module mb_usb_hdmi_top(
     
     sprites sprite_init (
         .clk(Clk),
+        .clk25(clk_25MHz),
         .keycode({keycode1_gpio, keycode0_gpio}),    
         .reset(reset_ah),
         .vs(vsync),
@@ -263,21 +264,29 @@ module mb_usb_hdmi_top(
     always_ff @ (posedge clk_25MHz)
     begin
         if (reset_ah) begin
+            goal_state_prev <= 2'b0;
             goal_state <= 2'b0;
             reset_player <= 1'b1;
         end
         else begin
             if (keycode0_gpio[7:0]==8'h15) begin 
-                goal_state <= 2'b10;
+                if (goal_state_prev == goal_state) goal_state <= 2'b10;
                 reset_player <= 1'b1;
+            end
+            else if (keycode0_gpio[7:0]==8'h17) begin 
+                if (goal_state_prev == goal_state) goal_state <= goal_state + 1'b1;
+                reset_player <= 1'b1;
+            end
+            else if (success) begin
+                if (goal_state_prev == goal_state) goal_state <= goal_state + 1'b1;
+                reset_player <= 1'b1;
+            end
+            else begin
+                goal_state_prev <= goal_state;
+                reset_player <= 1'b0;
             end
             rdata_reg <= rdata;
             brightness_reg <= {8'b0, rdata[7:0]} * {8'b0, rdata[7:0]};
-            if (success) begin
-                goal_state <= goal_state + 2'b1;
-                reset_player <= 1'b1;
-            end
-            else reset_player <= 1'b0;
         end
         
     end
