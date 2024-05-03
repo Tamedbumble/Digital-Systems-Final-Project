@@ -38,7 +38,7 @@ module instantiate_ram (
 			if (init_mem) begin
 				address <= address + 1'd1;
 				// stop at end of sprite map
-				if (address == 16'd4740) begin
+				if (address == 16'd46300) begin
 					init_mem <= 1'b0;
 				end
 			end

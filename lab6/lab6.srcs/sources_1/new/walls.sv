@@ -36,9 +36,10 @@ module walls
 // TODO: allow for array accessing of levels ex: wall[0]
 logic [19:0] wall_current[15];
 logic [4:0] goalys[4] = {5'd0, 5'd1, 5'd5, 5'd6};
-logic [4:0] goalxs[4] = {5'd4, 5'd18, 5'd12, 5'd9};
+logic [4:0] goalxs[4] = {5'd4, 5'd18, 5'd7, 5'd10};
 logic [4:0] startys[4] = {5'd8, 5'd18, 5'd18, 5'd5};
-logic [4:0] startxs[4] = {5'd11, 5'd1, 5'd18, 5'd17};
+logic [4:0] startxs[4] = {5'd9, 5'd19, 5'd2, 5'd3};
+logic [2:0] wall_colors[4] = {3'b111, 3'b110, 3'b100, 3'b011};
 logic [19:0] walls0[15] = {
     20'b11111111111111111111,
     20'b10000000000000000001,
@@ -95,9 +96,9 @@ logic [19:0] walls3[15] = {
     20'b00000000000000000010,
     20'b00011111111111000100,
     20'b00000000001100001000,
-    20'b00000000110000010000,
-    20'b00000011000000100000,
-    20'b00001100010001000000,
+    20'b00000000110000000000,
+    20'b00000011000000000000,
+    20'b00001100010000000000,
     20'b00010000000010000000,
     20'b00011111111100011000,
     20'b00000000000100011000,
@@ -118,6 +119,7 @@ assign goalx = goalxs[goalstate];
 assign goaly = goalys[goalstate];
 assign startx = startxs[goalstate];
 assign starty = startys[goalstate];
+assign wall_color = wall_colors[goalstate];
 
 always_comb begin
     case(goalstate)
@@ -134,7 +136,6 @@ always_comb begin
     shifted_y = DrawY >> 3;//5;
     row = shifted_x[4:0];
     col = shifted_y[4:0];
-    wall_color = (goalstate) ? 3'b001 : wall_0_color;
     
     // use walls_0 for now
     if (col==goaly && row==goalx) begin

@@ -1,6 +1,6 @@
-09:29:53 **** Incremental Build of project mb_usb_hdmi_top ****
-buildplatform.bat 60353 mb_usb_hdmi_top no_domain_build 
-xsct% XSDB Server Channel: tcfchan#12
+13:13:08 **** Incremental Build of project mb_usb_hdmi_top ****
+buildplatform.bat 51760 mb_usb_hdmi_top no_domain_build 
+xsct% XSDB Server Channel: tcfchan#17
 C:/Xilinx/Vitis/2022.2/gnu/microblaze/nt
 Building the BSP Library for domain  - standalone_microblaze_0 on processor microblaze_0
 make --no-print-directory seq_libs
@@ -23,17 +23,17 @@ MPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra -fno-tree-loop
 
 "Running Make include in microblaze_0/libsrc/gpio_v4_9/src"
 
+"Running Make include in microblaze_0/libsrc/intc_v3_15/src"
+
 make -C microblaze_0/libsrc/gpio_v4_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
 R_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-reorder -mno-xl-soft-mul -mxl-barrel-shift -mxl-pattern-compare" "EXTRA_CO
 MPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
 
-"Running Make include in microblaze_0/libsrc/intc_v3_15/src"
+"Running Make include in microblaze_0/libsrc/spi_v4_9/src"
 
 make -C microblaze_0/libsrc/intc_v3_15/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPIL
 ER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-reorder -mno-xl-soft-mul -mxl-barrel-shift -mxl-pattern-compare" "EXTRA_C
 OMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
-
-"Running Make include in microblaze_0/libsrc/spi_v4_9/src"
 
 make -C microblaze_0/libsrc/spi_v4_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER
 _FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-reorder -mno-xl-soft-mul -mxl-barrel-shift -mxl-pattern-compare" "EXTRA_COM
@@ -95,11 +95,6 @@ _COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra -fno-tree-l
 
 "Running Make libs in microblaze_0/libsrc/tmrctr_v4_9/src"
 
-microblaze_sleep.c:81:9: note: '#pragma message: For the sleep routines, assembly instructions are used'
-   81 | #pragma message ("For the sleep routines, assembly instructions are used")
-      |         ^~~~~~~
-"DEBUG NON_LTO_OBJECTS is ../../../lib/microblaze_interrupt_handler.o"
-
 make -C microblaze_0/libsrc/tmrctr_v4_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER
 _FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-reorder -mno-xl-soft-mul -mxl-barrel-shift -mxl-pattern-compare" "EXTRA_COM
 PILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
@@ -109,6 +104,11 @@ PILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra -fno-tree-loop-
 make -C microblaze_0/libsrc/uartlite_v3_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPIL
 ER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-reorder -mno-xl-soft-mul -mxl-barrel-shift -mxl-pattern-compare" "EXTRA_C
 OMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+microblaze_sleep.c:81:9: note: '#pragma message: For the sleep routines, assembly instructions are used'
+   81 | #pragma message ("For the sleep routines, assembly instructions are used")
+      |         ^~~~~~~
+"DEBUG NON_LTO_OBJECTS is ../../../lib/microblaze_interrupt_handler.o"
 
 'Finished building libraries parallelly.'
 
@@ -145,5 +145,5 @@ mb-ar: creating microblaze_0/lib/libxil.a
 'Finished building libraries'
 
 
-09:30:01 Build Finished (took 7s.980ms)
+13:13:25 Build Finished (took 17s.53ms)
 

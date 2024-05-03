@@ -43,7 +43,7 @@ package SLC3_TYPES;
    
    function [15:0] memContents(input [15:0] address);
 
-      logic [15:0] data;
+      logic [23:0] data;
       unique case(address)
       
             16'd0:  memContents =  24'b000000001111111111111111 ;
