@@ -20,7 +20,7 @@ module instantiate_ram (
 	input logic clk,
 	output logic [15:0]  addr,
 	output logic 		wren,
-	output logic [15:0] data
+	output logic [23:0] data
 );
 							
 	 

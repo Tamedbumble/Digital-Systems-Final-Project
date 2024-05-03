@@ -251,6 +251,7 @@ module mb_usb_hdmi_top(
     
     sprites sprite_init (
         .clk(Clk),
+        .keycode({keycode1_gpio, keycode0_gpio}),    
         .reset(reset_ah),
         .vs(vsync),
         .DrawX(drawX), 
